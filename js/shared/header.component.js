@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./shared/header.component"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,37 +10,29 @@ System.register(["angular2/core", "angular2/router", "./shared/header.component"
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, header_component_1;
-    var AppComponent;
+    var core_1;
+    var HeaderComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            },
-            function (header_component_1_1) {
-                header_component_1 = header_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            HeaderComponent = (function () {
+                function HeaderComponent() {
                 }
-                AppComponent.prototype.ngOnInit = function () { };
-                AppComponent = __decorate([
+                HeaderComponent.prototype.ngOnInit = function () { };
+                HeaderComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: "app/app.component.html",
-                        directives: [router_1.ROUTER_DIRECTIVES, header_component_1.HeaderComponent]
-                    }),
-                    router_1.RouteConfig([]), 
+                        selector: 'appheader',
+                        templateUrl: 'app/shared/header.component.html'
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], HeaderComponent);
+                return HeaderComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("HeaderComponent", HeaderComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=header.component.js.map
