@@ -1,11 +1,15 @@
 import { Component, OnInit } from "angular2/core";
-import {Router , RouteConfig } from "angular2/router";
+import {ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES  } from "angular2/router";
+import {LoginComponent} from "./users/login.component";
 @Component({
     selector: 'my-app',
-    template: '<h1> Hello world</h1>'
+    templateUrl: "app/app.component.html",
+   directives: [ROUTER_DIRECTIVES ] ,
+    providers: [ROUTER_PROVIDERS ]
 })
 @RouteConfig([
-    { path: '/home', as: 'Home', component: AppComponent }
+    { path: '/login', as: 'Login', component: LoginComponent, useAsDefault: true},
+    //{ path: '/login', as: 'Login', component: LoginComponent , useAsDefault: true}
 ])
 export class AppComponent implements OnInit {
     constructor() { }
