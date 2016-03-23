@@ -29,8 +29,7 @@ node_modules
 #typings files
 typings
 
-#compiled js 
-js/*
+
 
 # Optional npm cache directory
 .npm
