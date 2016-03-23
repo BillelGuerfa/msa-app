@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./nav.component"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,29 @@ System.register(['angular2/core', "./nav.component"], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, nav_component_1;
-    var HeaderComponent;
+    var core_1;
+    var LoginComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (nav_component_1_1) {
-                nav_component_1 = nav_component_1_1;
             }],
         execute: function() {
-            HeaderComponent = (function () {
-                function HeaderComponent() {
+            LoginComponent = (function () {
+                function LoginComponent() {
                 }
-                HeaderComponent.prototype.ngOnInit = function () { };
-                HeaderComponent = __decorate([
+                LoginComponent.prototype.ngOnInit = function () { };
+                LoginComponent = __decorate([
                     core_1.Component({
-                        selector: 'appheader',
-                        templateUrl: 'app/shared/header.component.html',
-                        directives: [nav_component_1.NavComponent]
+                        selector: 'login',
+                        templateUrl: 'app/users/views/login.component.html',
                     }), 
                     __metadata('design:paramtypes', [])
-                ], HeaderComponent);
-                return HeaderComponent;
+                ], LoginComponent);
+                return LoginComponent;
             }());
-            exports_1("HeaderComponent", HeaderComponent);
+            exports_1("LoginComponent", LoginComponent);
         }
     }
 });
-//# sourceMappingURL=header.component.js.map
+//# sourceMappingURL=login.component.js.map

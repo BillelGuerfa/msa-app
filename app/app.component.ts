@@ -1,7 +1,7 @@
 import { Component, OnInit } from "angular2/core";
 import { RouteConfig, ROUTER_DIRECTIVES  } from "angular2/router";
-import {LoginComponent} from "./users/login.component";
-import {HeaderComponent} from "./shared/header.component";
+import {LoginComponent} from "./users/components/login.component";
+import {HeaderComponent} from "./shared/components/header.component";
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",

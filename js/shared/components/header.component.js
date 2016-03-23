@@ -28,7 +28,7 @@ System.register(['angular2/core', "./nav.component"], function(exports_1, contex
                 HeaderComponent = __decorate([
                     core_1.Component({
                         selector: 'appheader',
-                        templateUrl: 'app/shared/header.component.html',
+                        templateUrl: 'app/shared/views/header.component.html',
                         directives: [nav_component_1.NavComponent]
                     }), 
                     __metadata('design:paramtypes', [])
