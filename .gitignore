@@ -30,7 +30,7 @@ node_modules
 typings
 
 #compiled js 
-js
+js/*
 
 # Optional npm cache directory
 .npm
