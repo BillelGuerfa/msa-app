@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./header.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "./header.component", "./footer.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./header.component"], function(exports_1, con
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, header_component_1;
+    var core_1, header_component_1, footer_component_1;
     var HomeComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', "./header.component"], function(exports_1, con
             },
             function (header_component_1_1) {
                 header_component_1 = header_component_1_1;
+            },
+            function (footer_component_1_1) {
+                footer_component_1 = footer_component_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -29,7 +32,7 @@ System.register(['angular2/core', "./header.component"], function(exports_1, con
                     core_1.Component({
                         selector: 'home',
                         templateUrl: 'app/shared/views/home.component.html',
-                        directives: [header_component_1.HeaderComponent]
+                        directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);

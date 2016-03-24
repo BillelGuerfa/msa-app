@@ -11,36 +11,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var NotificationComponent;
+    var FooterComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            NotificationComponent = (function () {
-                function NotificationComponent() {
+            FooterComponent = (function () {
+                function FooterComponent() {
                 }
-                NotificationComponent.prototype.ngOnInit = function () { };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], NotificationComponent.prototype, "type", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', String)
-                ], NotificationComponent.prototype, "contenu", void 0);
-                NotificationComponent = __decorate([
+                FooterComponent.prototype.ngOnInit = function () { };
+                FooterComponent = __decorate([
                     core_1.Component({
-                        selector: 'notification',
-                        templateUrl: 'app/shared/views/notification.component.html'
+                        selector: 'app-footer',
+                        templateUrl: 'app/shared/views/footer.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], NotificationComponent);
-                return NotificationComponent;
+                ], FooterComponent);
+                return FooterComponent;
             }());
-            exports_1("NotificationComponent", NotificationComponent);
+            exports_1("FooterComponent", FooterComponent);
         }
     }
 });
-//# sourceMappingURL=notification.component.js.map
+//# sourceMappingURL=footer.component.js.map

@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit, Input } from 'angular2/core';
 
 @Component({
     selector: 'notification',
@@ -6,6 +6,9 @@ import { Component, OnInit } from 'angular2/core';
 })
 
 export class NotificationComponent implements OnInit {
+    @Input() type: String;
+    @Input() contenu: String;
+    
     constructor() { }
 
     ngOnInit() { }

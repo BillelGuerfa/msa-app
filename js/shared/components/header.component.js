@@ -33,7 +33,7 @@ System.register(['angular2/core', "./nav.component", "./notification.component",
                 HeaderComponent.prototype.ngOnInit = function () { };
                 HeaderComponent = __decorate([
                     core_1.Component({
-                        selector: 'appheader',
+                        selector: 'app-header',
                         templateUrl: 'app/shared/views/header.component.html',
                         directives: [nav_component_1.NavComponent, notification_component_1.NotificationComponent, notificationBody_component_1.NotificationBodyComponent]
                     }), 

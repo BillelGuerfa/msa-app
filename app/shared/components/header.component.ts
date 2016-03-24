@@ -3,7 +3,7 @@ import {NavComponent} from "./nav.component";
 import {NotificationComponent} from "./notification.component";
 import {NotificationBodyComponent} from "./notificationBody.component";
 @Component({
-    selector: 'appheader',
+    selector: 'app-header',
     templateUrl: 'app/shared/views/header.component.html',
     directives: [NavComponent, NotificationComponent, NotificationBodyComponent] 
 })
