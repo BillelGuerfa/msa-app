@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./nav.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "./nav.component", "./notification.component", "./notificationBody.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./nav.component"], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, nav_component_1;
+    var core_1, nav_component_1, notification_component_1, notificationBody_component_1;
     var HeaderComponent;
     return {
         setters:[
@@ -19,6 +19,12 @@ System.register(['angular2/core', "./nav.component"], function(exports_1, contex
             },
             function (nav_component_1_1) {
                 nav_component_1 = nav_component_1_1;
+            },
+            function (notification_component_1_1) {
+                notification_component_1 = notification_component_1_1;
+            },
+            function (notificationBody_component_1_1) {
+                notificationBody_component_1 = notificationBody_component_1_1;
             }],
         execute: function() {
             HeaderComponent = (function () {
@@ -29,7 +35,7 @@ System.register(['angular2/core', "./nav.component"], function(exports_1, contex
                     core_1.Component({
                         selector: 'appheader',
                         templateUrl: 'app/shared/views/header.component.html',
-                        directives: [nav_component_1.NavComponent]
+                        directives: [nav_component_1.NavComponent, notification_component_1.NotificationComponent, notificationBody_component_1.NotificationBodyComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HeaderComponent);

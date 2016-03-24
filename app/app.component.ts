@@ -14,7 +14,7 @@ import {HomeComponent} from "./shared/components/home.component";
 ])
 export class AppComponent implements OnInit {
     constructor() { }
-
+    
     ngOnInit() { }
 
 }
