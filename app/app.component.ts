@@ -10,7 +10,7 @@ import {HomeComponent} from "./shared/components/home.component";
 
 @RouteConfig([
     { path: '/', as: 'Home', component: HomeComponent, useAsDefault: true},
-    //{ path: '/login', as: 'Login', component: LoginComponent , useAsDefault: true}
+    { path: '/login', as: 'Login', component: LoginComponent }
 ])
 export class AppComponent implements OnInit {
     constructor() { }
