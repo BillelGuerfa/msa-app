@@ -21,7 +21,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             LoginComponent = (function () {
                 function LoginComponent() {
                 }
-                LoginComponent.prototype.ngOnInit = function () { };
+                LoginComponent.prototype.ngOnInit = function () {
+                };
                 LoginComponent = __decorate([
                     core_1.Component({
                         selector: 'login',
