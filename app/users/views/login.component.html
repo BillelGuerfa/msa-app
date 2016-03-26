@@ -3,14 +3,14 @@
     <div class="input-group m-b-20">
         <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
         <div class="fg-line" >
-            <input type="text" class="form-control" placeholder="Username">
+            <input type="text" [(ngModel)]="compte.nomUtilisateur" class="form-control" placeholder="Username">
         </div>
     </div>
 
     <div class="input-group m-b-20">
         <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
         <div class="fg-line" >
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" [(ngModel)]="compte.motDePasse"  class="form-control" placeholder="Password">
         </div>
     </div>
 
@@ -18,7 +18,7 @@
 
 
 
-    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+    <a href="" (click)="login()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
 
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+    <a href="" (click)="forget()" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
 
     <ul class="login-navigation">
         <li data-block="#l-login" class="bgm-green">Login</li>
