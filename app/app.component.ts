@@ -14,12 +14,13 @@ import {
 import {
     HomeComponent
 } from "./shared/components/home.component";
-
+import {AuthService} from "./users/services/auth.service"
 declare var $;
 declare var Waves;
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
+    providers: [AuthService],
     directives: [ROUTER_DIRECTIVES, HomeComponent, LoginComponent]
 
 })
@@ -36,13 +37,16 @@ declare var Waves;
 }])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;
-    constructor(private _el: ElementRef) {
-        this.loginPage = true;
-        $('body').addClass('login-content');
+    constructor(private _el: ElementRef, private _authService: AuthService) {
+       
     }
 
     ngOnInit() {
-
+        if(this._authService.isLogged()){
+            
+        }else {
+             $('body').addClass('login-content');
+        }
     }
 
     ngAfterViewInit() {

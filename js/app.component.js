@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./users/components/login.component", "./shared/components/home.component"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./users/components/login.component", "./shared/components/home.component", "./users/services/auth.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, login_component_1, home_component_1;
+    var core_1, router_1, login_component_1, home_component_1, auth_service_1;
     var AppComponent;
     return {
         setters:[
@@ -25,15 +25,22 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
             },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
+            },
+            function (auth_service_1_1) {
+                auth_service_1 = auth_service_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_el) {
+                function AppComponent(_el, _authService) {
                     this._el = _el;
-                    this.loginPage = true;
-                    $('body').addClass('login-content');
+                    this._authService = _authService;
                 }
                 AppComponent.prototype.ngOnInit = function () {
+                    if (this._authService.isLogged()) {
+                    }
+                    else {
+                        $('body').addClass('login-content');
+                    }
                 };
                 AppComponent.prototype.ngAfterViewInit = function () {
                     /*
@@ -789,6 +796,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/app.component.html",
+                        providers: [auth_service_1.AuthService],
                         directives: [router_1.ROUTER_DIRECTIVES, home_component_1.HomeComponent, login_component_1.LoginComponent]
                     }),
                     router_1.RouteConfig([{
@@ -801,7 +809,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
                             as: 'Login',
                             component: login_component_1.LoginComponent
                         }]), 
-                    __metadata('design:paramtypes', [core_1.ElementRef])
+                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService])
                 ], AppComponent);
                 return AppComponent;
             }());

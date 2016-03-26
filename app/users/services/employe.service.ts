@@ -1,9 +1,11 @@
 import { Injectable } from 'angular2/core';
 import {Http} from "angular2/http";
+import {Feature, FeatureService} from "./feature.service";
 @Injectable()
 export class EmployeService {
     employe: Employe;
-    constructor() { }
+    currentFeatures: Feature[];
+    constructor(private _featureService: FeatureService) { }
     getEmploye(): Employe{
         return this.employe;
     }
@@ -18,3 +20,4 @@ export interface Employe {
     numeroTel: string;
     dateRecrutement: string;
 }
+

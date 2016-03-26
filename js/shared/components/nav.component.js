@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', "./navItem.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, navItem_component_1;
     var NavComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (navItem_component_1_1) {
+                navItem_component_1 = navItem_component_1_1;
             }],
         execute: function() {
             NavComponent = (function () {
@@ -25,7 +28,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 NavComponent = __decorate([
                     core_1.Component({
                         selector: 'appnav',
-                        templateUrl: 'app/shared/views/nav.component.html'
+                        templateUrl: 'app/shared/views/nav.component.html',
+                        directives: [navItem_component_1.NavItemComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], NavComponent);
