@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./header.component", "./footer.component", "../../assistante/components/calendrier.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "./header.component", "./footer.component", "../../assistante/components/calendrier.component", "../../assistante/components/listePatients.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./header.component", "./footer.component", ".
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, header_component_1, footer_component_1, calendrier_component_1;
+    var core_1, header_component_1, footer_component_1, calendrier_component_1, listePatients_component_1;
     var HomeComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', "./header.component", "./footer.component", ".
             },
             function (calendrier_component_1_1) {
                 calendrier_component_1 = calendrier_component_1_1;
+            },
+            function (listePatients_component_1_1) {
+                listePatients_component_1 = listePatients_component_1_1;
             }],
         execute: function() {
             HomeComponent = (function () {
@@ -35,7 +38,7 @@ System.register(['angular2/core', "./header.component", "./footer.component", ".
                     core_1.Component({
                         selector: 'home',
                         templateUrl: 'app/shared/views/home.component.html',
-                        directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent, calendrier_component_1.CalendrierComponent]
+                        directives: [header_component_1.HeaderComponent, footer_component_1.FooterComponent, calendrier_component_1.CalendrierComponent, listePatients_component_1.ListePatientsComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);
