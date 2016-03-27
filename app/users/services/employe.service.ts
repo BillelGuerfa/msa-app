@@ -6,7 +6,7 @@ export class EmployeService {
     employe: Employe;
     currentFeatures: Feature[];
     constructor(private _featureService: FeatureService) { }
-    getEmploye(): Employe{
+    getEmploye(id): Employe{
         return this.employe;
     }
 }
@@ -19,5 +19,6 @@ export interface Employe {
     dateNaissance: string;
     numeroTel: string;
     dateRecrutement: string;
+    poste: string;
 }
 

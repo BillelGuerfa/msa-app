@@ -25,7 +25,7 @@ System.register(['angular2/core', "./feature.service"], function(exports_1, cont
                 function EmployeService(_featureService) {
                     this._featureService = _featureService;
                 }
-                EmployeService.prototype.getEmploye = function () {
+                EmployeService.prototype.getEmploye = function (id) {
                     return this.employe;
                 };
                 EmployeService = __decorate([

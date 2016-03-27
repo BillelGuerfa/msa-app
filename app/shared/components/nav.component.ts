@@ -9,6 +9,7 @@ import {EmployeService} from "../../users/services/employe.service";
 })
 
 export class NavComponent implements OnInit {
+    fullname: string = "Billel Guerfa";
     constructor() { }
 
     ngOnInit() { }

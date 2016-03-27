@@ -23,6 +23,7 @@ System.register(['angular2/core', "./navItem.component"], function(exports_1, co
         execute: function() {
             NavComponent = (function () {
                 function NavComponent() {
+                    this.fullname = "Billel Guerfa";
                 }
                 NavComponent.prototype.ngOnInit = function () { };
                 NavComponent = __decorate([

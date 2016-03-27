@@ -8,7 +8,7 @@ export class PatientService {
 }
 
 export interface Patient{
-    nin: string;
+    idPatient: string;
     nom: string;
     prenom: string;
     numTelephone: string;
