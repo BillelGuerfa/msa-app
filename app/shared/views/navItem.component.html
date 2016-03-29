@@ -1,8 +1,8 @@
 <li class="sub-menu">
-    <a href="" [routerLink]=""><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> Gestion des patients</a>
+    <a *ngIf="feature.route !== 'none'" href="" [routerLink]="[feature.route]"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> {{feature.name}}</a>
+    <a *ngIf="feature.route === 'none'" href="" ><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> {{feature.name}}</a>
 
     <ul>
-        <li><a href="">Liste patients</a></li>
-        <li><a href="">Fiche anomalie</a></li>
+        <li *ngFor="#subFeature of feature.subFeatures" ><a href="" [routerLink]="[subFeature.route]">{{subFeature.name}}</a></li>
     </ul>
 </li>

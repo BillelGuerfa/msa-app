@@ -6,12 +6,13 @@ import  'rxjs/Rx';
 @Injectable()
 export class AuthService {
     
-    session_id: number;
     logged: boolean;
     compte: Compte;
     constructor(private _http: Http) { 
         if(sessionStorage.getItem("session_id"))  {
-            this.session_id = sessionStorage.getItem("session_id");
+            this.compte.session_id = sessionStorage.getItem("session_id");
+            this.compte.idCompte = sessionStorage.getItem("idCompte");
+            this.compte.nomUtilisateur = sessionStorage.getItem("nomUtilisateur");
             this.logged = true;
         }
         else this.logged = false;

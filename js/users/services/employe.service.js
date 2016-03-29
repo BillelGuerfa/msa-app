@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./feature.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "./feature.service", "./auth.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,37 @@ System.register(['angular2/core', "./feature.service"], function(exports_1, cont
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, feature_service_1;
+    var core_1, http_1, feature_service_1, auth_service_1;
     var EmployeService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
             function (feature_service_1_1) {
                 feature_service_1 = feature_service_1_1;
+            },
+            function (auth_service_1_1) {
+                auth_service_1 = auth_service_1_1;
             }],
         execute: function() {
             EmployeService = (function () {
-                function EmployeService(_featureService) {
+                function EmployeService(_http, _featureService, _authService) {
+                    this._http = _http;
                     this._featureService = _featureService;
+                    this._authService = _authService;
                 }
-                EmployeService.prototype.getEmploye = function (id) {
+                EmployeService.prototype.getEmploye = function () {
+                    this.
+                    ;
                     return this.employe;
                 };
                 EmployeService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [feature_service_1.FeatureService])
+                    __metadata('design:paramtypes', [http_1.Http, feature_service_1.FeatureService, auth_service_1.AuthService])
                 ], EmployeService);
                 return EmployeService;
             }());
