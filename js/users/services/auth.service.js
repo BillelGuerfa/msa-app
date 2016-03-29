@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/http", "../../app.config", 'rxjs/Observable'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Observable", 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25,21 +25,38 @@ System.register(['angular2/core', "angular2/http", "../../app.config", 'rxjs/Obs
             },
             function (Observable_1_1) {
                 Observable_1 = Observable_1_1;
-            }],
+            },
+            function (_1) {}],
         execute: function() {
             AuthService = (function () {
                 function AuthService(_http) {
                     this._http = _http;
-                    if (sessionStorage.getItem("session_id"))
+                    if (sessionStorage.getItem("session_id")) {
                         this.session_id = sessionStorage.getItem("session_id");
+                        this.logged = true;
+                    }
+                    else
+                        this.logged = false;
                 }
+                AuthService.prototype.getCompte = function () {
+                    if (this.compte)
+                        return this.compte;
+                };
                 AuthService.prototype.login = function (compte) {
-                    return this._http.post(app_config_1.config.urls.login, JSON.stringify(compte))
-                        .map(function (res) { return res.json(); })
+                    var _this = this;
+                    //TODO replace get with post for production
+                    return this._http.get(app_config_1.config.urls.login)
+                        .map(function (res) {
+                        _this.compte = res.json();
+                        sessionStorage.setItem("session_id", _this.compte.session_id);
+                        sessionStorage.setItem("idCompte", _this.compte.idCompte.toString());
+                        sessionStorage.setItem("nomUtilisateur", _this.compte.nomUtilisateur);
+                        return _this.compte;
+                    })
                         .catch(this.handleErrors);
                 };
                 AuthService.prototype.isLogged = function () {
-                    return true;
+                    return this.logged;
                 };
                 AuthService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');

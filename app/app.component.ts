@@ -2,7 +2,8 @@ import {
     Component,
     OnInit,
     ElementRef,
-    AfterViewInit
+    AfterViewInit,
+    
 } from "angular2/core";
 import {
     RouteConfig,
@@ -15,13 +16,19 @@ import {
     HomeComponent
 } from "./shared/components/home.component";
 import {AuthService} from "./users/services/auth.service"
+import {EmployeService} from "./users/services/employe.service";
+import {FeatureService} from "./users/services/feature.service";
+import {PatientService} from "./assistante/services/patient.service";
+import {AnomalieService} from "./assistante/services/anomalie.service";
+import {RdvService} from "./assistante/services/rdv.service";
+
 declare var $;
 declare var Waves;
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    providers: [AuthService],
-    directives: [ROUTER_DIRECTIVES, HomeComponent, LoginComponent]
+    providers: [AuthService, EmployeService, FeatureService, PatientService, AnomalieService, RdvService],
+    directives: [ROUTER_DIRECTIVES]
 
 })
 

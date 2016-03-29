@@ -1,4 +1,7 @@
 import { Component, OnInit, AfterViewInit  } from 'angular2/core';
+import {Employe} from "../../users/services/employe.service";
+import {Patient} from "../services/patient.service";
+import {Rdv } from "../services/rdv.service";
 declare var $;
 @Component({
     selector: 'calendrier',
@@ -6,6 +9,9 @@ declare var $;
 })
 
 export class CalendrierComponent implements OnInit, AfterViewInit  {
+    employe: Employe;
+    patient: Patient;
+    listeRdvs: Rdv[];
     constructor() { }
 
     ngOnInit() { }

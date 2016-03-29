@@ -25,13 +25,21 @@ System.register(['angular2/core', "angular2/router", "../services/auth.service"]
             }],
         execute: function() {
             LoginComponent = (function () {
-                function LoginComponent(_authService) {
+                function LoginComponent(_authService, _router) {
                     this._authService = _authService;
+                    this._router = _router;
+                    this.compte = { nomUtilisateur: "", motDePasse: "" };
                 }
                 LoginComponent.prototype.ngOnInit = function () {
                 };
                 LoginComponent.prototype.login = function () {
-                    this._authService.login(this.compte).subscribe();
+                    var _this = this;
+                    this._authService.login(this.compte)
+                        .subscribe(function (compte) {
+                        _this.compte = compte;
+                        console.log(compte);
+                        _this._router.navigate(['Home']);
+                    }, function (error) { return _this.error = error; });
                 };
                 LoginComponent.prototype.forget = function () {
                 };
@@ -42,7 +50,7 @@ System.register(['angular2/core', "angular2/router", "../services/auth.service"]
                         providers: [auth_service_1.AuthService],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
-                    __metadata('design:paramtypes', [auth_service_1.AuthService])
+                    __metadata('design:paramtypes', [auth_service_1.AuthService, router_1.Router])
                 ], LoginComponent);
                 return LoginComponent;
             }());

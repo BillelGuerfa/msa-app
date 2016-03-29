@@ -1,21 +1,38 @@
 import { Injectable } from 'angular2/core';
 import {Http, Response } from "angular2/http";
 import {config} from "../../app.config";
-import {Observable}     from 'rxjs/Observable';
+import {Observable} from "rxjs/Observable";
+import  'rxjs/Rx';
 @Injectable()
 export class AuthService {
     
     session_id: number;
+    logged: boolean;
+    compte: Compte;
     constructor(private _http: Http) { 
-        if(sessionStorage.getItem("session_id"))  this.session_id = sessionStorage.getItem("session_id");
+        if(sessionStorage.getItem("session_id"))  {
+            this.session_id = sessionStorage.getItem("session_id");
+            this.logged = true;
+        }
+        else this.logged = false;
+    }
+    getCompte() {
+        if(this.compte) return this.compte;
     }
     login(compte: Compte){
-        return this._http.post(config.urls.login,JSON.stringify(compte))
-                          .map((res)=> res.json())
+        //TODO replace get with post for production
+        return this._http.get(config.urls.login)
+                          .map( res => {
+                              this.compte = <Compte> res.json();
+                              sessionStorage.setItem("session_id", this.compte.session_id);
+                              sessionStorage.setItem("idCompte",this.compte.idCompte.toString());
+                              sessionStorage.setItem("nomUtilisateur",this.compte.nomUtilisateur);
+                              return this.compte;
+                            })
                           .catch(this.handleErrors);
     }
     isLogged(){
-        return true;
+        return this.logged;
     }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
@@ -23,6 +40,7 @@ export class AuthService {
 }
 export interface Compte {
     idCompte?: number;
+    session_id?:string;
     nomUtilisateur: string;
     motDePasse: string;
 }

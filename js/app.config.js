@@ -7,10 +7,15 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             exports_1("config", config = {
                 urls: {
-                    login: "",
-                    assistante: {},
+                    login: "./app/data/compte.json",
+                    assistante: {
+                        patients: "./app/data/patients.json"
+                    },
                     stomatherapeut: {},
-                    agentPrestation: {}
+                    agentPrestation: {},
+                    users: {
+                        employe: "./app/data/employe.json"
+                    }
                 }
             });
         }

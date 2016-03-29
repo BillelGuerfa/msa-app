@@ -1,7 +1,8 @@
 export var config = {
     urls: {
-        login: "",
+        login: "./app/data/compte.json",
         assistante: {
+            patients: "./app/data/patients.json"
             
         },
         stomatherapeut:{
@@ -9,6 +10,9 @@ export var config = {
         },
         agentPrestation:{
             
+        },
+        users:{
+            employe: "./app/data/employe.json"
         }
     }
 };
