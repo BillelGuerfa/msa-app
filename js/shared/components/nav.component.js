@@ -36,7 +36,7 @@ System.register(['angular2/core', "./navItem.component", "../../users/services/e
                 };
                 NavComponent = __decorate([
                     core_1.Component({
-                        selector: 'appnav',
+                        selector: 'app-nav',
                         templateUrl: 'app/shared/views/nav.component.html',
                         directives: [navItem_component_1.NavItemComponent]
                     }), 

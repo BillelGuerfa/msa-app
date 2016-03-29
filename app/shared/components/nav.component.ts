@@ -4,7 +4,7 @@ import {EmployeService, Employe} from "../../users/services/employe.service";
 import {Feature,FeatureService} from "../../users/services/feature.service";
 import {AuthService} from "../../users/services/auth.service";
 @Component({
-    selector: 'appnav',
+    selector: 'app-nav',
     templateUrl: 'app/shared/views/nav.component.html',
     
     directives: [NavItemComponent] 

@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
 import {LoginComponent} from "./users/components/login.component";
 import {HomeComponent} from "./shared/components/home.component";
 import { HeaderComponent} from "./shared/components/header.component";
+import {NavComponent} from "./shared/components/nav.component";
 import { FooterComponent} from "./shared/components/footer.component";
 import {CalendrierComponent} from "./assistante/components/calendrier.component";
 import {ListePatientsComponent} from "./assistante/components/listePatients.component";
@@ -28,6 +29,7 @@ declare var Waves;
                 
     directives: [ROUTER_DIRECTIVES ,
                  HeaderComponent,
+                 NavComponent,
                  FooterComponent] 
 
 })
