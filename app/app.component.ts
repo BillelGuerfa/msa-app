@@ -1,20 +1,11 @@
-import {
-    Component,
-    OnInit,
-    ElementRef,
-    AfterViewInit,
-    
-} from "angular2/core";
-import {
-    RouteConfig,
-    ROUTER_DIRECTIVES
-} from "angular2/router";
-import {
-    LoginComponent
-} from "./users/components/login.component";
-import {
-    HomeComponent
-} from "./shared/components/home.component";
+import {Component,OnInit,ElementRef,AfterViewInit,} from "angular2/core";
+import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
+import {LoginComponent} from "./users/components/login.component";
+import {HomeComponent} from "./shared/components/home.component";
+import { HeaderComponent} from "./shared/components/header.component";
+import { FooterComponent} from "./shared/components/footer.component";
+import {CalendrierComponent} from "./assistante/components/calendrier.component";
+import {ListePatientsComponent} from "./assistante/components/listePatients.component";
 import {AuthService} from "./users/services/auth.service"
 import {EmployeService} from "./users/services/employe.service";
 import {FeatureService} from "./users/services/feature.service";
@@ -27,32 +18,38 @@ declare var Waves;
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",
-    providers: [AuthService, EmployeService, FeatureService, PatientService, AnomalieService, RdvService],
-    directives: [ROUTER_DIRECTIVES]
+    
+    providers: [AuthService,
+                EmployeService, 
+                FeatureService, 
+                PatientService, 
+                AnomalieService, 
+                RdvService],
+                
+    directives: [ROUTER_DIRECTIVES ,
+                 HeaderComponent,
+                 FooterComponent] 
 
 })
 
-@RouteConfig([{
-    path: '/',
-    as: 'Home',
-    component: HomeComponent,
-    useAsDefault: true
-}, {
-    path: '/login',
-    as: 'Login',
-    component: LoginComponent
-}])
+@RouteConfig([
+    { path: '/',as: 'Home',component: HomeComponent, useAsDefault: true }, 
+    { path: '/login',as: 'Login',component: LoginComponent },
+    { path: "/calendrier", as:"Calendrier", component:CalendrierComponent}
+])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;
-    constructor(private _el: ElementRef, private _authService: AuthService) {
+    constructor(private _el: ElementRef, private _authService: AuthService, private _router:Router) {
        
     }
 
     ngOnInit() {
         if(this._authService.isLogged()){
-            
+            this.loginPage = false;
         }else {
+            this.loginPage = true;
              $('body').addClass('login-content');
+             this._router.navigate(['Login']);
         }
     }
 

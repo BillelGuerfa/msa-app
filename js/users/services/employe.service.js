@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/http", "./feature.service", "./auth.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "../../app.config", "./feature.service", "./auth.service", "rxjs/Observable", "rxjs/Rx"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/http", "./feature.service", "./auth.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, feature_service_1, auth_service_1;
+    var core_1, http_1, app_config_1, feature_service_1, auth_service_1, Observable_1;
     var EmployeService;
     return {
         setters:[
@@ -20,12 +20,19 @@ System.register(['angular2/core', "angular2/http", "./feature.service", "./auth.
             function (http_1_1) {
                 http_1 = http_1_1;
             },
+            function (app_config_1_1) {
+                app_config_1 = app_config_1_1;
+            },
             function (feature_service_1_1) {
                 feature_service_1 = feature_service_1_1;
             },
             function (auth_service_1_1) {
                 auth_service_1 = auth_service_1_1;
-            }],
+            },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            },
+            function (_1) {}],
         execute: function() {
             EmployeService = (function () {
                 function EmployeService(_http, _featureService, _authService) {
@@ -34,9 +41,29 @@ System.register(['angular2/core', "angular2/http", "./feature.service", "./auth.
                     this._authService = _authService;
                 }
                 EmployeService.prototype.getEmploye = function () {
-                    this.
-                    ;
-                    return this.employe;
+                    var _this = this;
+                    if (this._authService.getCompte()) {
+                        if (this.employe) {
+                            return Observable_1.Observable.create(function (observer) {
+                                observer.onNext(_this.employe);
+                                observer.onCompleted();
+                            });
+                        }
+                        else {
+                            return this._http.get(app_config_1.config.urls.users.employe + "?idEmploye=" + this._authService.getCompte().idCompte)
+                                .map(function (res) {
+                                _this.employe = res.json();
+                                return _this.employe;
+                            })
+                                .catch(this.handleErrors);
+                        }
+                    }
+                    else {
+                        console.log('must login');
+                    }
+                };
+                EmployeService.prototype.handleErrors = function (error) {
+                    return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
                 EmployeService = __decorate([
                     core_1.Injectable(), 

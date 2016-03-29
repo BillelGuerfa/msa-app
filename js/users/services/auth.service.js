@@ -32,7 +32,10 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                 function AuthService(_http) {
                     this._http = _http;
                     if (sessionStorage.getItem("session_id")) {
-                        this.session_id = sessionStorage.getItem("session_id");
+                        this.compte = {};
+                        this.compte.session_id = sessionStorage.getItem("session_id");
+                        this.compte.idCompte = sessionStorage.getItem("idCompte");
+                        this.compte.nomUtilisateur = sessionStorage.getItem("nomUtilisateur");
                         this.logged = true;
                     }
                     else

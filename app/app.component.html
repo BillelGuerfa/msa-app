@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<app-header *ngIf="!loginPage" ></app-header>
+<section id="main" data-layout="layout-1">
+    <router-outlet></router-outlet>
+</section>
+<app-footer *ngIf="!loginPage" ></app-footer>

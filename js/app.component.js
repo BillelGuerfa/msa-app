@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./users/components/login.component", "./shared/components/home.component", "./users/services/auth.service", "./users/services/employe.service", "./users/services/feature.service", "./assistante/services/patient.service", "./assistante/services/anomalie.service", "./assistante/services/rdv.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./users/components/login.component", "./shared/components/home.component", "./shared/components/header.component", "./shared/components/footer.component", "./assistante/components/calendrier.component", "./users/services/auth.service", "./users/services/employe.service", "./users/services/feature.service", "./assistante/services/patient.service", "./assistante/services/anomalie.service", "./assistante/services/rdv.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, login_component_1, home_component_1, auth_service_1, employe_service_1, feature_service_1, patient_service_1, anomalie_service_1, rdv_service_1;
+    var core_1, router_1, login_component_1, home_component_1, header_component_1, footer_component_1, calendrier_component_1, auth_service_1, employe_service_1, feature_service_1, patient_service_1, anomalie_service_1, rdv_service_1;
     var AppComponent;
     return {
         setters:[
@@ -25,6 +25,15 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
             },
             function (home_component_1_1) {
                 home_component_1 = home_component_1_1;
+            },
+            function (header_component_1_1) {
+                header_component_1 = header_component_1_1;
+            },
+            function (footer_component_1_1) {
+                footer_component_1 = footer_component_1_1;
+            },
+            function (calendrier_component_1_1) {
+                calendrier_component_1 = calendrier_component_1_1;
             },
             function (auth_service_1_1) {
                 auth_service_1 = auth_service_1_1;
@@ -46,15 +55,19 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_el, _authService) {
+                function AppComponent(_el, _authService, _router) {
                     this._el = _el;
                     this._authService = _authService;
+                    this._router = _router;
                 }
                 AppComponent.prototype.ngOnInit = function () {
                     if (this._authService.isLogged()) {
+                        this.loginPage = false;
                     }
                     else {
+                        this.loginPage = true;
                         $('body').addClass('login-content');
+                        this._router.navigate(['Login']);
                     }
                 };
                 AppComponent.prototype.ngAfterViewInit = function () {
@@ -811,20 +824,22 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/app.component.html",
-                        providers: [auth_service_1.AuthService, employe_service_1.EmployeService, feature_service_1.FeatureService, patient_service_1.PatientService, anomalie_service_1.AnomalieService, rdv_service_1.RdvService],
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        providers: [auth_service_1.AuthService,
+                            employe_service_1.EmployeService,
+                            feature_service_1.FeatureService,
+                            patient_service_1.PatientService,
+                            anomalie_service_1.AnomalieService,
+                            rdv_service_1.RdvService],
+                        directives: [router_1.ROUTER_DIRECTIVES,
+                            header_component_1.HeaderComponent,
+                            footer_component_1.FooterComponent]
                     }),
-                    router_1.RouteConfig([{
-                            path: '/',
-                            as: 'Home',
-                            component: home_component_1.HomeComponent,
-                            useAsDefault: true
-                        }, {
-                            path: '/login',
-                            as: 'Login',
-                            component: login_component_1.LoginComponent
-                        }]), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService])
+                    router_1.RouteConfig([
+                        { path: '/', as: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
+                        { path: '/login', as: 'Login', component: login_component_1.LoginComponent },
+                        { path: "/calendrier", as: "Calendrier", component: calendrier_component_1.CalendrierComponent }
+                    ]), 
+                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService, router_1.Router])
                 ], AppComponent);
                 return AppComponent;
             }());

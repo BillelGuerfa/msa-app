@@ -9,7 +9,9 @@ export class AuthService {
     logged: boolean;
     compte: Compte;
     constructor(private _http: Http) { 
+        
         if(sessionStorage.getItem("session_id"))  {
+            this.compte = {};
             this.compte.session_id = sessionStorage.getItem("session_id");
             this.compte.idCompte = sessionStorage.getItem("idCompte");
             this.compte.nomUtilisateur = sessionStorage.getItem("nomUtilisateur");

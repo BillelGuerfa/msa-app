@@ -5,8 +5,7 @@ import {CalendrierComponent} from "../../assistante/components/calendrier.compon
 import {ListePatientsComponent} from "../../assistante/components/listePatients.component";
 @Component({
     selector: 'home',
-    templateUrl: 'app/shared/views/home.component.html',
-    directives: [HeaderComponent, FooterComponent, CalendrierComponent, ListePatientsComponent] 
+    templateUrl: 'app/shared/views/home.component.html'
 })
 
 export class HomeComponent implements OnInit {
