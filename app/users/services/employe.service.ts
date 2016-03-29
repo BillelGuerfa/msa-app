@@ -2,35 +2,29 @@ import { Injectable } from 'angular2/core';
 import {Http, Response } from "angular2/http";
 import {config} from "../../app.config";
 import {Feature, FeatureService} from "./feature.service";
-import {AuthService} from "./auth.service";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 @Injectable()
 export class EmployeService {
     employe: Employe;
     currentFeatures: Feature[];
-    constructor(private _http: Http, private _featureService: FeatureService, private _authService: AuthService) {
+    constructor(private _http: Http, private _featureService: FeatureService) {
         
      }
-    getEmploye(): Observable<Employe> {
-        if(this._authService.getCompte()){
+    getEmploye(idEmploye): Observable<Employe> {
             if(this.employe){
                 return Observable.create(observer => {
                    observer.onNext(this.employe);
                    observer.onCompleted();
                 });
             }else {
-                return this._http.get(config.urls.users.employe+"?idEmploye="+this._authService.getCompte().idCompte)
+                return this._http.get(config.urls.users.employe+"?idEmploye="+idEmploye)
                              .map(res => {
                                  this.employe = <Employe> res.json();
                                  return this.employe;
                              })
                              .catch(this.handleErrors);
             }
-            
-        }else{
-            console.log('must login');
-        }
     }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');

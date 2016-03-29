@@ -54,6 +54,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         sessionStorage.setItem("session_id", _this.compte.session_id);
                         sessionStorage.setItem("idCompte", _this.compte.idCompte.toString());
                         sessionStorage.setItem("nomUtilisateur", _this.compte.nomUtilisateur);
+                        _this.logged = true;
                         return _this.compte;
                     })
                         .catch(this.handleErrors);

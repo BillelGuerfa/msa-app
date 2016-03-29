@@ -58,14 +58,18 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent(_el, _authService, _router) {
+                function AppComponent(_el, _authService, _router, _employeService, _featureService) {
                     this._el = _el;
                     this._authService = _authService;
                     this._router = _router;
+                    this._employeService = _employeService;
+                    this._featureService = _featureService;
                 }
                 AppComponent.prototype.ngOnInit = function () {
                     if (this._authService.isLogged()) {
                         this.loginPage = false;
+                        var compte = this._authService.getCompte();
+                        this.employe = this._employeService.getEmploye(compte.idCompte);
                     }
                     else {
                         this.loginPage = true;
@@ -843,7 +847,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
                         { path: '/login', as: 'Login', component: login_component_1.LoginComponent },
                         { path: "/calendrier", as: "Calendrier", component: calendrier_component_1.CalendrierComponent }
                     ]), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService, router_1.Router])
+                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService, router_1.Router, employe_service_1.EmployeService, feature_service_1.FeatureService])
                 ], AppComponent);
                 return AppComponent;
             }());

@@ -1,4 +1,4 @@
-import {Component,OnInit,ElementRef,AfterViewInit,} from "angular2/core";
+import {Component,OnInit,ElementRef,AfterViewInit} from "angular2/core";
 import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
 import {LoginComponent} from "./users/components/login.component";
 import {HomeComponent} from "./shared/components/home.component";
@@ -8,12 +8,12 @@ import { FooterComponent} from "./shared/components/footer.component";
 import {CalendrierComponent} from "./assistante/components/calendrier.component";
 import {ListePatientsComponent} from "./assistante/components/listePatients.component";
 import {AuthService} from "./users/services/auth.service"
-import {EmployeService} from "./users/services/employe.service";
-import {FeatureService} from "./users/services/feature.service";
+import {EmployeService, Employe} from "./users/services/employe.service";
+import {FeatureService, Feature} from "./users/services/feature.service";
 import {PatientService} from "./assistante/services/patient.service";
 import {AnomalieService} from "./assistante/services/anomalie.service";
 import {RdvService} from "./assistante/services/rdv.service";
-
+import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
 @Component({
@@ -41,13 +41,22 @@ declare var Waves;
 ])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;
-    constructor(private _el: ElementRef, private _authService: AuthService, private _router:Router) {
-       
+    employe: Observable<Employe>;
+    features: Feature[];
+    constructor(private _el: ElementRef,
+                private _authService: AuthService, 
+                private _router:Router, 
+                private _employeService: EmployeService, 
+                private _featureService: FeatureService) {
+                    
     }
 
     ngOnInit() {
         if(this._authService.isLogged()){
             this.loginPage = false;
+            let compte = this._authService.getCompte();
+            this.employe = this._employeService.getEmploye(compte.idCompte);
+            
         }else {
             this.loginPage = true;
              $('body').addClass('login-content');

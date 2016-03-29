@@ -30,6 +30,7 @@ export class AuthService {
                               sessionStorage.setItem("session_id", this.compte.session_id);
                               sessionStorage.setItem("idCompte",this.compte.idCompte.toString());
                               sessionStorage.setItem("nomUtilisateur",this.compte.nomUtilisateur);
+                              this.logged = true;
                               return this.compte;
                             })
                           .catch(this.handleErrors);
