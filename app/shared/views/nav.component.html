@@ -6,7 +6,6 @@
             </div>
 
             <div class="profile-info">
-                {{fullname}}
 
                 <i class="zmdi zmdi-caret-down"></i>
             </div>
@@ -31,6 +30,7 @@
     <ul class="main-menu">
 
         <li><a href="index.html"><i class="zmdi zmdi-home"></i>Acceuil</a></li>
+        <!-- 
         <li class="sub-menu">
             <a href=""><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> Gestion des RDV</a>
 
@@ -39,14 +39,8 @@
                 <li><a href="image-logo.html">Stomathérapeute</a></li>
             </ul>
         </li>
-
-        <li class="sub-menu">
-            <a href=""><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> Gestion des patients</a>
-
-            <ul>
-                <li><a href="">Liste patients</a></li>
-                <li><a href="">Fiche anomalie</a></li>
-            </ul>
+        -->
+        <li class="sub-menu nav-item" *ngFor="#feature of features" [feature]="feature">
         </li>
     </ul>
 </aside>

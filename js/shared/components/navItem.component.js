@@ -31,7 +31,7 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
                 ], NavItemComponent.prototype, "feature", void 0);
                 NavItemComponent = __decorate([
                     core_1.Component({
-                        selector: 'nav-item',
+                        selector: '.nav-item',
                         templateUrl: 'app/shared/views/navItem.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 

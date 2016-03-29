@@ -1,5 +1,5 @@
 <app-header *ngIf="!loginPage" ></app-header>
-<app-nav *ngIf="!loginPage"></app-nav>
+<app-nav *ngIf="!loginPage" [employe]="employe | async"></app-nav>
 <section id="main" data-layout="layout-1">
     <router-outlet></router-outlet>
 </section>
