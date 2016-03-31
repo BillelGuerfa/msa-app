@@ -49,7 +49,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                         subFeatures: [
                                             {
                                                 name: "Liste patients",
-                                                route: "Home",
+                                                route: "Patients",
                                                 subFeatures: []
                                             },
                                             {

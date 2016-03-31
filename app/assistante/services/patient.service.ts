@@ -1,9 +1,21 @@
 import { Injectable } from 'angular2/core';
-import {Http} from "angular2/http";
+import {Http, Response} from "angular2/http";
+import "rxjs/Rx";
+import {Observable} from "rxjs/Observable";
+import {config} from "../../app.config";
 @Injectable()
 export class PatientService {
-
-    constructor() { }
+    
+    constructor(private _http: Http) { }
+    
+    getPatients() : Observable <Patient[]> {
+        return this._http.get(config.urls.assistante.patients)
+                   .map(patients => <Patient[]> patients.json())
+                   .catch(this.handleErrors);
+    }
+    handleErrors(error: Response) {
+        return Observable.throw(error.json().error || 'Server error');
+    }
 
 }
 
@@ -18,7 +30,7 @@ export interface Patient{
     adressMail: string;
     typePoche: string;
     gamme: string;
-    nombrepocheJ: string;
+    nombrepocheJ: number;
     referenceDossier: string;
     nss? : string;
 }

@@ -8,29 +8,30 @@
             <div class="container">
                 <div class="col-md-9"></div>
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-primary btn-md btn-block">Dossier medical</button>
-                    <button type="button" class="btn btn-info btn-md btn-block">Fiche anomalie</button>
+                    <button type="button" class="btn btn-primary btn-md btn-block" (click)="gotoDossier(selectedId)">Dossier medical</button>
+                    <button type="button" class="btn btn-info btn-md btn-block" (click)="gotoFicheAnomalie(selectedId)">Fiche anomalie</button>
                 </div>
             </div>
             <div class="table-responsive">
                 <table id="data-table-selection" class="table table-striped">
                     <thead>
                         <tr>
-                            <th data-column-id="id" data-type="numeric" data-identifier="true">N°</th>
+                            <th data-column-id="id" data-type="string" data-identifier="true">N°</th>
                             <th data-column-id="Nom">Nom</th>
                             <th data-column-id="Prenom">Prenom</th>
                             <th data-column-id="NumTel">Num tel</th>
-                            <th data-column-id="DateIns">Date inscription</th>
-
+                            <th data-column-id="AdresseMail">Adresse mail</th>
+                            <th data-column-id="TypeStomie">Type Stomie</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>10238</td>
-                            <td>Benbelkacem</td>
-                            <td>Sonia</td>
-                            <td>0665987421</td>
-                            <td>21/03/2014</td>
+                        <tr *ngFor="#patient of patients" >
+                            <td>{{ patient.idPatient }}</td>
+                            <td>{{ patient.nom }}</td>
+                            <td>{{ patient.prenom }}</td>
+                            <td>{{ patient.numTelephone }}</td>
+                            <td>{{ patient.adressMail }}</td>
+                            <td>{{ patient.typeStomie }}</td>
                         </tr>
                     </tbody>
                 </table>

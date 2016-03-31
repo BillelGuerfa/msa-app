@@ -33,7 +33,7 @@ export class FeatureService {
                             subFeatures: [
                                 {
                                     name: "Liste patients",
-                                    route: "Home",
+                                    route: "Patients",
                                     subFeatures: []
                                 },
                                 {
