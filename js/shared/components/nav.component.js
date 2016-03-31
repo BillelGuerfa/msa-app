@@ -35,8 +35,6 @@ System.register(['angular2/core', "./navItem.component", "../../users/services/f
                     }
                 };
                 NavComponent.prototype.ngOnInit = function () {
-                    console.log(this.employe);
-                    console.log(this.features);
                 };
                 __decorate([
                     core_1.Input(), 

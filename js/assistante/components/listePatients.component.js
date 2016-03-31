@@ -30,6 +30,9 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                 }
                 ListePatientsComponent.prototype.ngOnInit = function () {
                 };
+                ListePatientsComponent.prototype.selectPatient = function (id) {
+                    this.selectedPatient = this.patients.filter(function (patient) { return patient.idPatient === id; })[0];
+                };
                 ListePatientsComponent.prototype.gotoDossier = function (id) {
                 };
                 ListePatientsComponent.prototype.gotoFicheAnomalie = function (id) {
@@ -52,10 +55,11 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                                             iconUp: 'zmdi-expand-less'
                                         },
                                         selection: true,
-                                        multiSelect: true,
+                                        multiSelect: false,
                                         rowSelect: true,
                                         keepSelection: true
-                                    }).on("loaded.rs.jquery.bootgrid", function () {
+                                    }).on("selected.rs.jquery.bootgrid", function (e, rows) {
+                                        _this.selectPatient(rows[0].id);
                                     });
                                 });
                             }, 1000);

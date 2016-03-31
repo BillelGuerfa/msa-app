@@ -10,6 +10,7 @@ declare var $;
 
 export class ListePatientsComponent implements OnInit, AfterViewInit  {
     patients : Patient[];
+    selectedPatient: Patient;
     constructor(private _patientService: PatientService, private _ngZone: NgZone) { 
         this.patients = [];
     }
@@ -17,6 +18,9 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
     ngOnInit() {
          
      }
+    selectPatient(id){
+        this.selectedPatient = this.patients.filter((patient) => patient.idPatient === id)[0];
+    }
     gotoDossier(id){
         
     }
@@ -29,7 +33,7 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
                             .subscribe(patients => {
                                 this.patients = patients;
                                 this._ngZone.run(() => {
-                                    setTimeout(function() {
+                                    setTimeout(() => {
                                         $(document).ready(() => {
                                         //Selection
                                         $("#data-table-selection").bootgrid({
@@ -41,12 +45,14 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
                                                 iconUp: 'zmdi-expand-less'
                                             },
                                             selection: true,
-                                            multiSelect: true,
+                                            multiSelect: false,
                                             rowSelect: true,
                                             keepSelection: true
-                                        }).on("loaded.rs.jquery.bootgrid",()=>{
-                                            
-                                        });
+                                        }).on("selected.rs.jquery.bootgrid", (e, rows) =>
+                                                {
+                                                    
+                                                    this.selectPatient(rows[0].id);
+                                                });
                                         });
                                     }, 1000);
                                 });

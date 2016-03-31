@@ -22,8 +22,6 @@ export class NavComponent implements OnInit,OnChanges  {
         
     }
     ngOnInit() { 
-       console.log(this.employe);
-       console.log(this.features);
     }
 
 }
