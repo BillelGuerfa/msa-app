@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit,NgZone  } from 'angular2/core';
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
-import {PatientService, Patient} from "../services/patient.service";
+import {Patient, PatientService} from "../services/patient.service";
 declare var $;
 @Component({
     selector: 'liste-patients',

@@ -33,12 +33,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                         subFeatures: [
                                             {
                                                 name: "Medecin",
-                                                route: "Home",
+                                                route: "Calendrier",
                                                 subFeatures: []
                                             },
                                             {
                                                 name: "Stomathérapeut",
-                                                route: "Home",
+                                                route: "Calendrier",
                                                 subFeatures: []
                                             }
                                         ]

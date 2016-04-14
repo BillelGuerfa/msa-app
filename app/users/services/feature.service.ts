@@ -17,12 +17,12 @@ export class FeatureService {
                             subFeatures: [
                                 {
                                     name: "Medecin",
-                                    route: "Home",
+                                    route: "Calendrier",
                                     subFeatures: []
                                 },
                                 {
                                     name: "Stomathérapeut",
-                                    route: "Home",
+                                    route: "Calendrier",
                                     subFeatures: []
                                 }
                             ]

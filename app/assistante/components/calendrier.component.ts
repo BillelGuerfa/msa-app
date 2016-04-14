@@ -40,7 +40,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                     selectable: true,
                     selectHelper: true,
                     editable: true,
-
+                    //TODO : delete fake events
                     //Add Events
                     events: [
                         {
@@ -172,13 +172,16 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
             
                 //Add new Event
                 $('body').on('click', '#addEvent', function(){
-                    var eventName = $('#eventName').val();
+                    //var eventName = $('#eventName').val();
+                    //TODO: ADD nom + prenom;
+                    var nom = $("#nom").val();
+                    var prenom = $("#prenom").val();
                     var tagColor = $('.event-tag > span.selected').attr('data-tag');
                         
-                    if (eventName != '') {
+                    if (nom + prenom != '') {
                         //Render Event
                         $('#calendar').fullCalendar('renderEvent',{
-                            title: eventName,
+                            title: nom +" "+ prenom,
                             start: $('#getStart').val(),
                             end:  $('#getEnd').val(),
                             allDay: true,
