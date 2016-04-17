@@ -38,7 +38,7 @@ export class FeatureService {
                                 },
                                 {
                                     name: "Fiche anomalie",
-                                    route: "Home",
+                                    route: "FicheAnomalieForm",
                                     subFeatures: []
                                 }
                             ]

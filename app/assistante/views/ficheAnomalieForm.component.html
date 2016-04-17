@@ -1,0 +1,74 @@
+<div class="col-md-1"></div>
+             <div class="col-md-10">
+                 <div class="container">
+                        <div class="card">
+                                <div class="card-header bgm-cyan">
+                                    <center><h2>FICHE ANOMALIE</h2></center>
+
+                                    <ul class="actions actions-alt">
+                                        <li class="dropdown">
+                                            <a href="" data-toggle="dropdown" aria-expanded="false">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </a>
+                                            
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a href="">Actualiser</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <p><label><h4> PATIENT : {{anomalie.patient.nom+" " + anomalie.patient.prenom}}</h4></label></p>
+                                    <div class="row"><label>       </label></div>
+                                    <div class="row"><label>       </label></div>
+                                    
+                                    <form class="form-horizontal">
+                         
+                         
+                                        <div class="row"><label>       </label></div>
+                                        <div class="form-group">
+                                            <label for="date" class="col-sm-2 control-label">DATE</label>
+                                            <div class="col-sm-10">
+                                                <input type='text' class="form-control date-picker" id="date" placeholder="Cliquer ici...">
+                                            </div>
+                                        </div>
+                                         <div class="row"><label>       </label></div>
+                                         <div class="row"><label>       </label></div>
+                                         <div class="form-group">
+                                            <label for="type" class="col-sm-2 control-label">TYPE ANOMALIE</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" id="type">
+                                                        <option>Alergie</option>
+                                                        <option>Brulure</option>
+                                                        <option>Autre</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                         <div class="row"><label>       </label></div>
+                                         <div class="row"><label>       </label></div>
+                                            <div class="form-group">
+                            
+                                                <label for="desc" class="col-sm-2 control-label">DESCRIPRION</label>
+                                                    <div class="col-sm-1"></div>
+                                                    <div class="col-sm-10">  <textarea class="form-control" rows="4" id="desc"></textarea> </div> 
+                                                    <div class="col-sm-1"></div>
+                                                </div>
+                                                 <div class="row"><label>       </label></div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-offset-10 col-sm-10">
+                                                        <button type="submit" class="btn btn-info">ENREGISTRER</button>
+                                                    </div>
+                                                </div>
+                                    </form>
+                            </div>
+                        </div>            
+                
+                     </div>
+                    </div>  
+                 
+             <div class="col-md-1"></div>

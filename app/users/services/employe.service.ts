@@ -9,7 +9,6 @@ export class EmployeService {
     employe: Employe;
     currentFeatures: Feature[];
     constructor(private _http: Http, private _featureService: FeatureService) {
-        
      }
     getEmploye(idEmploye): Observable<Employe> {
             if(this.employe){
@@ -35,7 +34,7 @@ export interface Employe {
     idEmploye: number;
     nom: string;
     prenom: string;
-    adresse: string;
+    adresse: {};
     dateNaissance: string;
     numeroTel: string;
     dateRecrutement: string;

@@ -54,7 +54,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                             },
                                             {
                                                 name: "Fiche anomalie",
-                                                route: "Home",
+                                                route: "FicheAnomalieForm",
                                                 subFeatures: []
                                             }
                                         ]

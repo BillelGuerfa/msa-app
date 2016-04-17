@@ -1,18 +1,18 @@
 import {Component,OnInit,ElementRef,AfterViewInit, NgZone } from "angular2/core";
 import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
-import {LoginComponent} from "./users/components/login.component";
-import {HomeComponent} from "./shared/components/home.component";
-import { HeaderComponent} from "./shared/components/header.component";
-import {NavComponent} from "./shared/components/nav.component";
-import { FooterComponent} from "./shared/components/footer.component";
-import {CalendrierComponent} from "./assistante/components/calendrier.component";
-import {ListePatientsComponent} from "./assistante/components/listePatients.component";
-import {AuthService} from "./users/services/auth.service"
-import {EmployeService, Employe} from "./users/services/employe.service";
-import {FeatureService, Feature} from "./users/services/feature.service";
-import {PatientService} from "./assistante/services/patient.service";
-import {AnomalieService} from "./assistante/services/anomalie.service";
-import {RdvService} from "./assistante/services/rdv.service";
+import {HomeComponent, HeaderComponent, NavComponent, FooterComponent} from "./shared/shared.barrel";
+import {AuthService, 
+        LoginComponent,
+        EmployeService, 
+        Employe, 
+        FeatureService, 
+        Feature} from "./users/users.barrel"
+import {PatientService,
+        AnomalieService, 
+        RdvService, 
+        FicheAnomalieFormComponent, 
+        ListePatientsComponent, 
+        CalendrierComponent} from "./assistante/assistante.barrel";
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
@@ -38,7 +38,8 @@ declare var Waves;
     { path: '/',as: 'Home',component: HomeComponent, useAsDefault: true }, 
     { path: '/login',as: 'Login',component: LoginComponent },
     { path: '/patients', as:'Patients', component: ListePatientsComponent},
-    { path: "/calendrier", as:"Calendrier", component:CalendrierComponent}
+    { path: "/calendrier", as:"Calendrier", component:CalendrierComponent},
+    { path: '/anomalie-new', as:"FicheAnomalieForm", component: FicheAnomalieFormComponent}
 ])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;

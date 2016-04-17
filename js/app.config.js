@@ -9,7 +9,8 @@ System.register([], function(exports_1, context_1) {
                 urls: {
                     login: "./app/data/compte.json",
                     assistante: {
-                        patients: "./app/data/patients.json"
+                        patients: "./app/data/patients.json",
+                        anomalie: ""
                     },
                     stomatherapeut: {},
                     agentPrestation: {},

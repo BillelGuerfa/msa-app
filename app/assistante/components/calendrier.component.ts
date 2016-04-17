@@ -176,6 +176,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                     //TODO: ADD nom + prenom;
                     var nom = $("#nom").val();
                     var prenom = $("#prenom").val();
+                     alert("The current date of the calendar is " + $('#getStart').val());
                     var tagColor = $('.event-tag > span.selected').attr('data-tag');
                         
                     if (nom + prenom != '') {

@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./users/components/login.component", "./shared/components/home.component", "./shared/components/header.component", "./shared/components/nav.component", "./shared/components/footer.component", "./assistante/components/calendrier.component", "./assistante/components/listePatients.component", "./users/services/auth.service", "./users/services/employe.service", "./users/services/feature.service", "./assistante/services/patient.service", "./assistante/services/anomalie.service", "./assistante/services/rdv.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "./users/users.barrel", "./assistante/assistante.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, login_component_1, home_component_1, header_component_1, nav_component_1, footer_component_1, calendrier_component_1, listePatients_component_1, auth_service_1, employe_service_1, feature_service_1, patient_service_1, anomalie_service_1, rdv_service_1;
+    var core_1, router_1, shared_barrel_1, users_barrel_1, assistante_barrel_1;
     var AppComponent;
     return {
         setters:[
@@ -20,44 +20,14 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (login_component_1_1) {
-                login_component_1 = login_component_1_1;
+            function (shared_barrel_1_1) {
+                shared_barrel_1 = shared_barrel_1_1;
             },
-            function (home_component_1_1) {
-                home_component_1 = home_component_1_1;
+            function (users_barrel_1_1) {
+                users_barrel_1 = users_barrel_1_1;
             },
-            function (header_component_1_1) {
-                header_component_1 = header_component_1_1;
-            },
-            function (nav_component_1_1) {
-                nav_component_1 = nav_component_1_1;
-            },
-            function (footer_component_1_1) {
-                footer_component_1 = footer_component_1_1;
-            },
-            function (calendrier_component_1_1) {
-                calendrier_component_1 = calendrier_component_1_1;
-            },
-            function (listePatients_component_1_1) {
-                listePatients_component_1 = listePatients_component_1_1;
-            },
-            function (auth_service_1_1) {
-                auth_service_1 = auth_service_1_1;
-            },
-            function (employe_service_1_1) {
-                employe_service_1 = employe_service_1_1;
-            },
-            function (feature_service_1_1) {
-                feature_service_1 = feature_service_1_1;
-            },
-            function (patient_service_1_1) {
-                patient_service_1 = patient_service_1_1;
-            },
-            function (anomalie_service_1_1) {
-                anomalie_service_1 = anomalie_service_1_1;
-            },
-            function (rdv_service_1_1) {
-                rdv_service_1 = rdv_service_1_1;
+            function (assistante_barrel_1_1) {
+                assistante_barrel_1 = assistante_barrel_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -837,24 +807,25 @@ System.register(["angular2/core", "angular2/router", "./users/components/login.c
                     core_1.Component({
                         selector: 'my-app',
                         templateUrl: "app/app.component.html",
-                        providers: [auth_service_1.AuthService,
-                            employe_service_1.EmployeService,
-                            feature_service_1.FeatureService,
-                            patient_service_1.PatientService,
-                            anomalie_service_1.AnomalieService,
-                            rdv_service_1.RdvService],
+                        providers: [users_barrel_1.AuthService,
+                            users_barrel_1.EmployeService,
+                            users_barrel_1.FeatureService,
+                            assistante_barrel_1.PatientService,
+                            assistante_barrel_1.AnomalieService,
+                            assistante_barrel_1.RdvService],
                         directives: [router_1.ROUTER_DIRECTIVES,
-                            header_component_1.HeaderComponent,
-                            nav_component_1.NavComponent,
-                            footer_component_1.FooterComponent]
+                            shared_barrel_1.HeaderComponent,
+                            shared_barrel_1.NavComponent,
+                            shared_barrel_1.FooterComponent]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', as: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-                        { path: '/login', as: 'Login', component: login_component_1.LoginComponent },
-                        { path: '/patients', as: 'Patients', component: listePatients_component_1.ListePatientsComponent },
-                        { path: "/calendrier", as: "Calendrier", component: calendrier_component_1.CalendrierComponent }
+                        { path: '/', as: 'Home', component: shared_barrel_1.HomeComponent, useAsDefault: true },
+                        { path: '/login', as: 'Login', component: users_barrel_1.LoginComponent },
+                        { path: '/patients', as: 'Patients', component: assistante_barrel_1.ListePatientsComponent },
+                        { path: "/calendrier", as: "Calendrier", component: assistante_barrel_1.CalendrierComponent },
+                        { path: '/anomalie-new', as: "FicheAnomalieForm", component: assistante_barrel_1.FicheAnomalieFormComponent }
                     ]), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, auth_service_1.AuthService, router_1.Router, employe_service_1.EmployeService, feature_service_1.FeatureService, core_1.NgZone])
+                    __metadata('design:paramtypes', [core_1.ElementRef, users_barrel_1.AuthService, router_1.Router, users_barrel_1.EmployeService, users_barrel_1.FeatureService, core_1.NgZone])
                 ], AppComponent);
                 return AppComponent;
             }());
