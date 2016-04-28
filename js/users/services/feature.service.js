@@ -70,7 +70,38 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             break;
                         case "AGENT_PRESTATION":
                             {
-                                this.features = [];
+                                this.features = [
+                                    {
+                                        name: "Devis",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-assignment zmdi-hc-fw"
+                                    },
+                                    {
+                                        name: "Commandes",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-labels zmdi-hc-fw"
+                                    },
+                                    {
+                                        name: "Factures",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-receipt zmdi-hc-fw"
+                                    },
+                                    {
+                                        name: "Mouvements",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-swap zmdi-hc-fw"
+                                    },
+                                    {
+                                        name: "Organismes",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-local-store zmdi-hc-fw"
+                                    }
+                                ];
                             }
                             break;
                         case "MEDECIN":

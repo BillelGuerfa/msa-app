@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./navItem.component", "../../users/services/feature.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "./navItem.component", "../../users/services/feature.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core', "./navItem.component", "../../users/services/f
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, navItem_component_1, feature_service_1;
+    var core_1, router_1, navItem_component_1, feature_service_1;
     var NavComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (navItem_component_1_1) {
                 navItem_component_1 = navItem_component_1_1;
@@ -44,7 +47,7 @@ System.register(['angular2/core', "./navItem.component", "../../users/services/f
                     core_1.Component({
                         selector: 'app-nav',
                         templateUrl: 'app/shared/views/nav.component.html',
-                        directives: [navItem_component_1.NavItemComponent]
+                        directives: [navItem_component_1.NavItemComponent, router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [feature_service_1.FeatureService])
                 ], NavComponent);

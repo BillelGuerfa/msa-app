@@ -53,7 +53,7 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
                                                     this.selectPatient(rows[0].id);
                                                 });
                                         });
-                                    }, 1000);//Timeout because async and bootgrid intialization
+                                    }, 200);//Timeout because async and bootgrid intialization
                                 });
                             },
                             error => {
