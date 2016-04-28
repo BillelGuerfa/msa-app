@@ -27,7 +27,8 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
                     this._ngZone = _ngZone;
                     this.rdv = null;
                 }
-                CalendrierComponent.prototype.ngOnInit = function () { };
+                CalendrierComponent.prototype.ngOnInit = function () {
+                };
                 CalendrierComponent.prototype.addRdv = function () {
                 };
                 CalendrierComponent.prototype.getRdvs = function (idMedecin) {

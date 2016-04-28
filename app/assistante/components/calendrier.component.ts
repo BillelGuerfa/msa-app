@@ -13,7 +13,9 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
     listeRdvs: Rdv[];
     constructor(private _rdvService:RdvService, private _ngZone: NgZone) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        
+     }
     
     addRdv() {
         

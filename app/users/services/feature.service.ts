@@ -18,14 +18,17 @@ export class FeatureService {
                                 {
                                     name: "Medecin",
                                     route: "Calendrier",
-                                    subFeatures: []
+                                    subFeatures: [],
+                                    icon:""
                                 },
                                 {
                                     name: "Stomathérapeut",
                                     route: "Calendrier",
-                                    subFeatures: []
+                                    subFeatures: [],
+                                    icon:""
                                 }
-                            ]
+                            ],
+                            icon:"zmdi zmdi-calendar-note zmdi-hc-fw"
                         },
                         {
                             name: "Gestion des patients",
@@ -34,14 +37,17 @@ export class FeatureService {
                                 {
                                     name: "Liste patients",
                                     route: "Patients",
-                                    subFeatures: []
+                                    subFeatures: [],
+                                    icon:""
                                 },
                                 {
                                     name: "Fiche anomalie",
                                     route: "FicheAnomalieForm",
-                                    subFeatures: []
+                                    subFeatures: [],
+                                    icon:""
                                 }
-                            ]
+                            ],
+                            icon:"zmdi zmdi-account-o zmdi-hc-fw"
                         }
                     ];
                 }break;
@@ -81,4 +87,5 @@ export interface Feature {
     name: string;
     route: string;
     subFeatures: Feature[];
+    icon: string;
 }

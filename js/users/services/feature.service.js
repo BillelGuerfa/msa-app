@@ -34,14 +34,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                             {
                                                 name: "Medecin",
                                                 route: "Calendrier",
-                                                subFeatures: []
+                                                subFeatures: [],
+                                                icon: ""
                                             },
                                             {
                                                 name: "Stomathérapeut",
                                                 route: "Calendrier",
-                                                subFeatures: []
+                                                subFeatures: [],
+                                                icon: ""
                                             }
-                                        ]
+                                        ],
+                                        icon: "zmdi zmdi-calendar-note zmdi-hc-fw"
                                     },
                                     {
                                         name: "Gestion des patients",
@@ -50,14 +53,17 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                             {
                                                 name: "Liste patients",
                                                 route: "Patients",
-                                                subFeatures: []
+                                                subFeatures: [],
+                                                icon: ""
                                             },
                                             {
                                                 name: "Fiche anomalie",
                                                 route: "FicheAnomalieForm",
-                                                subFeatures: []
+                                                subFeatures: [],
+                                                icon: ""
                                             }
-                                        ]
+                                        ],
+                                        icon: "zmdi zmdi-account-o zmdi-hc-fw"
                                     }
                                 ];
                             }
