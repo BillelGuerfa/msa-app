@@ -8,6 +8,7 @@ export class AnomalieService {
     constructor(private _http:Http) { }
     
     sendAnomalie(anomalie: Anomalie) {
+        
     }
 
 }

@@ -3,7 +3,8 @@ export var config = {
         login: "./app/data/compte.json",
         assistante: {
             patients: "./app/data/patients.json",
-            anomalie:""
+            anomalie:"",
+            rdvs:"./app/data/rdvs.json"
             
         },
         stomatherapeut:{

@@ -62,9 +62,8 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                                         _this.selectPatient(rows[0].id);
                                     });
                                 });
-                            }, 1000);
+                            }, 1000); //Timeout because async and bootgrid intialization
                         });
-                        console.log(_this.patients);
                     }, function (error) {
                     });
                 };

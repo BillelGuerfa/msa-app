@@ -10,7 +10,8 @@ System.register([], function(exports_1, context_1) {
                     login: "./app/data/compte.json",
                     assistante: {
                         patients: "./app/data/patients.json",
-                        anomalie: ""
+                        anomalie: "",
+                        rdvs: "./app/data/rdvs.json"
                     },
                     stomatherapeut: {},
                     agentPrestation: {},

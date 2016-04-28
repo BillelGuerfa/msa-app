@@ -50,13 +50,11 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
                                             keepSelection: true
                                         }).on("selected.rs.jquery.bootgrid", (e, rows) =>
                                                 {
-                                                    
                                                     this.selectPatient(rows[0].id);
                                                 });
                                         });
-                                    }, 1000);
+                                    }, 1000);//Timeout because async and bootgrid intialization
                                 });
-                                console.log(this.patients);
                             },
                             error => {
                                 

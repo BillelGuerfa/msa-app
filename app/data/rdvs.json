@@ -1,0 +1,85 @@
+[{
+    "idRdv": "1",
+    "employe": {
+        "idEmploye": 20,
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "adresse": "03 rue mustapha bouhired ,Alger",
+        "dateNaissance": "22/07/1994",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "20/03/2016",
+        "poste": "MEDECIN"
+    },
+    "patient": {
+        "idPatient": "P22",
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "numTelephone": "0542765526",
+        "dateNaissance": "22/07/1994",
+        "natureStomie": "colostomie",
+        "typeStomie": "colostomie",
+        "adressMail": "cb_guerfa@esi.dz",
+        "typePoche": "Moyenne",
+        "gamme": "laGamme",
+        "nombrepocheJ": 2,
+        "referenceDossier": "P22",
+        "nss": "07523698542"
+    },
+    "date": ""
+}, {
+    "idRdv": "2",
+    "employe": {
+        "idEmploye": 20,
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "adresse": "03 rue mustapha bouhired ,Alger",
+        "dateNaissance": "22/07/1994",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "20/03/2016",
+        "poste": "MEDECIN"
+    },
+    "patient": {
+        "idPatient": "P22",
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "numTelephone": "0542765526",
+        "dateNaissance": "22/07/1994",
+        "natureStomie": "colostomie",
+        "typeStomie": "colostomie",
+        "adressMail": "cb_guerfa@esi.dz",
+        "typePoche": "Moyenne",
+        "gamme": "laGamme",
+        "nombrepocheJ": 2,
+        "referenceDossier": "P22",
+        "nss": "07523698542"
+    },
+    "date": ""
+}, {
+    "idRdv": "3",
+    "employe": {
+        "idEmploye": 20,
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "adresse": "03 rue mustapha bouhired ,Alger",
+        "dateNaissance": "22/07/1994",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "20/03/2016",
+        "poste": "MEDECIN"
+    },
+    "patient": {
+        "idPatient": "P22",
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "numTelephone": "0542765526",
+        "dateNaissance": "22/07/1994",
+        "natureStomie": "colostomie",
+        "typeStomie": "colostomie",
+        "adressMail": "cb_guerfa@esi.dz",
+        "typePoche": "Moyenne",
+        "gamme": "laGamme",
+        "nombrepocheJ": 2,
+        "referenceDossier": "P22",
+        "nss": "07523698542"
+    },
+    "date": ""
+}]

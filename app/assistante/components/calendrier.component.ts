@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit  } from 'angular2/core';
+import { Component, OnInit, AfterViewInit , NgZone } from 'angular2/core';
 import {Employe} from "../../users/services/employe.service";
 import {Patient} from "../services/patient.service";
-import {Rdv } from "../services/rdv.service";
+import {Rdv, RdvService } from "../services/rdv.service";
 declare var $;
 @Component({
     selector: 'calendrier',
@@ -9,15 +9,21 @@ declare var $;
 })
 
 export class CalendrierComponent implements OnInit, AfterViewInit  {
-    employe: Employe;
-    patient: Patient;
+    rdv : Rdv = null;
     listeRdvs: Rdv[];
-    constructor() { }
+    constructor(private _rdvService:RdvService, private _ngZone: NgZone) { }
 
     ngOnInit() { }
     
+    addRdv() {
+        
+    }
+    getRdvs(idMedecin){
+        
+    }
     ngAfterViewInit(){
-         $(document).ready(function() {
+         $(document).ready(() => {
+             this._ngZone.run(() => {
                $('.time-picker').datetimepicker({
                     format: 'LT'
                 });
@@ -163,7 +169,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                 cId.find('.fc-toolbar').append(actionMenu);
                 
                 //Event Tag Selector
-                (function(){
+                (() => {
                     $('body').on('click', '.event-tag > span', function(){
                         $('.event-tag > span').removeClass('selected');
                         $(this).addClass('selected');
@@ -171,12 +177,13 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                 })();
             
                 //Add new Event
-                $('body').on('click', '#addEvent', function(){
+                $('body').on('click', '#addEvent', () => {
                     //var eventName = $('#eventName').val();
                     //TODO: ADD nom + prenom;
                     var nom = $("#nom").val();
                     var prenom = $("#prenom").val();
-                     alert("The current date of the calendar is " + $('#getStart').val());
+                    this.rdv.date = $('#getStart').val(); //TODO: put 
+                     alert("The current date of the calendar is " + $('#getStart').val() + $("#getEnd").val());
                     var tagColor = $('.event-tag > span.selected').attr('data-tag');
                         
                     if (nom + prenom != '') {
@@ -210,7 +217,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                     $(this).parent().addClass('active');
                     cId.fullCalendar('changeView', dataView);  
                 });
-            });   
+           }) });   
     }
 
 }

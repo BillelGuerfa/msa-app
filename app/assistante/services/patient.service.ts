@@ -13,6 +13,9 @@ export class PatientService {
                    .map(patients => <Patient[]> patients.json())
                    .catch(this.handleErrors);
     }
+    getPatient() {
+        //TODO get patient with name
+    }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }

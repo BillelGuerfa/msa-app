@@ -37,6 +37,9 @@ System.register(['angular2/core', "angular2/http", "rxjs/Rx", "rxjs/Observable",
                         .map(function (patients) { return patients.json(); })
                         .catch(this.handleErrors);
                 };
+                PatientService.prototype.getPatient = function () {
+                    //TODO get patient with name
+                };
                 PatientService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
