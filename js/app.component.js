@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "./users/users.barrel", "./assistante/assistante.barrel"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "./users/users.barrel", "./assistante/assistante.barrel", "./agentPrestation/agentPrestation.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, shared_barrel_1, users_barrel_1, assistante_barrel_1;
+    var core_1, router_1, shared_barrel_1, users_barrel_1, assistante_barrel_1, agentPrestation_barrel_1;
     var AppComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
             },
             function (assistante_barrel_1_1) {
                 assistante_barrel_1 = assistante_barrel_1_1;
+            },
+            function (agentPrestation_barrel_1_1) {
+                agentPrestation_barrel_1 = agentPrestation_barrel_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -821,9 +824,16 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                     router_1.RouteConfig([
                         { path: '/', as: 'Home', component: shared_barrel_1.HomeComponent, useAsDefault: true },
                         { path: '/login', as: 'Login', component: users_barrel_1.LoginComponent },
+                        //Assistante Routes : ---------------------------------------------------------------
                         { path: '/patients', as: 'Patients', component: assistante_barrel_1.ListePatientsComponent },
                         { path: "/calendrier", as: "Calendrier", component: assistante_barrel_1.CalendrierComponent },
-                        { path: '/anomalie-new', as: "FicheAnomalieForm", component: assistante_barrel_1.FicheAnomalieFormComponent }
+                        { path: '/anomalie-new', as: "FicheAnomalieForm", component: assistante_barrel_1.FicheAnomalieFormComponent },
+                        //Agent de prestation Routes : ------------------------------------------------------------
+                        { path: '/devis', as: 'Devis', component: agentPrestation_barrel_1.ListeDevisComponent },
+                        { path: '/commandes', as: 'Commandes', component: agentPrestation_barrel_1.ListeCommandesComponent },
+                        { path: '/factures', as: 'Factures', component: agentPrestation_barrel_1.ListeFacturesComponent },
+                        { path: '/mouvements', as: 'Mouvements', component: agentPrestation_barrel_1.ListeMouvementsComponent },
+                        { path: '/organismes', as: 'Organismes', component: agentPrestation_barrel_1.ListeOrganismesComponent }
                     ]), 
                     __metadata('design:paramtypes', [core_1.ElementRef, users_barrel_1.AuthService, router_1.Router, users_barrel_1.EmployeService, users_barrel_1.FeatureService, core_1.NgZone])
                 ], AppComponent);

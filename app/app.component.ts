@@ -13,6 +13,11 @@ import {PatientService,
         FicheAnomalieFormComponent, 
         ListePatientsComponent, 
         CalendrierComponent} from "./assistante/assistante.barrel";
+import {ListeDevisComponent,
+        ListeCommandesComponent,
+        ListeFacturesComponent,
+        ListeMouvementsComponent,
+        ListeOrganismesComponent} from "./agentPrestation/agentPrestation.barrel";
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
@@ -37,9 +42,16 @@ declare var Waves;
 @RouteConfig([
     { path: '/',as: 'Home',component: HomeComponent, useAsDefault: true }, 
     { path: '/login',as: 'Login',component: LoginComponent },
+    //Assistante Routes : ---------------------------------------------------------------
     { path: '/patients', as:'Patients', component: ListePatientsComponent},
     { path: "/calendrier", as:"Calendrier", component:CalendrierComponent},
-    { path: '/anomalie-new', as:"FicheAnomalieForm", component: FicheAnomalieFormComponent}
+    { path: '/anomalie-new', as:"FicheAnomalieForm", component: FicheAnomalieFormComponent},
+    //Agent de prestation Routes : ------------------------------------------------------------
+    { path: '/devis', as:'Devis', component: ListeDevisComponent},
+    { path: '/commandes', as:'Commandes', component: ListeCommandesComponent},
+    { path: '/factures', as:'Factures', component: ListeFacturesComponent},
+    { path: '/mouvements', as:'Mouvements', component: ListeMouvementsComponent},
+    { path: '/organismes', as:'Organismes', component: ListeOrganismesComponent}
 ])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;
