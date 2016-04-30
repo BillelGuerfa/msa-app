@@ -11,7 +11,10 @@ declare var $;
 export class CalendrierComponent implements OnInit, AfterViewInit  {
     rdv : Rdv = null;
     listeRdvs: Rdv[];
-    constructor(private _rdvService:RdvService, private _ngZone: NgZone) { }
+    
+    constructor(private _rdvService:RdvService, private _ngZone: NgZone) { 
+           
+    }
 
     ngOnInit() {
         
@@ -45,6 +48,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
             cb(matches);
         };
     };
+
     ngAfterViewInit(){
          $(document).ready(() => {
              this._ngZone.run(() => {

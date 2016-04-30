@@ -111,7 +111,39 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             break;
                         case "THERAPEUT":
                             {
-                                this.features = [];
+                                this.features = [
+                                    {
+                                        name: "Gestion des RDV",
+                                        route: "none",
+                                        subFeatures: [],
+                                        icon: "zmdi zmdi-calendar-note zmdi-hc-fw"
+                                    },
+                                    {
+                                        name: "Gestion des patients",
+                                        route: "none",
+                                        subFeatures: [
+                                            {
+                                                name: "Liste patients",
+                                                route: "none",
+                                                subFeatures: [],
+                                                icon: ""
+                                            },
+                                            {
+                                                name: "Fiche Séance",
+                                                route: "none",
+                                                subFeatures: [],
+                                                icon: ""
+                                            },
+                                            {
+                                                name: "Historique des visites",
+                                                route: "none",
+                                                subFeatures: [],
+                                                icon: ""
+                                            }
+                                        ],
+                                        icon: "zmdi zmdi-account-o zmdi-hc-fw"
+                                    }
+                                ];
                             }
                             break;
                         case "MAGASINIER":

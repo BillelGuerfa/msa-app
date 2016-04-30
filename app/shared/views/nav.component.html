@@ -40,7 +40,7 @@
             </ul>
         </li>
         -->
-        <li class="sub-menu nav-item" *ngFor="#feature of features" [feature]="feature" >
+        <li class="nav-item" *ngFor="#feature of features" [feature]="feature" [ngClass]="{'sub-menu': feature.subFeatures.length }"  >
         </li>
     </ul>
 </aside>
