@@ -19,15 +19,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             ListeOrganismesComponent = (function () {
-                function ListeOrganismesComponent() {
+                function ListeOrganismesComponent(_zone) {
+                    this._zone = _zone;
                 }
                 ListeOrganismesComponent.prototype.ngOnInit = function () { };
+                ListeOrganismesComponent.prototype.ngAfterViewInit = function () {
+                    this._zone.run(function () {
+                        $("#data-table-selection").bootgrid({
+                            css: {
+                                icon: 'zmdi icon',
+                                iconColumns: 'zmdi-view-module',
+                                iconDown: 'zmdi-expand-more',
+                                iconRefresh: 'zmdi-refresh',
+                                iconUp: 'zmdi-expand-less'
+                            },
+                            selection: true,
+                            rowSelect: true,
+                            keepSelection: true
+                        });
+                    });
+                };
                 ListeOrganismesComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-organismes',
-                        templateUrl: 'app/agentPrestation/views/listeOgranismes.component.html'
+                        templateUrl: 'app/agentPrestation/views/listeOrganismes.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.NgZone])
                 ], ListeOrganismesComponent);
                 return ListeOrganismesComponent;
             }());

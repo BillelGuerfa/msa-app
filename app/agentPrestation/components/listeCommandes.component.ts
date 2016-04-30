@@ -21,7 +21,6 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
                     iconUp: 'zmdi-expand-less'
                 },
                 selection: true,
-                multiSelect: true,
                 rowSelect: true,
                 keepSelection: true
             });

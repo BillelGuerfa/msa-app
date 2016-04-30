@@ -19,15 +19,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             ListeDevisComponent = (function () {
-                function ListeDevisComponent() {
+                function ListeDevisComponent(_zone) {
+                    this._zone = _zone;
                 }
                 ListeDevisComponent.prototype.ngOnInit = function () { };
+                ListeDevisComponent.prototype.ngAfterViewInit = function () {
+                    this._zone.run(function () {
+                        $("#data-table-selection").bootgrid({
+                            css: {
+                                icon: 'zmdi icon',
+                                iconColumns: 'zmdi-view-module',
+                                iconDown: 'zmdi-expand-more',
+                                iconRefresh: 'zmdi-refresh',
+                                iconUp: 'zmdi-expand-less'
+                            },
+                            selection: true,
+                            rowSelect: true,
+                            keepSelection: true
+                        });
+                    });
+                };
                 ListeDevisComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-devis',
                         templateUrl: 'app/agentPrestation/views/listeDevis.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.NgZone])
                 ], ListeDevisComponent);
                 return ListeDevisComponent;
             }());

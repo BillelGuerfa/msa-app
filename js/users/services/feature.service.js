@@ -85,7 +85,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                     },
                                     {
                                         name: "Factures",
-                                        route: "none",
+                                        route: "Factures",
                                         subFeatures: [],
                                         icon: "zmdi zmdi-receipt zmdi-hc-fw"
                                     },
@@ -97,7 +97,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                     },
                                     {
                                         name: "Organismes",
-                                        route: "none",
+                                        route: "Organismes",
                                         subFeatures: [],
                                         icon: "zmdi zmdi-local-store zmdi-hc-fw"
                                     }

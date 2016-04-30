@@ -19,15 +19,40 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             ListeFacturesComponent = (function () {
-                function ListeFacturesComponent() {
+                function ListeFacturesComponent(_zone) {
+                    this._zone = _zone;
                 }
                 ListeFacturesComponent.prototype.ngOnInit = function () { };
+                ListeFacturesComponent.prototype.ngAfterViewInit = function () {
+                    this._zone.run(function () {
+                        var grid = $("#data-table-command").bootgrid({
+                            css: {
+                                icon: 'zmdi icon',
+                                iconColumns: 'zmdi-view-module',
+                                iconDown: 'zmdi-expand-more',
+                                iconRefresh: 'zmdi-refresh',
+                                iconUp: 'zmdi-expand-less'
+                            },
+                            formatters: {
+                                "actions": function (column, row) {
+                                    return "<button title=\"Confirmer\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-check\"></i></button>" +
+                                        "<button title=\"Annuler\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-delete\"></i></button>" +
+                                        "<button title=\"Editer\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-edit\"></i></button>" +
+                                        "<button title=\"Consulter\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-eye\"></i></button>";
+                                },
+                                "link": function (column, row) {
+                                    return "<a href=\"#\">" + column.id + ": " + row.id + "</a>";
+                                }
+                            }
+                        });
+                    });
+                };
                 ListeFacturesComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-factures',
                         templateUrl: 'app/agentPrestation/views/listeFactures.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.NgZone])
                 ], ListeFacturesComponent);
                 return ListeFacturesComponent;
             }());

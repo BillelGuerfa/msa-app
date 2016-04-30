@@ -71,7 +71,7 @@ export class FeatureService {
                         },
                         {
                             name: "Factures",
-                            route: "none",
+                            route: "Factures",
                             subFeatures: [
                                 
                             ],
@@ -87,7 +87,7 @@ export class FeatureService {
                         },
                         {
                             name: "Organismes",
-                            route: "none",
+                            route: "Organismes",
                             subFeatures: [
                                 
                             ],
