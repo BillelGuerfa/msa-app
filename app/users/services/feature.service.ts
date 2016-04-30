@@ -55,7 +55,7 @@ export class FeatureService {
                     this.features =  [
                         {
                             name: "Devis",
-                            route: "none",
+                            route: "Devis",
                             subFeatures: [
                                 
                             ],
@@ -63,7 +63,7 @@ export class FeatureService {
                         },
                         {
                             name: "Commandes",
-                            route: "none",
+                            route: "Commandes",
                             subFeatures: [
                                 
                             ],

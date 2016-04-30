@@ -33,10 +33,41 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
                 };
                 CalendrierComponent.prototype.getRdvs = function (idMedecin) {
                 };
+                CalendrierComponent.prototype.substringMatcher = function (strs) {
+                    return function findMatches(q, cb) {
+                        var matches, substrRegex;
+                        // an array that will be populated with substring matches
+                        matches = [];
+                        // regex used to determine if a string contains the substring `q`
+                        substrRegex = new RegExp(q, 'i');
+                        // iterate through the pool of strings and for any string that
+                        // contains the substring `q`, add it to the `matches` array
+                        $.each(strs, function (i, str) {
+                            if (substrRegex.test(str)) {
+                                matches.push(str);
+                            }
+                        });
+                        cb(matches);
+                    };
+                };
+                ;
                 CalendrierComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
                     $(document).ready(function () {
                         _this._ngZone.run(function () {
+                            $('#nomClient .typeahead').typeahead({
+                                hint: true,
+                                highlight: true,
+                                minLength: 1
+                            }, {
+                                name: 'nomsClients',
+                                //TODO: Add list of clients here.
+                                source: _this.substringMatcher(["Billel", "Asma", "Sonia", "Yacine"])
+                            });
+                            $('#nomClient .typeahead').bind('typeahead:select', function (ev, suggestion) {
+                                //TODO: handle the selection here.
+                                console.log('Selection: ' + suggestion);
+                            });
                             $('.time-picker').datetimepicker({
                                 format: 'LT'
                             });

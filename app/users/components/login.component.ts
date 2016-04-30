@@ -1,4 +1,4 @@
-import { Component, OnInit } from 'angular2/core';
+import { Component, OnInit, AfterViewInit  } from 'angular2/core';
 import {ROUTER_DIRECTIVES,Router } from "angular2/router";
 import {AuthService, Compte} from "../services/auth.service";
 declare var jQuery;
@@ -10,7 +10,7 @@ declare var $;
     directives: [ROUTER_DIRECTIVES] 
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit  {
     compte: Compte;
     error;
     constructor(private _authService: AuthService, private _router: Router) { 
@@ -18,6 +18,9 @@ export class LoginComponent implements OnInit {
     }
         
     ngOnInit() { 
+        
+    }
+    ngAfterViewInit(){
         
     }
     login(){
@@ -32,5 +35,6 @@ export class LoginComponent implements OnInit {
     forget(){
         
     }
+    
 
 }

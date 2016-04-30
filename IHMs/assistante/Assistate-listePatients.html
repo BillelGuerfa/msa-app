@@ -10,12 +10,12 @@
         
         
         
-       
         <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
         <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
         <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
         <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
         <link href="vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+        
         <!-- CSS -->
         <link href="css/app.min.1.css" rel="stylesheet">
         <link href="css/app.min.2.css" rel="stylesheet">
@@ -49,7 +49,10 @@
                             </div>
                         </li>
 
-                       <!-- Notifications -->
+                       
+                        
+                      
+                        <!-- Notifications -->
                         
                         <li class="dropdown">
                             <a data-toggle="dropdown" data-target="notifications" href="#">
@@ -117,9 +120,6 @@
                             </div>
                         </li>
                         
-                        
-                      
-                       
                     
                      
                         <li class="dropdown">
@@ -151,7 +151,14 @@
                         
                     </ul>
                 </li>
-            </ul>       
+            </ul>
+
+  
+            
+            
+            
+            
+            
             
             
         </header>
@@ -181,7 +188,8 @@
                     </div>
                 </div>
             </div>
-          
+            
+                        
                         <div class="modal fade" id="notif2" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -226,7 +234,6 @@
                 </div>
             </div>
                         
-             
   <!-- menu -->   
              <aside id="sidebar" class="sidebar c-overflow">
                 <div class="profile-menu">
@@ -261,267 +268,154 @@
                 <ul class="main-menu">
                     
                     <li><a href="index.html"><i class="zmdi zmdi-home"></i>Acceuil</a></li>
-                    <li><a href="index.html"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>Devis</a></li>
-                    <li><a href="index.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i>Commandes</a></li>
-                    <li><a href="index.html"><i class="zmdi zmdi-receipt zmdi-hc-fw"></i>Factures</a></li>
-                    <li><a href="index.html"><i class="zmdi zmdi-swap zmdi-hc-fw"></i>Mouvements</a></li>
-                    <li><a href="index.html"><i class="zmdi zmdi-local-store zmdi-hc-fw"></i>Organismes</a></li>
+                    <li class="sub-menu">
+                        <a href=""><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> Gestion des RDV</a>
+
+                        <ul>
+                            <li><a href="textual-menu.html">Medecin</a></li>
+                            <li><a href="image-logo.html">Stomathérapeute</a></li>
+                        </ul>
+                    </li>
                     
+                    <li class="sub-menu">
+                        <a href=""><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> Gestion des patients</a>
+
+                        <ul>
+                            <li><a href="">Liste patients</a></li>
+                            <li><a href="">Fiche anomalie</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </aside>
 
             
-     <!-- TABLE -->  
-             <div class="container">
-            <div class="col-md-1"></div>
+     <!-- Table -->  
+            <div class="container">
+             <div class="col-md-1"></div>
              <div class="col-md-10">
-                  <div class="card">
+             <div class="card">
                         <div class="card-header">
-                            <h2>DEVIS</h2>
+                            <h2>Liste des patients</h2>
                         </div>
-                        
-                      
-                      <div class="row"><label>      </label></div>
-                      <div class="col-md-1"></div>
-                       <div class="col-md-5">
-                      <button class="btn btn-default" type="submit">CSV</button>
-                           <label>      </label>
-                      <button class="btn btn-default" type="submit">PDF</button>
-                           <label>      </label>
-                      <button class="btn btn-primary" type="submit">IMPRIMER</button>
-                      </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2"><button class="btn btn-success" type="submit" data-toggle="modal" data-target="#creation">CREER</button></div>
-                      
-                      <div class="row"><label>      </label></div>
-                      <div class="row"><label>      </label></div>
-                      <div class="row"><label>      </label></div>
+                        <div class="container">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-primary btn-md btn-block">Dossier medical</button>
+                                <button type="button" class="btn btn-info btn-md btn-block">Fiche anomalie</button>
+                             </div>  
+                        </div>
                         <div class="table-responsive">
                             <table id="data-table-selection" class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N° DEVIS</th>
-                                        <th data-column-id="date-crea">DATE CREATION</th>
-                                        <th data-column-id="id-client">N° CLIENT</th>
-                                        <th data-column-id="nom">NOM</th>
-                                        <th data-column-id="prenom">PRENOM</th>
-                                         <th data-column-id="date-exp">DATE EXPIRATION</th>
+                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N°</th>
+                                        <th data-column-id="Nom">Nom</th>
+                                        <th data-column-id="Prenom">Prenom</th>
+                                        <th data-column-id="NumTel">Num tel</th>
+                                        <th data-column-id="DateIns">Date inscription</th>
                                         
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>10238</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Benbelkacem</td>
+                                        <td>Sonia</td>
+                                        <td>0665987421</td>
+                                        <td>21/03/2014</td>
                                     </tr>
                                     <tr>
                                         <td>10239</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Chaibi</td>
+                                        <td>Asma</td>
+                                        <td>0665987421</td>
+                                        <td>21/03/2014</td>
                                     </tr>
                                     <tr>
                                         <td>10240</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Guerfa</td>
+                                        <td>Billel</td>
+                                        <td>0655987421</td>
+                                        <td>21/05/2015</td>
                                     </tr>
                                     <tr>
                                         <td>10241</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
+                                    
                                     <tr>
                                         <td>10242</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
+                                    
                                     <tr>
                                         <td>10243</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
+                                    
                                     <tr>
                                         <td>10244</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
                                     <tr>
                                         <td>10245</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
                                     <tr>
                                         <td>10246</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>    </div>
-             <div class="col-md-1"></div>
-                 </div>
-             
-             <!-- Modal -->
-             <div class="modal fade bs-example-modal-lg" id="creation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <center><h4 class="modal-title" id="myLargeModalLabel">GENERER UN NOUVEAU DEVIS</h4></center>
-                        </div>
-                        <div class="modal-body">
-                              
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                <label for="nom" class="col-sm-2 control-label">NOM</label>
-                                <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="nom" placeholder=" ">
-                                </div>
-                              </div>
-                                <div class="form-group">
-                                <label for="prenom" class="col-sm-2 control-label">PRENOM</label>
-                                <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="prenom" placeholder=" ">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="id-devis" class="col-sm-2 control-label">N° DEVIS</label>
-                                <div class="col-sm-10">
-                                  <input type="email" class="form-control" id="id-devis" placeholder=" ">
-                                </div>
-                              </div>
-                              
-                              <div class="form-group">
-                                <label for="type" class="col-sm-2 control-label">TYPE DEVIS</label>
-                                <div class="col-sm-10">
-                                 
-                                   <select class="form-control" id="type">
-                                        <option>PRIS EN CHARGE</option>
-                                        <option>NON PRIS EN CHARGE</option>
-                                    </select>                                           
-                              </div>
-                                </div>
-                                  <div class="form-group">
-                                            <label for="date1" class="col-sm-2 control-label">DATE CREATION</label>
-                                            <div class="col-sm-10">
-                                                <input type='text' class="form-control date-picker" id="date1" placeholder="Cliquer ici...">
-                                            </div>
-                                        </div>
-                                  
-                                  <div class="form-group">
-                                            <label for="date2" class="col-sm-2 control-label">DATE EXPIRATION</label>
-                                            <div class="col-sm-10">
-                                                <input type='text' class="form-control date-picker" id="date2" placeholder="Cliquer ici...">
-                                            </div>
-                                        </div>
-                                
-                                
-                                
-                                <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
-                                
-                                <div class="container">
-            
-             <div class="col-md-12">
-                  <div class="card">
-                        <div class="card-header">
-                          <h2>LISTE DES PRODUITS </h2>
-                        </div>
-                        
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        
-                                        <th>CODE PRODUIT</th>
-                                        <th>DESIGNATION</th>
-                                        <th>QUANTITE</th>
-                                        <th>PRIX</th>
-                                        <th>AUGMENTER</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>poche1</td>
-                                        <td>20</td>
-                                        <td>350</td>
-                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>poche1</td>
-                                        <td>20</td>
-                                        <td>350</td>
-                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
+                                        <td>10247</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>poche1</td>
-                                        <td>20</td>
-                                        <td>350</td>
-                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
+                                        <td>10248</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
                                     </tr>
                                     
                                 </tbody>
                             </table>
+                            
+                            
                         </div>
                     </div>
-                    </div>
-             
-                 </div>
-                        <label>PRIX TOTAL :1050 DA</label>         
-                                
-                                <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
-                        
-                            </form>
-                            
-                            
-                     
-                        <div class="modal-footer">
-                            
-                           
-                            <div class="col-md-offset-8"></div>
-                            <button type="button" class="btn btn-primary">CREER</button>
-                        </div>
-                    </div>
-                  </div>
             </div>
-             </div>
+             <div class="col-md-1"></div>
+           </div>  
+             
              
          </section>
         
         
         
+        
         <footer id="footer">
-            Copyright &copy; 2015 Material Admin
+            Copyright &copy; 2016 MSA
             
             <ul class="f-menu">
                 <li><a href="">Home</a></li>
@@ -531,7 +425,6 @@
                 <li><a href="">Contact</a></li>
             </ul>
         </footer>
-        
 
         <!-- Page Loader -->
         <div class="page-loader">
@@ -551,19 +444,12 @@
         <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         
-        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+                <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
         <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>  
+        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
         <script src="vendors/bower_components/moment/min/moment.min.js"></script>
         <script src="vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
-        
-        
-        <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
-        <script src="vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
-        <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-        <script src="vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
-        <script src="vendors/summernote/dist/summernote-updated.min.js"></script>
         
         
         <!-- Placeholder for IE9 -->
@@ -571,16 +457,12 @@
             <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
         <![endif]-->
         
-        <script src="vendors/bower_components/chosen/chosen.jquery.min.js"></script>
-        <script src="vendors/fileinput/fileinput.min.js"></script>
-        <script src="vendors/input-mask/input-mask.min.js"></script>
-        <script src="vendors/farbtastic/farbtastic.min.js"></script>
+        
     
         <script src="js/functions.js"></script>
         <script src="js/demo.js"></script>
-        
-        
-        <!-- Data Table -->
+
+         <!-- Data Table -->
         <script type="text/javascript">
             $(document).ready(function(){
                 //Basic Example
@@ -627,6 +509,9 @@
                 });
             });
         </script>
+        
+        
+        
         
     </body>
 </html>

@@ -19,15 +19,33 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             ListeCommandesComponent = (function () {
-                function ListeCommandesComponent() {
+                function ListeCommandesComponent(_zone) {
+                    this._zone = _zone;
                 }
                 ListeCommandesComponent.prototype.ngOnInit = function () { };
+                ListeCommandesComponent.prototype.ngAfterViewInit = function () {
+                    this._zone.run(function () {
+                        $(".data-table-selection").bootgrid({
+                            css: {
+                                icon: 'zmdi icon',
+                                iconColumns: 'zmdi-view-module',
+                                iconDown: 'zmdi-expand-more',
+                                iconRefresh: 'zmdi-refresh',
+                                iconUp: 'zmdi-expand-less'
+                            },
+                            selection: true,
+                            multiSelect: true,
+                            rowSelect: true,
+                            keepSelection: true
+                        });
+                    });
+                };
                 ListeCommandesComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-commandes',
                         templateUrl: 'app/agentPrestation/views/listeCommandes.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.NgZone])
                 ], ListeCommandesComponent);
                 return ListeCommandesComponent;
             }());

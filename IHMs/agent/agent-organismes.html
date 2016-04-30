@@ -277,120 +277,47 @@
              <div class="col-md-10">
                   <div class="card">
                         <div class="card-header">
-                            <h2>DEVIS</h2>
+                            <h2>ORGANISMES</h2>
                         </div>
                         
                       
                       <div class="row"><label>      </label></div>
-                      <div class="col-md-1"></div>
-                       <div class="col-md-5">
-                      <button class="btn btn-default" type="submit">CSV</button>
-                           <label>      </label>
-                      <button class="btn btn-default" type="submit">PDF</button>
-                           <label>      </label>
-                      <button class="btn btn-primary" type="submit">IMPRIMER</button>
-                      </div>
-                      <div class="col-md-4"></div>
-                      <div class="col-md-2"><button class="btn btn-success" type="submit" data-toggle="modal" data-target="#creation">IMPORTER</button></div>
                       
-                      <div class="row"><label>      </label></div>
-                      <div class="row"><label>      </label></div>
-                      <div class="row"><label>      </label></div>
                         <div class="table-responsive">
-                            <table  class="table table-striped data-table-selection">
+                            <table id="data-table-selection" class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N° COMMANDE</th>
-                                        <th data-column-id="orga">ORGANISME</th>
-                                        <th data-column-id="id-client">N° CLIENT</th>
+                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N° ORGANISME</th>
                                         <th data-column-id="nom">NOM</th>
-                                        <th data-column-id="prenom">PRENOM</th>
-                                         <th data-column-id="date">DATE</th>
-                                        <th data-column-id="montant">MONTANT</th>
-                                        <th data-column-id="type">TYPE</th>
-                                        <th data-column-id="etat">ETAT</th>
+                                        <th data-column-id="adresse">ADRESSE</th>
+                                        <th data-column-id="num">NUMTEL</th>
+                                        <th data-column-id="email">EMAIL</th>
+                                        
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>10238</td>
                                         <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
+                                        <td>35 rue abas turki</td>
+                                        <td>021569874</td>
+                                        <td>cs_benbelkacem@esi.dz</td>
+                                    
                                     </tr>
                                     <tr>
                                         <td>10239</td>
                                         <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
+                                        <td>35 rue abas turki</td>
+                                        <td>021569874</td>
+                                        <td>cs_benbelkacem@esi.dz</td>
                                     </tr>
                                     <tr>
                                         <td>10240</td>
                                         <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10241</td>
-                                        <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10242</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10243</td>
-                                        <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10244</td>
-                                        <td>ESI</td>
-                                        <td>14.10.2013</td>
-                                        <td>23658</td>
-                                        <td>BNEBLKACEM </td>
-                                        <td>SONIA</td>
-                                        <td>20.10.2013</td>
-                                        <td>3569</td>
-                                        <td>je c pas</td>
-                                        <td>je c pas</td>
+                                        <td>35 rue abas turki</td>
+                                        <td>021569874</td>
+                                        <td>cs_benbelkacem@esi.dz</td>
                                     </tr>
                                     
                                 </tbody>
@@ -424,24 +351,36 @@
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="id-devis" class="col-sm-2 control-label">N° COMMANDE</label>
+                                <label for="id-devis" class="col-sm-2 control-label">N° DEVIS</label>
                                 <div class="col-sm-10">
                                   <input type="email" class="form-control" id="id-devis" placeholder=" ">
                                 </div>
                               </div>
                               
                               <div class="form-group">
-                                <label for="orga" class="col-sm-2 control-label">ORGANISME</label>
+                                <label for="type" class="col-sm-2 control-label">TYPE DEVIS</label>
                                 <div class="col-sm-10">
                                  
-                                   <select class="form-control" id="orga">
-                                        <option>ESI</option>
-                                        <option>USTHB</option>
-                                        <option>SAAS</option>
+                                   <select class="form-control" id="type">
+                                        <option>PRIS EN CHARGE</option>
+                                        <option>NON PRIS EN CHARGE</option>
                                     </select>                                           
                               </div>
                                 </div>
+                                  <div class="form-group">
+                                            <label for="date1" class="col-sm-2 control-label">DATE CREATION</label>
+                                            <div class="col-sm-10">
+                                                <input type='text' class="form-control date-picker" id="date1" placeholder="Cliquer ici...">
+                                            </div>
+                                        </div>
                                   
+                                  <div class="form-group">
+                                            <label for="date2" class="col-sm-2 control-label">DATE EXPIRATION</label>
+                                            <div class="col-sm-10">
+                                                <input type='text' class="form-control date-picker" id="date2" placeholder="Cliquer ici...">
+                                            </div>
+                                        </div>
+                                
                                 
                                 
                                 <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
@@ -451,49 +390,42 @@
              <div class="col-md-12">
                   <div class="card">
                         <div class="card-header">
-                            <h2>SELECTION DU DEVIS</h2>
+                          <h2>LISTE DES PRODUITS </h2>
                         </div>
                         
                         <div class="table-responsive">
-                            <table id="data-table-selection" class="table table-striped data-table-selection">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N°DEVIS</th>
-                                        <th data-column-id="date">DATE</th>
-                                        <th data-column-id="date-exp">DATE EXPIRATION</th>
                                         
+                                        <th>CODE PRODUIT</th>
+                                        <th>DESIGNATION</th>
+                                        <th>QUANTITE</th>
+                                        <th>PRIX</th>
+                                        <th>AUGMENTER</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>10238</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
+                                        <td>1</td>
+                                        <td>poche1</td>
+                                        <td>20</td>
+                                        <td>350</td>
+                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
                                     </tr>
                                     <tr>
-                                        <td>10243</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
+                                        <td>1</td>
+                                        <td>poche1</td>
+                                        <td>20</td>
+                                        <td>350</td>
+                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
                                     </tr>
                                     <tr>
-                                        <td>10248</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10253</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10234</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10239</td>
-                                        <td>14.10.2013</td>
-                                        <td>14.10.2013</td>
+                                        <td>1</td>
+                                        <td>poche1</td>
+                                        <td>20</td>
+                                        <td>350</td>
+                                        <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
                                     </tr>
                                     
                                 </tbody>
@@ -515,7 +447,7 @@
                             
                            
                             <div class="col-md-offset-8"></div>
-                            <button type="button" class="btn btn-primary">IMPORTER</button>
+                            <button type="button" class="btn btn-primary">CREER</button>
                         </div>
                     </div>
                   </div>
@@ -601,7 +533,7 @@
                 });
                 
                 //Selection
-                $(".data-table-selection").bootgrid({
+                $("#data-table-selection").bootgrid({
                     css: {
                         icon: 'zmdi icon',
                         iconColumns: 'zmdi-view-module',

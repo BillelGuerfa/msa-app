@@ -32,6 +32,8 @@ System.register(['angular2/core', "angular2/router", "../services/auth.service"]
                 }
                 LoginComponent.prototype.ngOnInit = function () {
                 };
+                LoginComponent.prototype.ngAfterViewInit = function () {
+                };
                 LoginComponent.prototype.login = function () {
                     var _this = this;
                     this._authService.login(this.compte)

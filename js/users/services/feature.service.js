@@ -73,13 +73,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                 this.features = [
                                     {
                                         name: "Devis",
-                                        route: "none",
+                                        route: "Devis",
                                         subFeatures: [],
                                         icon: "zmdi zmdi-assignment zmdi-hc-fw"
                                     },
                                     {
                                         name: "Commandes",
-                                        route: "none",
+                                        route: "Commandes",
                                         subFeatures: [],
                                         icon: "zmdi zmdi-labels zmdi-hc-fw"
                                     },
