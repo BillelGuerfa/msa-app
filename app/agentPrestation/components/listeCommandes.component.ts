@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit,NgZone} from 'angular2/core';
+import {Router } from "angular2/router";
 import {Commande} from "../services/commande.service";
 declare var $;
 @Component({
@@ -7,7 +8,7 @@ declare var $;
 })
 export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     commandes: Commande[];
-    constructor(private _zone:NgZone ) { }
+    constructor(private _zone:NgZone, private _router:Router ) { }
 
     ngOnInit() { }
     ngAfterViewInit(){
@@ -23,7 +24,12 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
                 selection: true,
                 rowSelect: true,
                 keepSelection: true
-            });
+            }).on("selected.rs.jquery.bootgrid", (e, rows) =>
+                  {
+                     //TODO: Select event here
+                     this._router.navigate(["DetailCommande"]);
+                     
+             });
         });
     }
 }

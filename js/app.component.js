@@ -833,7 +833,10 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                         { path: '/commandes', as: 'Commandes', component: agentPrestation_barrel_1.ListeCommandesComponent },
                         { path: '/factures', as: 'Factures', component: agentPrestation_barrel_1.ListeFacturesComponent },
                         { path: '/mouvements', as: 'Mouvements', component: agentPrestation_barrel_1.ListeMouvementsComponent },
-                        { path: '/organismes', as: 'Organismes', component: agentPrestation_barrel_1.ListeOrganismesComponent }
+                        { path: '/organismes', as: 'Organismes', component: agentPrestation_barrel_1.ListeOrganismesComponent },
+                        { path: '/detail-devis', as: 'DetailDevis', component: agentPrestation_barrel_1.DetailDevisComponent },
+                        { path: '/detail-commande', as: 'DetailCommande', component: agentPrestation_barrel_1.DetailCommandeComponent },
+                        { path: '/detail-facture', as: 'DetailFacture', component: agentPrestation_barrel_1.DetailFactureComponent }
                     ]), 
                     __metadata('design:paramtypes', [core_1.ElementRef, users_barrel_1.AuthService, router_1.Router, users_barrel_1.EmployeService, users_barrel_1.FeatureService, core_1.NgZone])
                 ], AppComponent);

@@ -17,7 +17,10 @@ import {ListeDevisComponent,
         ListeCommandesComponent,
         ListeFacturesComponent,
         ListeMouvementsComponent,
-        ListeOrganismesComponent} from "./agentPrestation/agentPrestation.barrel";
+        ListeOrganismesComponent,
+        DetailDevisComponent,
+        DetailCommandeComponent,
+        DetailFactureComponent } from "./agentPrestation/agentPrestation.barrel";
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
@@ -51,7 +54,11 @@ declare var Waves;
     { path: '/commandes', as:'Commandes', component: ListeCommandesComponent},
     { path: '/factures', as:'Factures', component: ListeFacturesComponent},
     { path: '/mouvements', as:'Mouvements', component: ListeMouvementsComponent},
-    { path: '/organismes', as:'Organismes', component: ListeOrganismesComponent}
+    { path: '/organismes', as:'Organismes', component: ListeOrganismesComponent},
+    { path: '/detail-devis', as:'DetailDevis', component: DetailDevisComponent},
+    { path: '/detail-commande', as:'DetailCommande', component: DetailCommandeComponent},
+    { path: '/detail-facture', as:'DetailFacture', component: DetailFactureComponent}
+    
 ])
 export class AppComponent implements OnInit, AfterViewInit {
     loginPage: boolean;

@@ -1,4 +1,4 @@
-System.register(["./components/listeDevis.component", "./components/listeCommandes.component", "./components/listeFactures.component", "./components/listeMouvements.component", "./components/listeOrganismes.component"], function(exports_1, context_1) {
+System.register(["./components/listeDevis.component", "./components/listeCommandes.component", "./components/listeFactures.component", "./components/listeMouvements.component", "./components/listeOrganismes.component", "./components/detailDevis.component", "./components/detailCommande.component", "./components/detailFacture.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     return {
@@ -26,6 +26,21 @@ System.register(["./components/listeDevis.component", "./components/listeCommand
             function (listeOrganismes_component_1_1) {
                 exports_1({
                     "ListeOrganismesComponent": listeOrganismes_component_1_1["ListeOrganismesComponent"]
+                });
+            },
+            function (detailDevis_component_1_1) {
+                exports_1({
+                    "DetailDevisComponent": detailDevis_component_1_1["DetailDevisComponent"]
+                });
+            },
+            function (detailCommande_component_1_1) {
+                exports_1({
+                    "DetailCommandeComponent": detailCommande_component_1_1["DetailCommandeComponent"]
+                });
+            },
+            function (detailFacture_component_1_1) {
+                exports_1({
+                    "DetailFactureComponent": detailFacture_component_1_1["DetailFactureComponent"]
                 });
             }],
         execute: function() {

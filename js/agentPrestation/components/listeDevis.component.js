@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,20 +10,25 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, router_1;
     var ListeDevisComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             ListeDevisComponent = (function () {
-                function ListeDevisComponent(_zone) {
+                function ListeDevisComponent(_zone, _router) {
                     this._zone = _zone;
+                    this._router = _router;
                 }
                 ListeDevisComponent.prototype.ngOnInit = function () { };
                 ListeDevisComponent.prototype.ngAfterViewInit = function () {
+                    var _this = this;
                     this._zone.run(function () {
                         $("#data-table-selection").bootgrid({
                             css: {
@@ -36,6 +41,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             selection: true,
                             rowSelect: true,
                             keepSelection: true
+                        }).on("selected.rs.jquery.bootgrid", function (e, rows) {
+                            //TODO: Select event here
+                            _this._router.navigate(["DetailDevis"]);
                         });
                     });
                 };
@@ -44,7 +52,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         selector: 'liste-devis',
                         templateUrl: 'app/agentPrestation/views/listeDevis.component.html'
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone])
+                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router])
                 ], ListeDevisComponent);
                 return ListeDevisComponent;
             }());
