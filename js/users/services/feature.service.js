@@ -33,13 +33,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                         subFeatures: [
                                             {
                                                 name: "Medecin",
-                                                route: "Calendrier",
+                                                route: "SearchRdvs",
                                                 subFeatures: [],
                                                 icon: ""
                                             },
                                             {
                                                 name: "Stomathérapeut",
-                                                route: "Calendrier",
+                                                route: "SearchRdvs",
                                                 subFeatures: [],
                                                 icon: ""
                                             }
@@ -109,12 +109,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                 this.features = [];
                             }
                             break;
-                        case "THERAPEUT":
+                        case "THERAPEUTE":
                             {
                                 this.features = [
                                     {
                                         name: "Gestion des RDV",
-                                        route: "none",
+                                        route: "Calendrier",
                                         subFeatures: [],
                                         icon: "zmdi zmdi-calendar-note zmdi-hc-fw"
                                     },
@@ -124,19 +124,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                         subFeatures: [
                                             {
                                                 name: "Liste patients",
-                                                route: "none",
-                                                subFeatures: [],
-                                                icon: ""
-                                            },
-                                            {
-                                                name: "Fiche Séance",
-                                                route: "none",
+                                                route: "Patients",
                                                 subFeatures: [],
                                                 icon: ""
                                             },
                                             {
                                                 name: "Historique des visites",
-                                                route: "none",
+                                                route: "HistoriqueVisites",
                                                 subFeatures: [],
                                                 icon: ""
                                             }

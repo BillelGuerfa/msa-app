@@ -1,4 +1,4 @@
-System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "rxjs/Rx", "../services/patient.service", "../../users/users.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, patient_service_1;
+    var core_1, patient_service_1, users_barrel_1;
     var ListePatientsComponent;
     return {
         setters:[
@@ -20,15 +20,43 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
             function (_1) {},
             function (patient_service_1_1) {
                 patient_service_1 = patient_service_1_1;
+            },
+            function (users_barrel_1_1) {
+                users_barrel_1 = users_barrel_1_1;
             }],
         execute: function() {
             ListePatientsComponent = (function () {
-                function ListePatientsComponent(_patientService, _ngZone) {
+                function ListePatientsComponent(_patientService, _employeService, _ngZone) {
                     this._patientService = _patientService;
+                    this._employeService = _employeService;
                     this._ngZone = _ngZone;
+                    this.employe = null;
+                    this.actions = {
+                        dossierMedical: {
+                            isActive: true,
+                            route: ""
+                        },
+                        ficheAnomalie: {
+                            isActive: false,
+                            route: "FicheAnomalieForm"
+                        },
+                        ficheSeance: {
+                            isActive: false,
+                            route: "FicheSeance"
+                        }
+                    };
                     this.patients = [];
                 }
                 ListePatientsComponent.prototype.ngOnInit = function () {
+                    if (this._employeService.employe) {
+                        this.employe = this._employeService.employe;
+                        if (this.employe.poste === "ASSISTANTE") {
+                            this.actions.ficheAnomalie.isActive = true;
+                        }
+                        else if (this.employe.poste === "THERAPEUTE") {
+                            this.actions.ficheSeance.isActive = true;
+                        }
+                    }
                 };
                 ListePatientsComponent.prototype.selectPatient = function (id) {
                     this.selectedPatient = this.patients.filter(function (patient) { return patient.idPatient === id; })[0];
@@ -36,6 +64,8 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                 ListePatientsComponent.prototype.gotoDossier = function (id) {
                 };
                 ListePatientsComponent.prototype.gotoFicheAnomalie = function (id) {
+                };
+                ListePatientsComponent.prototype.gotoFicheSeance = function (id) {
                 };
                 ListePatientsComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
@@ -62,7 +92,7 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                                         _this.selectPatient(rows[0].id);
                                     });
                                 });
-                            }, 200); //Timeout because async and bootgrid intialization
+                            }, 1); //Timeout because async and bootgrid intialization
                         });
                     }, function (error) {
                     });
@@ -72,7 +102,7 @@ System.register(['angular2/core', "rxjs/Rx", "../services/patient.service"], fun
                         selector: 'liste-patients',
                         templateUrl: 'app/assistante/views/listePatients.component.html'
                     }), 
-                    __metadata('design:paramtypes', [patient_service_1.PatientService, core_1.NgZone])
+                    __metadata('design:paramtypes', [patient_service_1.PatientService, users_barrel_1.EmployeService, core_1.NgZone])
                 ], ListePatientsComponent);
                 return ListePatientsComponent;
             }());

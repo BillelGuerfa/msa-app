@@ -12,7 +12,8 @@ import {PatientService,
         RdvService, 
         FicheAnomalieFormComponent, 
         ListePatientsComponent, 
-        CalendrierComponent} from "./assistante/assistante.barrel";
+        CalendrierComponent, 
+        SearchRdvsComponent} from "./assistante/assistante.barrel";
 import {ListeDevisComponent,
         ListeCommandesComponent,
         ListeFacturesComponent,
@@ -21,6 +22,10 @@ import {ListeDevisComponent,
         DetailDevisComponent,
         DetailCommandeComponent,
         DetailFactureComponent } from "./agentPrestation/agentPrestation.barrel";
+import {
+        FicheSeanceFormComponent,
+        HistoriqueVisitesComponent
+        } from "./therapeute/therapeute.barrel";
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
@@ -49,6 +54,7 @@ declare var Waves;
     { path: '/patients', as:'Patients', component: ListePatientsComponent},
     { path: "/calendrier", as:"Calendrier", component:CalendrierComponent},
     { path: '/anomalie-new', as:"FicheAnomalieForm", component: FicheAnomalieFormComponent},
+    { path: '/rdvs', as:"SearchRdvs", component: SearchRdvsComponent},
     //Agent de prestation Routes : ------------------------------------------------------------
     { path: '/devis', as:'Devis', component: ListeDevisComponent},
     { path: '/commandes', as:'Commandes', component: ListeCommandesComponent},
@@ -57,7 +63,12 @@ declare var Waves;
     { path: '/organismes', as:'Organismes', component: ListeOrganismesComponent},
     { path: '/detail-devis', as:'DetailDevis', component: DetailDevisComponent},
     { path: '/detail-commande', as:'DetailCommande', component: DetailCommandeComponent},
-    { path: '/detail-facture', as:'DetailFacture', component: DetailFactureComponent}
+    { path: '/detail-facture', as:'DetailFacture', component: DetailFactureComponent},
+    //Therapeute Routes : ------------------------------------------------------------
+    { path: '/seance-new', as:"FicheSeanceForm", component: FicheSeanceFormComponent},
+    { path: '/historique-visites', as:"HistoriqueVisites", component: HistoriqueVisitesComponent}
+    
+    
     
 ])
 export class AppComponent implements OnInit, AfterViewInit {

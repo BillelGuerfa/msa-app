@@ -1,4 +1,4 @@
-System.register(["./components/calendrier.component", "./components/ficheAnomalieForm.component", "./components/listePatients.component", "./services/anomalie.service", "./services/patient.service", "./services/rdv.service"], function(exports_1, context_1) {
+System.register(["./components/calendrier.component", "./components/ficheAnomalieForm.component", "./components/listePatients.component", "./components/searchRdvs.component", "./services/anomalie.service", "./services/patient.service", "./services/rdv.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     return {
@@ -16,6 +16,11 @@ System.register(["./components/calendrier.component", "./components/ficheAnomali
             function (listePatients_component_1_1) {
                 exports_1({
                     "ListePatientsComponent": listePatients_component_1_1["ListePatientsComponent"]
+                });
+            },
+            function (searchRdvs_component_1_1) {
+                exports_1({
+                    "SearchRdvsComponent": searchRdvs_component_1_1["SearchRdvsComponent"]
                 });
             },
             function (anomalie_service_1_1) {

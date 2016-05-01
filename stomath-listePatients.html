@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Assistante</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        
+        
+        
+        
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+        <link href="vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+        
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+    
+
+    
+    <body>
+        
+        <header id="header" class="clearfix" data-current-skin="blue">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="logo hidden-xs">
+                    <a href="index.html">MSA</a>
+                    
+                </li>
+
+                <li class="pull-right">
+                    <ul class="top-menu">
+                        <li id="toggle-width">
+                            <div class="toggle-switch">
+                                <input id="tw-switch" type="checkbox" hidden="hidden">
+                                <label for="tw-switch" class="ts-helper"></label>
+                            </div>
+                        </li>
+
+                       
+                        
+                      
+                       
+                    
+                     
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href=""><i class="tm-icon zmdi zmdi-more-vert"></i></a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="skin-switch hidden-xs">
+                                    <span class="ss-skin bgm-lightblue" data-skin="lightblue"></span>
+                                    <span class="ss-skin bgm-bluegray" data-skin="bluegray"></span>
+                                    <span class="ss-skin bgm-cyan" data-skin="cyan"></span>
+                                    <span class="ss-skin bgm-teal" data-skin="teal"></span>
+                                    <span class="ss-skin bgm-orange" data-skin="orange"></span>
+                                    <span class="ss-skin bgm-blue" data-skin="blue"></span>
+                                </li>
+                                <li class="divider hidden-xs"></li>
+                                <li class="hidden-xs">
+                                    <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Plein ecrant</a>
+                                </li>
+                                <li>
+                                    <a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Effacer le contenu local</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-face"></i> Parametres de confidentialite</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-settings"></i> Autre parametres</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>       
+            
+            
+        </header>
+   <!--------------------------------------------------------------------------------------------------------------------------------->     
+        
+         <section id="main" data-layout="layout-1">
+             
+  <!----------------------------------------------------------------------------------------------------------------------------------------->   
+             <aside id="sidebar" class="sidebar c-overflow">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                            <img src="img/profile-pics/1.jpg" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            Malinda Hollaway
+
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href=""><i class="zmdi zmdi-account"></i> Voir le profil</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Parametres de confidentialite</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Parametres</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Deconnection</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    
+                    <li><a href="index.html"><i class="zmdi zmdi-home"></i>Acceuil</a></li>
+                    <li class="active">
+                        <a href=""><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> Gestion des RDV</a>
+
+                        
+                    </li>
+                    
+                    <li class="sub-menu">
+                        <a href=""><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> Gestion des patients</a>
+
+                        <ul>
+                            <li><a href="stomath-listePatients.html">Liste patients</a></li>
+                            <li><a href="stomath-ficheSeance.html">Fiche seance</a></li>
+                            <li><a href="stomath-historiqueVisite.html">Historique des visites</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+            
+     <!-------------------------------------------------TABLE----------------------------------------------------------------------------->  
+            
+                     <div class="container">
+             <div class="col-md-1"></div>
+             <div class="col-md-10">
+             <div class="card">
+                        <div class="card-header">
+                            <h2>Liste des patients</h2>
+                        </div>
+                        <div class="container">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3">
+                                <button type="button" class="btn btn-primary btn-md btn-block">DOSSIER MEDICAL</button>
+                                <button type="button" class="btn btn-info btn-md btn-block">FICHE SEANCE</button>
+                             </div>  
+                        </div>
+                        <div class="table-responsive">
+                            <table id="data-table-selection" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-column-id="id" data-type="numeric" data-identifier="true">N°</th>
+                                        <th data-column-id="Nom">Nom</th>
+                                        <th data-column-id="Prenom">Prenom</th>
+                                        <th data-column-id="NumTel">Num tel</th>
+                                        <th data-column-id="DateIns">Date inscription</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10238</td>
+                                        <td>Benbelkacem</td>
+                                        <td>Sonia</td>
+                                        <td>0665987421</td>
+                                        <td>21/03/2014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10239</td>
+                                        <td>Chaibi</td>
+                                        <td>Asma</td>
+                                        <td>0665987421</td>
+                                        <td>21/03/2014</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10240</td>
+                                        <td>Guerfa</td>
+                                        <td>Billel</td>
+                                        <td>0655987421</td>
+                                        <td>21/05/2015</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10241</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>10242</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>10243</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>10244</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10245</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10246</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10247</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10248</td>
+                                        <td>Yousnaj</td>
+                                        <td>yacine</td>
+                                        <td>0665958421</td>
+                                        <td>25/10/2016</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+            
+                     
+                     
+                     
+                     
+             
+         </section>
+        
+        
+        
+        
+        
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewbox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+        
+        
+
+        
+         <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+                <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+        
+        
+        <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+        <script src="vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+        <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+        <script src="vendors/summernote/dist/summernote-updated.min.js"></script>
+        
+        
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        <script src="vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+        <script src="vendors/fileinput/fileinput.min.js"></script>
+        <script src="vendors/input-mask/input-mask.min.js"></script>
+        <script src="vendors/farbtastic/farbtastic.min.js"></script>
+    
+        <script src="js/functions.js"></script>
+        <script src="js/demo.js"></script>
+
+         <!-- Data Table -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //Basic Example
+                $("#data-table-basic").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                });
+                
+                //Selection
+                $("#data-table-selection").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                    selection: true,
+                    multiSelect: true,
+                    rowSelect: true,
+                    keepSelection: true
+                });
+                
+                //Command Buttons
+                $("#data-table-command").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                    formatters: {
+                        "commands": function(column, row) {
+                            return "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-edit\"></span></button> " + 
+                                "<button type=\"button\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-delete\"></span></button>";
+                        }
+                    }
+                });
+            });
+        </script>
+        
+        
+        
+    </body>
+</html>

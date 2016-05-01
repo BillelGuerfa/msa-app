@@ -17,13 +17,13 @@ export class FeatureService {
                             subFeatures: [
                                 {
                                     name: "Medecin",
-                                    route: "Calendrier",
+                                    route: "SearchRdvs",
                                     subFeatures: [],
                                     icon:""
                                 },
                                 {
                                     name: "Stomathérapeut",
-                                    route: "Calendrier",
+                                    route: "SearchRdvs",
                                     subFeatures: [],
                                     icon:""
                                 }
@@ -101,11 +101,11 @@ export class FeatureService {
                         
                     ];
                 }break;
-                case "THERAPEUT":{
+                case "THERAPEUTE":{
                     this.features =  [
                         {
                             name: "Gestion des RDV",
-                            route: "none",
+                            route: "Calendrier",
                             subFeatures: [
                                 
                             ],
@@ -117,19 +117,13 @@ export class FeatureService {
                             subFeatures: [
                                 {
                                     name: "Liste patients",
-                                    route: "none",
-                                    subFeatures: [],
-                                    icon:""
-                                },
-                                {
-                                    name: "Fiche Séance",
-                                    route: "none",
+                                    route: "Patients",
                                     subFeatures: [],
                                     icon:""
                                 },
                                 {
                                     name: "Historique des visites",
-                                    route: "none",
+                                    route: "HistoriqueVisites",
                                     subFeatures: [],
                                     icon:""
                                 }

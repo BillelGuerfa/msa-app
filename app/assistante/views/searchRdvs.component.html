@@ -1,0 +1,26 @@
+<div class="container">
+<div class="card">
+    <div class="card-header">
+        <h2>Veillez Taper le nom du Medecin <small>Selectionnez ensuite le medecin selon la liste de suggestions</small></h2>
+    </div>
+
+    <div class="card-body card-padding">
+        <div class="row">
+            <div class="col-sm-4">
+                
+            </div>
+
+            <div class="col-sm-4">
+                <div class="fg-line">
+                    <input type="text" class="form-control" placeholder="Nom du medecin..." typeaheadautocomplete [objectsDataSet]="dataSet" [labelAtt]="'nom'" [name]="'listePatients'" [handleFunction]="testDirective">
+                    
+                </div>
+                
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>

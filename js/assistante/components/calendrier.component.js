@@ -1,4 +1,4 @@
-System.register(['angular2/core', "../services/rdv.service"], function(exports_1, context_1) {
+System.register(['angular2/core', "../../users/services/employe.service", "../services/rdv.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,28 +10,48 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, rdv_service_1;
+    var core_1, employe_service_1, rdv_service_1;
     var CalendrierComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (employe_service_1_1) {
+                employe_service_1 = employe_service_1_1;
+            },
             function (rdv_service_1_1) {
                 rdv_service_1 = rdv_service_1_1;
             }],
         execute: function() {
             CalendrierComponent = (function () {
-                function CalendrierComponent(_rdvService, _ngZone) {
+                function CalendrierComponent(_rdvService, _employeService, _ngZone) {
                     this._rdvService = _rdvService;
+                    this._employeService = _employeService;
                     this._ngZone = _ngZone;
-                    this.rdv = null;
+                    this.createRdv = false;
+                    this.displayedRdvs = [];
                 }
                 CalendrierComponent.prototype.ngOnInit = function () {
+                    if (this._employeService.employe.poste === "ASSISTANTE")
+                        this.createRdv = true;
+                    //TODO: get rdvs from RdvService
                 };
                 CalendrierComponent.prototype.addRdv = function () {
                 };
                 CalendrierComponent.prototype.getRdvs = function (idMedecin) {
+                };
+                CalendrierComponent.prototype.displayRdvs = function () {
+                    var calendarRdvs = [];
+                    this.listeRdvs.forEach(function (rdv) {
+                        calendarRdvs.push({
+                            title: rdv.patient.prenom + " " + rdv.patient.nom,
+                            start: moment(rdv.date),
+                            allDay: true,
+                            className: 'bgm-cyan'
+                        });
+                    });
+                    return calendarRdvs;
                 };
                 CalendrierComponent.prototype.substringMatcher = function (strs) {
                     return function findMatches(q, cb) {
@@ -171,8 +191,10 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
                                 ],
                                 //On Day Select
                                 select: function (start, end, allDay) {
-                                    $('#addNew-event').modal('show');
-                                    $('#addNew-event input:text').val('');
+                                    if (_this.createRdv) {
+                                        $('#addNew-event').modal('show');
+                                        $('#addNew-event input:text').val('');
+                                    }
                                     $('#getStart').val(start);
                                     $('#getEnd').val(end);
                                 }
@@ -209,30 +231,32 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
                                 });
                             })();
                             //Add new Event
-                            $('body').on('click', '#addEvent', function () {
-                                //var eventName = $('#eventName').val();
-                                //TODO: ADD nom + prenom;
-                                var nom = $("#nom").val();
-                                var prenom = $("#prenom").val();
-                                _this.rdv.date = $('#getStart').val(); //TODO: put 
-                                alert("The current date of the calendar is " + $('#getStart').val() + $("#getEnd").val());
-                                var tagColor = $('.event-tag > span.selected').attr('data-tag');
-                                if (nom + prenom != '') {
-                                    //Render Event
-                                    $('#calendar').fullCalendar('renderEvent', {
-                                        title: nom + " " + prenom,
-                                        start: $('#getStart').val(),
-                                        end: $('#getEnd').val(),
-                                        allDay: true,
-                                        className: tagColor
-                                    }, true); //Stick the event
-                                    $('#addNew-event form')[0].reset();
-                                    $('#addNew-event').modal('hide');
-                                }
-                                else {
-                                    $('#eventName').closest('.form-group').addClass('has-error');
-                                }
-                            });
+                            if (_this.createRdv) {
+                                $('body').on('click', '#addEvent', function () {
+                                    //var eventName = $('#eventName').val();
+                                    //TODO: ADD nom + prenom;
+                                    var nom = $("#nom").val();
+                                    var prenom = $("#prenom").val();
+                                    _this.rdv.date = $('#getStart').val(); //TODO: put 
+                                    //alert("The current date of the calendar is " + $('#getStart').val() + $("#getEnd").val());
+                                    var tagColor = $('.event-tag > span.selected').attr('data-tag');
+                                    if (nom + prenom != '') {
+                                        //Render Event
+                                        $('#calendar').fullCalendar('renderEvent', {
+                                            title: nom + " " + prenom,
+                                            start: $('#getStart').val(),
+                                            end: $('#getEnd').val(),
+                                            allDay: true,
+                                            className: tagColor
+                                        }, true); //Stick the event
+                                        $('#addNew-event form')[0].reset();
+                                        $('#addNew-event').modal('hide');
+                                    }
+                                    else {
+                                        $('#eventName').closest('.form-group').addClass('has-error');
+                                    }
+                                });
+                            }
                             //Calendar views
                             $('body').on('click', '#fc-actions [data-view]', function (e) {
                                 e.preventDefault();
@@ -249,7 +273,7 @@ System.register(['angular2/core', "../services/rdv.service"], function(exports_1
                         selector: 'calendrier',
                         templateUrl: 'app/assistante/views/calendrier.component.html'
                     }), 
-                    __metadata('design:paramtypes', [rdv_service_1.RdvService, core_1.NgZone])
+                    __metadata('design:paramtypes', [rdv_service_1.RdvService, employe_service_1.EmployeService, core_1.NgZone])
                 ], CalendrierComponent);
                 return CalendrierComponent;
             }());

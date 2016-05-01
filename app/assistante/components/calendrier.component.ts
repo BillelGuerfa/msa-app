@@ -1,22 +1,26 @@
 import { Component, OnInit, AfterViewInit , NgZone } from 'angular2/core';
-import {Employe} from "../../users/services/employe.service";
+import {Employe, EmployeService} from "../../users/services/employe.service";
 import {Patient} from "../services/patient.service";
 import {Rdv, RdvService } from "../services/rdv.service";
 declare var $;
+declare var moment;
 @Component({
     selector: 'calendrier',
     templateUrl: 'app/assistante/views/calendrier.component.html'
 })
 
 export class CalendrierComponent implements OnInit, AfterViewInit  {
-    rdv : Rdv = null;
+    rdv : Rdv;
     listeRdvs: Rdv[];
-    
-    constructor(private _rdvService:RdvService, private _ngZone: NgZone) { 
+    createRdv = false;
+    displayedRdvs = [];
+    constructor(private _rdvService:RdvService, private _employeService : EmployeService, private _ngZone: NgZone) { 
            
     }
 
     ngOnInit() {
+        if (this._employeService.employe.poste === "ASSISTANTE") this.createRdv = true;
+        //TODO: get rdvs from RdvService
         
      }
     
@@ -24,6 +28,21 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
         
     }
     getRdvs(idMedecin){
+        
+    }
+    displayRdvs(){
+        let calendarRdvs = [];
+        this.listeRdvs.forEach(rdv => {
+            calendarRdvs.push(
+                {
+                            title: rdv.patient.prenom + " " +rdv.patient.nom,
+                            start: moment(rdv.date),
+                            allDay: true,
+                            className: 'bgm-cyan'
+                }
+            );
+        });
+        return calendarRdvs;
         
     }
     substringMatcher(strs) {
@@ -39,7 +58,7 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
             // iterate through the pool of strings and for any string that
             // contains the substring `q`, add it to the `matches` array
             
-            $.each(strs, function(i, str) {
+            $.each(strs, (i, str) => {
             if (substrRegex.test(str)) {
                 matches.push(str);
             }
@@ -175,9 +194,11 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                     
                     
                     
-                    select: function(start, end, allDay) {
-                        $('#addNew-event').modal('show');
-                        $('#addNew-event input:text').val('');
+                    select: (start, end, allDay) => {
+                        if(this.createRdv){
+                            $('#addNew-event').modal('show');
+                            $('#addNew-event input:text').val('');
+                        }
                         $('#getStart').val(start);
                         $('#getEnd').val(end);
                     }
@@ -219,34 +240,36 @@ export class CalendrierComponent implements OnInit, AfterViewInit  {
                 })();
             
                 //Add new Event
-                $('body').on('click', '#addEvent', () => {
-                    //var eventName = $('#eventName').val();
-                    //TODO: ADD nom + prenom;
-                    var nom = $("#nom").val();
-                    var prenom = $("#prenom").val();
-                    this.rdv.date = $('#getStart').val(); //TODO: put 
-                     alert("The current date of the calendar is " + $('#getStart').val() + $("#getEnd").val());
-                    var tagColor = $('.event-tag > span.selected').attr('data-tag');
-                        
-                    if (nom + prenom != '') {
-                        //Render Event
-                        $('#calendar').fullCalendar('renderEvent',{
-                            title: nom +" "+ prenom,
-                            start: $('#getStart').val(),
-                            end:  $('#getEnd').val(),
-                            allDay: true,
-                            className: tagColor
+                if(this.createRdv){
+                    $('body').on('click', '#addEvent', () => {
+                        //var eventName = $('#eventName').val();
+                        //TODO: ADD nom + prenom;
+                        var nom = $("#nom").val();
+                        var prenom = $("#prenom").val();
+                        this.rdv.date = $('#getStart').val(); //TODO: put 
+                        //alert("The current date of the calendar is " + $('#getStart').val() + $("#getEnd").val());
+                        var tagColor = $('.event-tag > span.selected').attr('data-tag');
                             
-                        },true ); //Stick the event
+                        if (nom + prenom != '') {
+                            //Render Event
+                            $('#calendar').fullCalendar('renderEvent',{
+                                title: nom +" "+ prenom,
+                                start: $('#getStart').val(),
+                                end:  $('#getEnd').val(),
+                                allDay: true,
+                                className: tagColor
+                                
+                            },true ); //Stick the event
+                            
+                            $('#addNew-event form')[0].reset()
+                            $('#addNew-event').modal('hide');
+                        }
                         
-                        $('#addNew-event form')[0].reset()
-                        $('#addNew-event').modal('hide');
-                    }
-                    
-                    else {
-                        $('#eventName').closest('.form-group').addClass('has-error');
-                    }
-                });  
+                        else {
+                            $('#eventName').closest('.form-group').addClass('has-error');
+                        }
+                    });  
+                }
                 
               
 

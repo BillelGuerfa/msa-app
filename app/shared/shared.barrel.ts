@@ -9,3 +9,6 @@ export {NotificationBodyComponent} from "./components/notificationBody.component
 
 //Services:
 export {NotificationService} from "./services/notification.service";
+
+//attDirectives
+export {AutocompleteDirective} from "./attDirectives/autocomplete.directive";

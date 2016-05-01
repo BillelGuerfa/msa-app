@@ -10,16 +10,22 @@ export class RdvService {
 
     constructor(private _http:Http) { }
     
-    getRdvMedecin(idMedecin){
+    getRdvMedecins(idMedecin){
        this._http.get(config.urls.assistante.rdvs)
                  .map(rdvs => <Rdv[]> rdvs.json() )
                  .catch(this.handleErrors);
     }
-    getRdvTherapeut(idTherapeut){
-        
+    getRdvTherapeutes(idTherapeut){
+        this._http.get(config.urls.assistante.rdvs)
+                 .map(rdvs => <Rdv[]> rdvs.json() )
+                 .catch(this.handleErrors);
     }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
+    }
+    
+    sendRdv(rdv: Rdv){
+        //TODO: post here
     }
 }
 export interface Rdv{
@@ -27,4 +33,5 @@ export interface Rdv{
     patient: Patient;
     employe: Employe;
     date: string;
+    etat: string;
 }

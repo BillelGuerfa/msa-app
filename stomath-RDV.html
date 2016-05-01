@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Assistante</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        
+        
+        
+        
+        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+        
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+    </head>
+    
+
+    
+    <body>
+        
+        <header id="header" class="clearfix" data-current-skin="blue">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="logo hidden-xs">
+                    <a href="index.html">MSA</a>
+                    
+                </li>
+
+                <li class="pull-right">
+                    <ul class="top-menu">
+                        <li id="toggle-width">
+                            <div class="toggle-switch">
+                                <input id="tw-switch" type="checkbox" hidden="hidden">
+                                <label for="tw-switch" class="ts-helper"></label>
+                            </div>
+                        </li>
+
+                       
+                        
+                      
+                       
+                    
+                     
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href=""><i class="tm-icon zmdi zmdi-more-vert"></i></a>
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li class="skin-switch hidden-xs">
+                                    <span class="ss-skin bgm-lightblue" data-skin="lightblue"></span>
+                                    <span class="ss-skin bgm-bluegray" data-skin="bluegray"></span>
+                                    <span class="ss-skin bgm-cyan" data-skin="cyan"></span>
+                                    <span class="ss-skin bgm-teal" data-skin="teal"></span>
+                                    <span class="ss-skin bgm-orange" data-skin="orange"></span>
+                                    <span class="ss-skin bgm-blue" data-skin="blue"></span>
+                                </li>
+                                <li class="divider hidden-xs"></li>
+                                <li class="hidden-xs">
+                                    <a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Plein ecrant</a>
+                                </li>
+                                <li>
+                                    <a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Effacer le contenu local</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-face"></i> Parametres de confidentialite</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-settings"></i> Autre parametres</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>       
+            
+            
+        </header>
+   <!-- main -->     
+        
+         <section id="main" data-layout="layout-1">
+             
+  <!-- menu -->   
+             <aside id="sidebar" class="sidebar c-overflow">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                            <img src="img/profile-pics/1.jpg" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            Malinda Hollaway
+
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href=""><i class="zmdi zmdi-account"></i> Voir le profil</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Parametres de confidentialite</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Parametres</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Deconnection</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    
+                    <li><a href="index.html"><i class="zmdi zmdi-home"></i>Acceuil</a></li>
+                    <li class="active">
+                        <a href="stomath-RDV"><i class="zmdi zmdi-calendar-note zmdi-hc-fw"></i> Gestion des RDV</a>
+
+                        
+                    </li>
+                    
+                    <li class="sub-menu">
+                        <a href="#"><i class="zmdi zmdi-account-o zmdi-hc-fw"></i> Gestion des patients</a>
+
+                        <ul>
+                            <li><a href="stomath-listePatients.html">Liste patients</a></li>
+                            <li><a href="stomath-ficheSeance.html">Fiche seance</a></li>
+                            <li><a href="stomath-historiqueVisite.html">Historique des visites</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+            
+     <!-- CALENDRIER -->  
+            
+                    <section id="content">
+                <div class="container c-alt">
+                    <div class="block-header">
+                        <ul class="actions">
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-trending-up"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+                    
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="">Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Manage Widgets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Widgets Settings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    
+                    </div>
+                    
+                    <div id="calendar"></div>
+                    
+                    <!-- Add event -->
+                    
+             
+         </section>
+        
+        
+        
+        <footer id="footer">
+            Copyright &copy; 2015 Material Admin
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+        
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewbox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+        
+        
+
+        
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+                <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+        
+        <script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+        <script src="vendors/bower_components/nouislider/distribute/jquery.nouislider.all.min.js"></script>
+        <script src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="vendors/bower_components/typeahead.js/dist/typeahead.bundle.min.js"></script>
+        <script src="vendors/summernote/dist/summernote-updated.min.js"></script>
+
+        
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        
+        <script src="vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+        <script src="vendors/fileinput/fileinput.min.js"></script>
+        <script src="vendors/input-mask/input-mask.min.js"></script>
+        <script src="vendors/farbtastic/farbtastic.min.js"></script>
+        
+        
+        
+        <script src="js/functions.js"></script>
+        <script src="js/demo.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+               
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+
+                var cId = $('#calendar'); //Change the name if you want. I'm also using thsi add button for more actions
+
+                //Generate the Calendar
+                cId.fullCalendar({
+                    header: {
+                        right: '',
+                        center: 'prev, title, next',
+                        left: ''
+                    },
+
+                    theme: true, //Do not remove this as it ruin the design
+                    selectable: true,
+                    selectHelper: true,
+                    editable: true,
+
+                    //Add Events
+                    events: [
+                        {
+                            title: 'Hangout with friends',
+                            start: new Date(y, m, 1),
+                            allDay: true,
+                            className: 'bgm-cyan'
+                        },
+                        {
+                            title: 'Meeting with client',
+                            start: new Date(y, m, 10),
+                            allDay: true,
+                            className: 'bgm-orange'
+                        },
+                        {
+                            title: 'Repeat Event',
+                            start: new Date(y, m, 18),
+                            allDay: true,
+                            className: 'bgm-amber'
+                        },
+                        {
+                            title: 'Semester Exam',
+                            start: new Date(y, m, 20),
+                            allDay: true,
+                            className: 'bgm-green'
+                        },
+                        {
+                            title: 'Soccor match',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'bgm-lightblue'
+                        },
+                        {
+                            title: 'Coffee time',
+                            start: new Date(y, m, 21),
+                            allDay: true,
+                            className: 'bgm-orange'
+                        },
+                        {
+                            title: 'Job Interview',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'bgm-amber'
+                        },
+                        {
+                            title: 'IT Meeting',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'bgm-green'
+                        },
+                        {
+                            title: 'Brunch at Beach',
+                            start: new Date(y, m, 1),
+                            allDay: true,
+                            className: 'bgm-lightblue'
+                        },
+                        {
+                            title: 'Live TV Show',
+                            start: new Date(y, m, 15),
+                            allDay: true,
+                            className: 'bgm-cyan'
+                        },
+                        {
+                            title: 'Software Conference',
+                            start: new Date(y, m, 25),
+                            allDay: true,
+                            className: 'bgm-lightblue'
+                        },
+                        {
+                            title: 'Coffee time',
+                            start: new Date(y, m, 30),
+                            allDay: true,
+                            className: 'bgm-orange'
+                        },
+                        {
+                            title: 'Job Interview',
+                            start: new Date(y, m, 30),
+                            allDay: true,
+                            className: 'bgm-green'
+                        },
+                    ],
+                     
+                    //On Day Select
+                    
+                    
+                    
+                    
+                });
+
+                //Create and ddd Action button with dropdown in Calendar header. 
+                var actionMenu = '<ul class="actions actions-alt" id="fc-actions">' +
+                                    '<li class="dropdown">' +
+                                        '<a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>' +
+                                        '<ul class="dropdown-menu dropdown-menu-right">' +
+                                            '<li class="active">' +
+                                                '<a data-view="month" href="">Month View</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a data-view="basicWeek" href="">Week View</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a data-view="agendaWeek" href="">Agenda Week View</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a data-view="basicDay" href="">Day View</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a data-view="agendaDay" href="">Agenda Day View</a>' +
+                                            '</li>' +
+                                        '</ul>' +
+                                    '</div>' +
+                                '</li>';
+
+
+                cId.find('.fc-toolbar').append(actionMenu);
+                
+                //Event Tag Selector
+                (function(){
+                    $('body').on('click', '.event-tag > span', function(){
+                        $('.event-tag > span').removeClass('selected');
+                        $(this).addClass('selected');
+                    });
+                })();
+            
+                //Add new Event
+                $('body').on('click', '#addEvent', function(){
+                    var eventName = $('#eventName').val();
+                    var tagColor = $('.event-tag > span.selected').attr('data-tag');
+                        
+                    if (eventName != '') {
+                        //Render Event
+                        $('#calendar').fullCalendar('renderEvent',{
+                            title: eventName,
+                            start: $('#getStart').val(),
+                            end:  $('#getEnd').val(),
+                            allDay: true,
+                            className: tagColor
+                            
+                        },true ); //Stick the event
+                        
+                        $('#addNew-event form')[0].reset()
+                        $('#addNew-event').modal('hide');
+                    }
+                    
+                    else {
+                        $('#eventName').closest('.form-group').addClass('has-error');
+                    }
+                });  
+                
+              
+
+                //Calendar views
+                $('body').on('click', '#fc-actions [data-view]', function(e){
+                    e.preventDefault();
+                    var dataView = $(this).attr('data-view');
+                    
+                    $('#fc-actions li').removeClass('active');
+                    $(this).parent().addClass('active');
+                    cId.fullCalendar('changeView', dataView);  
+                });
+            });   
+           
+             
+        </script>
+        
+        
+    </body>
+</html>

@@ -32,15 +32,21 @@ System.register(['angular2/core', "angular2/http", "rxjs/Rx", "rxjs/Observable",
                 function RdvService(_http) {
                     this._http = _http;
                 }
-                RdvService.prototype.getRdvMedecin = function (idMedecin) {
+                RdvService.prototype.getRdvMedecins = function (idMedecin) {
                     this._http.get(app_config_1.config.urls.assistante.rdvs)
                         .map(function (rdvs) { return rdvs.json(); })
                         .catch(this.handleErrors);
                 };
-                RdvService.prototype.getRdvTherapeut = function (idTherapeut) {
+                RdvService.prototype.getRdvTherapeutes = function (idTherapeut) {
+                    this._http.get(app_config_1.config.urls.assistante.rdvs)
+                        .map(function (rdvs) { return rdvs.json(); })
+                        .catch(this.handleErrors);
                 };
                 RdvService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
+                };
+                RdvService.prototype.sendRdv = function (rdv) {
+                    //TODO: post here
                 };
                 RdvService = __decorate([
                     core_1.Injectable(), 

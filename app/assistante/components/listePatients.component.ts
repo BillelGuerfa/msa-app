@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit,NgZone  } from 'angular2/core';
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 import {Patient, PatientService} from "../services/patient.service";
+import {EmployeService, Employe} from "../../users/users.barrel";
 declare var $;
 @Component({
     selector: 'liste-patients',
@@ -11,12 +12,36 @@ declare var $;
 export class ListePatientsComponent implements OnInit, AfterViewInit  {
     patients : Patient[];
     selectedPatient: Patient;
-    constructor(private _patientService: PatientService, private _ngZone: NgZone) { 
+     employe:Employe = null;
+    actions = {
+        dossierMedical:{
+            isActive: true,
+            route: ""
+        },
+        ficheAnomalie:{
+            isActive: false,
+            route: "FicheAnomalieForm"
+        },
+        ficheSeance:{
+            isActive: false,
+            route: "FicheSeance"
+        }
+        
+    }
+    constructor(private _patientService: PatientService, private _employeService: EmployeService, private _ngZone: NgZone) { 
         this.patients = [];
     }
 
     ngOnInit() {
-         
+        if(this._employeService.employe){
+            this.employe = this._employeService.employe;
+            if(this.employe.poste === "ASSISTANTE"){
+                this.actions.ficheAnomalie.isActive = true;
+            }
+            else if(this.employe.poste === "THERAPEUTE"){
+                this.actions.ficheSeance.isActive = true;
+            }
+        }
      }
     selectPatient(id){
         this.selectedPatient = this.patients.filter((patient) => patient.idPatient === id)[0];
@@ -25,6 +50,9 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
         
     }
     gotoFicheAnomalie(id){
+        
+    }
+    gotoFicheSeance(id){
         
     }
     ngAfterViewInit(){
@@ -53,7 +81,7 @@ export class ListePatientsComponent implements OnInit, AfterViewInit  {
                                                     this.selectPatient(rows[0].id);
                                                 });
                                         });
-                                    }, 200);//Timeout because async and bootgrid intialization
+                                    }, 1);//Timeout because async and bootgrid intialization
                                 });
                             },
                             error => {
