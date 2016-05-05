@@ -16,10 +16,12 @@ export class DevisService {
                          .catch(this.handleErrors);
     }
     postDevis(devis : Devis) : Observable<Devis>{
+        //TODO : Check stock before posting
         return this._http.post(config.urls.agentPrestation.devis,JSON.stringify(devis))
                             .map(devis => <Devis> devis.json())
                             .catch(this.handleErrors);
     }
+    
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }

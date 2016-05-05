@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit, AfterViewInit  {
                              this.compte = compte;
                              console.log(compte);
                              this._router.navigate(['Home']);
+                             location.reload();
                          },
                          error =>  this.error = error);
     }

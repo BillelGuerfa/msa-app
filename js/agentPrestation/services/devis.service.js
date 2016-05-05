@@ -38,6 +38,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         .catch(this.handleErrors);
                 };
                 DevisService.prototype.postDevis = function (devis) {
+                    //TODO : Check stock before posting
                     return this._http.post(app_config_1.config.urls.agentPrestation.devis, JSON.stringify(devis))
                         .map(function (devis) { return devis.json(); })
                         .catch(this.handleErrors);

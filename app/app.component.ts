@@ -1,4 +1,4 @@
-import {Component,OnInit,ElementRef,AfterViewInit, NgZone } from "angular2/core";
+import {Component,OnInit,ElementRef,AfterViewInit, NgZone, OnChanges  } from "angular2/core";
 import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
 import {HomeComponent, HeaderComponent, NavComponent, FooterComponent} from "./shared/shared.barrel";
 import {AuthService, 
@@ -71,7 +71,7 @@ declare var Waves;
     
     
 ])
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit, AfterViewInit, OnChanges {
     loginPage: boolean;
     employe: Observable<Employe>;
     features: Feature[];
@@ -96,7 +96,9 @@ export class AppComponent implements OnInit, AfterViewInit {
              this._router.navigate(['Login']);
         }
     }
-
+    ngOnChanges(){
+        
+    }
     ngAfterViewInit() {
         this._zone.run(() => {
             /*

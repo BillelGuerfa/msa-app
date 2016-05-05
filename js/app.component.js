@@ -57,6 +57,8 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                         this._router.navigate(['Login']);
                     }
                 };
+                AppComponent.prototype.ngOnChanges = function () {
+                };
                 AppComponent.prototype.ngAfterViewInit = function () {
                     this._zone.run(function () {
                         /*
