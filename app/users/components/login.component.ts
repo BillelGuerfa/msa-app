@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit, AfterViewInit  {
     constructor(private _authService: AuthService, private _router: Router) { 
         this.compte = {nomUtilisateur : "" , motDePasse: ""};
     }
-        
     ngOnInit() { 
         
     }

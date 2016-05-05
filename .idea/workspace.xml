@@ -24,8 +24,8 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="782">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding>
                 <element signature="e#0#81#0" expanded="true" />
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
@@ -39,7 +39,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-              <folding />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +49,8 @@
       <file leaf-file-name="listePatients.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assistante/components/listePatients.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state relative-caret-position="408">
+              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#ListePatientsComponent#0" expanded="false" />
@@ -70,11 +72,12 @@
       <file leaf-file-name="calendrier.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assistante/components/calendrier.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="85">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
               <folding>
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#CalendrierComponent#0" expanded="false" />
-                <marker date="1461253493114" expanded="true" signature="7:42" placeholder="..." />
+                <marker date="1462123982386" expanded="true" signature="7:42" placeholder="..." />
+                <marker date="1462123982386" expanded="true" signature="11161:11645" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,10 +110,10 @@
       <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/users/components/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            <state relative-caret-position="561">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,15 +124,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
               <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding>
-                <marker date="1461848126509" expanded="true" signature="213:690" placeholder="{...}" />
-                <marker date="1461848126509" expanded="true" signature="253:690" placeholder="{...}" />
-                <marker date="1461848126509" expanded="true" signature="289:690" placeholder="{...}" />
-                <marker date="1461848126509" expanded="true" signature="328:690" placeholder="[...]" />
-                <marker date="1461848126509" expanded="true" signature="354:690" placeholder="{&quot;name&quot;: &quot;Gestion des RDV&quot;...}" />
-                <marker date="1461848126509" expanded="true" signature="493:690" placeholder="[...]" />
-                <marker date="1461848126509" expanded="true" signature="527:690" placeholder="{&quot;name&quot;: &quot;Medecin&quot;...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,9 +134,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1461249766701" expanded="true" signature="723:729" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -359,11 +352,12 @@
       <workItem from="1461168374993" duration="298000" />
       <workItem from="1461421683876" duration="596000" />
       <workItem from="1461875561186" duration="26000" />
+      <workItem from="1462213112013" duration="99000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10196000" />
+    <option name="totallyTimeSpent" value="10295000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +423,7 @@
         <state relative-caret-position="493">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -438,15 +432,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461848126509" expanded="true" signature="213:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="253:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="289:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="328:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="354:690" placeholder="{&quot;name&quot;: &quot;Gestion des RDV&quot;...}" />
-            <marker date="1461848126509" expanded="true" signature="493:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="527:690" placeholder="{&quot;name&quot;: &quot;Medecin&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -454,9 +440,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461249766701" expanded="true" signature="723:729" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -475,7 +459,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,7 +490,8 @@
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
             <element signature="n#!!block;n#ngAfterViewInit#0;n#CalendrierComponent#0" expanded="false" />
-            <marker date="1461253493114" expanded="true" signature="7:42" placeholder="..." />
+            <marker date="1462123982386" expanded="true" signature="7:42" placeholder="..." />
+            <marker date="1462123982386" expanded="true" signature="11161:11645" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -534,7 +521,7 @@
         <state relative-caret-position="493">
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -543,15 +530,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461848126509" expanded="true" signature="213:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="253:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="289:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="328:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="354:690" placeholder="{&quot;name&quot;: &quot;Gestion des RDV&quot;...}" />
-            <marker date="1461848126509" expanded="true" signature="493:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="527:690" placeholder="{&quot;name&quot;: &quot;Medecin&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -559,9 +538,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461249766701" expanded="true" signature="723:729" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +744,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -775,27 +754,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1461249766701" expanded="true" signature="723:729" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assistante/components/calendrier.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="85">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
             <element signature="n#!!block;n#ngAfterViewInit#0;n#CalendrierComponent#0" expanded="false" />
-            <marker date="1461253493114" expanded="true" signature="7:42" placeholder="..." />
+            <marker date="1462123982386" expanded="true" signature="7:42" placeholder="..." />
+            <marker date="1462123982386" expanded="true" signature="11161:11645" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assistante/components/listePatients.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state relative-caret-position="408">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#ListePatientsComponent#0" expanded="false" />
@@ -833,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        <state relative-caret-position="782">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
             <element signature="e#0#81#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
@@ -844,10 +822,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/users/components/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="561">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -856,15 +834,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <marker date="1461848126509" expanded="true" signature="213:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="253:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="289:690" placeholder="{...}" />
-            <marker date="1461848126509" expanded="true" signature="328:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="354:690" placeholder="{&quot;name&quot;: &quot;Gestion des RDV&quot;...}" />
-            <marker date="1461848126509" expanded="true" signature="493:690" placeholder="[...]" />
-            <marker date="1461848126509" expanded="true" signature="527:690" placeholder="{&quot;name&quot;: &quot;Medecin&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

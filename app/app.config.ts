@@ -1,20 +1,22 @@
 export var config = {
     urls: {
-        login: "./app/data/compte.json",
+        login: "./app/data/users/compte.json",
         assistante: {
-            patients: "./app/data/patients.json",
+            patients: "./app/data/assistante/patients.json",
             anomalie:"",
-            rdvs:"./app/data/rdvs.json"
-            
+            rdvs:"./app/data/assistante/rdvs.json"
         },
         stomatherapeut:{
-            
         },
         agentPrestation:{
+            organismes: "./app/data/agentPrestation/organismes.json",
+            commandes : "./app/data/agentPrestation/commandes.json",
+            devis: "./app/data/agentPrestation/devis.json",
+            factures: "./app/data/agentPrestation/factures.json"
             
         },
         users:{
-            employe: "./app/data/employe.json"
+            employe: "./app/data/users/employe.json"
         }
     }
 };

@@ -36,8 +36,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             formatters: {
                                 "actions": function (column, row) {
                                     return "<button title=\"Confirmer\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-check\"></i></button>" +
-                                        "<button title=\"Annuler\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-delete\"></i></button>" +
-                                        "<button title=\"Editer\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-edit\"></i></button>" +
                                         "<button title=\"Consulter\" class=\"btn btn-default btn-icon waves-effect waves-circle \"><i class=\"zmdi zmdi-eye\"></i></button>";
                                 },
                                 "link": function (column, row) {
