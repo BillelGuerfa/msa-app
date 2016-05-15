@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d554b86a-1777-4d86-b0d2-fb772800ccc7" name="Default" comment="" />
+    <list default="true" id="d554b86a-1777-4d86-b0d2-fb772800ccc7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/commande.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/commande.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/devis.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/devis.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/facture.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/facture.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/views/listeDevis.component.html" afterPath="$PROJECT_DIR$/app/agentPrestation/views/listeDevis.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assistante/components/searchRdvs.component.ts" afterPath="$PROJECT_DIR$/app/assistante/components/searchRdvs.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js" afterPath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js.map" afterPath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js.map" />
+    </list>
     <ignored path="msa-app.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,10 +39,10 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
+            <state relative-caret-position="952">
               <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding>
-                <element signature="e#0#81#0" expanded="true" />
+                <element signature="e#0#93#0" expanded="true" />
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
               </folding>
             </state>
@@ -39,9 +54,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,7 +62,7 @@
       <file leaf-file-name="listePatients.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assistante/components/listePatients.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="391">
               <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
@@ -72,7 +85,7 @@
       <file leaf-file-name="calendrier.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assistante/components/calendrier.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="51">
               <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
               <folding>
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#CalendrierComponent#0" expanded="false" />
@@ -114,6 +127,7 @@
               <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
+                <marker date="1462460984340" expanded="true" signature="1015:1044" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -353,11 +367,13 @@
       <workItem from="1461421683876" duration="596000" />
       <workItem from="1461875561186" duration="26000" />
       <workItem from="1462213112013" duration="99000" />
+      <workItem from="1462733154874" duration="182000" />
+      <workItem from="1462905583119" duration="178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10295000" />
+    <option name="totallyTimeSpent" value="10655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,6 +440,7 @@
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
+            <marker date="1462460984340" expanded="true" signature="1015:1044" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -449,7 +466,7 @@
         <state relative-caret-position="646">
           <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding>
-            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
           </folding>
         </state>
@@ -459,9 +476,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -522,6 +537,7 @@
           <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
+            <marker date="1462460984340" expanded="true" signature="1015:1044" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -542,19 +558,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent-detailDevis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent-detailDevis.html" />
     <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
           <folding>
-            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
           </folding>
         </state>
@@ -600,13 +610,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agent-detailDevis.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/agent-detailDevis.html" />
     <entry file="file://$PROJECT_DIR$/app/app.config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -621,13 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data/compte.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data/compte.json" />
     <entry file="file://$PROJECT_DIR$/app/shared/components/footer.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -744,9 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +756,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assistante/components/calendrier.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="51">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
             <element signature="n#!!block;n#ngAfterViewInit#0;n#CalendrierComponent#0" expanded="false" />
@@ -772,7 +768,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assistante/components/listePatients.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="391">
           <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
@@ -811,10 +807,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
+        <state relative-caret-position="952">
           <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
-            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
           </folding>
         </state>
@@ -826,6 +822,7 @@
           <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
+            <marker date="1462460984340" expanded="true" signature="1015:1044" placeholder="{...}" />
           </folding>
         </state>
       </provider>

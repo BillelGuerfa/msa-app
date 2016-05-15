@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel", "../../assistante/assistante.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, shared_barrel_1, assistante_barrel_1;
     var ListeDevisComponent;
     return {
         setters:[
@@ -19,14 +19,22 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (shared_barrel_1_1) {
+                shared_barrel_1 = shared_barrel_1_1;
+            },
+            function (assistante_barrel_1_1) {
+                assistante_barrel_1 = assistante_barrel_1_1;
             }],
         execute: function() {
             ListeDevisComponent = (function () {
-                function ListeDevisComponent(_zone, _router) {
+                function ListeDevisComponent(_zone, _router, _patientService) {
                     this._zone = _zone;
                     this._router = _router;
+                    this._patientService = _patientService;
                 }
-                ListeDevisComponent.prototype.ngOnInit = function () { };
+                ListeDevisComponent.prototype.ngOnInit = function () {
+                };
                 ListeDevisComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
                     this._zone.run(function () {
@@ -50,9 +58,10 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
                 ListeDevisComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-devis',
-                        templateUrl: 'app/agentPrestation/views/listeDevis.component.html'
+                        templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
+                        directives: [shared_barrel_1.AutocompleteDirective]
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router])
+                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router, assistante_barrel_1.PatientService])
                 ], ListeDevisComponent);
                 return ListeDevisComponent;
             }());

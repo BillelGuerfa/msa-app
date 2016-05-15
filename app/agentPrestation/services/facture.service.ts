@@ -12,7 +12,11 @@ export class FactureService {
     
     getFacture() :Observable<Facture[]> {
         return this._http.get(config.urls.agentPrestation.factures)
-                  .map(factures => <Facture[]> factures.json())
+                  .map(facturesSansCommandes => {
+                      let factures : Facture[];
+                      //TODO: get commandes here.
+                      return factures;
+                  })
                   .catch(this.handleErrors);
     }
     handleErrors(error: Response) {

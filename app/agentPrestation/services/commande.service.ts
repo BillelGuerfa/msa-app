@@ -13,7 +13,9 @@ export class CommandeService {
     
     getCommandes(): Observable<Commande[]>{
         return this._http.get(config.urls.agentPrestation.commandes)
-                         .map(commandes => <Commande[]> commandes.json())
+                         .map(commandes => {
+                             return commandes.json();
+                         })
                          .catch(this.handleErrors);
     }
     handleErrors(error: Response) {

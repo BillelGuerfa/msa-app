@@ -33,14 +33,35 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     this._http = _http;
                 }
                 DevisService.prototype.getDevis = function () {
+                    var _this = this;
                     return this._http.get(app_config_1.config.urls.agentPrestation.devis)
-                        .map(function (devis) { return devis.json(); })
+                        .map(function (devisSansLignes) {
+                        var devis;
+                        devis = devisSansLignes.json();
+                        devis.forEach(function (dev) {
+                            _this._http.get(app_config_1.config.urls.agentPrestation.lignesDevis + "?idDevis=" + dev.idDevis)
+                                .map(function (lignesDevis) {
+                                dev.listeLigneDevis = lignesDevis.json();
+                            });
+                        });
+                        return devis;
+                    })
                         .catch(this.handleErrors);
                 };
                 DevisService.prototype.postDevis = function (devis) {
+                    var _this = this;
                     //TODO : Check stock before posting
+                    //TODO : don't forget to post lignes devis After devis...
                     return this._http.post(app_config_1.config.urls.agentPrestation.devis, JSON.stringify(devis))
-                        .map(function (devis) { return devis.json(); })
+                        .map(function (devisReturned) {
+                        //TODO: post lignes devis after cheking devis here.
+                        if (devisReturned.json()) {
+                            _this._http.post(app_config_1.config.urls.agentPrestation.lignesDevis, JSON.stringify(devis.listeLigneDevis))
+                                .map(function (lignesDevis) {
+                            });
+                        }
+                        return devisReturned.json();
+                    })
                         .catch(this.handleErrors);
                 };
                 DevisService.prototype.handleErrors = function (error) {

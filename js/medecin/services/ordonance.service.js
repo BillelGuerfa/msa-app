@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Rx"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,20 +10,31 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, http_1, app_config_1;
     var OrdonanceService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            }],
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (app_config_1_1) {
+                app_config_1 = app_config_1_1;
+            },
+            function (_1) {}],
         execute: function() {
             OrdonanceService = (function () {
-                function OrdonanceService() {
+                function OrdonanceService(_http) {
+                    this._http = _http;
                 }
+                OrdonanceService.prototype.getOrdonance = function (patient) {
+                    this._http.get(app_config_1.config.urls.medecin.ordonance);
+                };
                 OrdonanceService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], OrdonanceService);
                 return OrdonanceService;
             }());

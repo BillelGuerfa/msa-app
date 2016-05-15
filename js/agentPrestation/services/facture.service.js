@@ -34,7 +34,11 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                 }
                 FactureService.prototype.getFacture = function () {
                     return this._http.get(app_config_1.config.urls.agentPrestation.factures)
-                        .map(function (factures) { return factures.json(); })
+                        .map(function (facturesSansCommandes) {
+                        var factures;
+                        //TODO: get commandes here.
+                        return factures;
+                    })
                         .catch(this.handleErrors);
                 };
                 FactureService.prototype.handleErrors = function (error) {

@@ -18,7 +18,12 @@ System.register([], function(exports_1, context_1) {
                         organismes: "./app/data/agentPrestation/organismes.json",
                         commandes: "./app/data/agentPrestation/commandes.json",
                         devis: "./app/data/agentPrestation/devis.json",
+                        lignesDevis: "./app/data/agentPrestation/lignesDevis.json",
                         factures: "./app/data/agentPrestation/factures.json"
+                    },
+                    medecin: {
+                        ordonances: "",
+                        ordonance: "./app/data/medecin/ordonance.json"
                     },
                     users: {
                         employe: "./app/data/users/employe.json"

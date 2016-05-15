@@ -33,8 +33,8 @@ export class SearchRdvsComponent implements OnInit {
     },
     {
         "idPatient": "P39",
-        "nom": "Guerfa",
-        "prenom": "Billel",
+        "nom": "Chaibi",
+        "prenom": "Asma",
         "numTelephone":  "0542765526" ,
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",
@@ -48,8 +48,8 @@ export class SearchRdvsComponent implements OnInit {
     },
     {
         "idPatient": "10",
-        "nom": "Guerfa",
-        "prenom": "Billel",
+        "nom": "Benbelkacem",
+        "prenom": "Sonia",
         "numTelephone":  "0542765526" ,
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",

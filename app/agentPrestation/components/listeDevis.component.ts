@@ -1,15 +1,20 @@
 import { Component, OnInit, AfterViewInit,NgZone } from 'angular2/core';
 import {Router } from "angular2/router";
+import {AutocompleteDirective} from "../../shared/shared.barrel";
+import {PatientService} from "../../assistante/assistante.barrel";
 declare var $;
 @Component({
     selector: 'liste-devis',
-    templateUrl: 'app/agentPrestation/views/listeDevis.component.html'
+    templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
+    directives: [AutocompleteDirective]
 })
 
 export class ListeDevisComponent implements OnInit, AfterViewInit  {
-    constructor(private _zone:NgZone, private _router:Router) { }
+    constructor(private _zone:NgZone, private _router:Router, private _patientService:PatientService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        
+     }
     ngAfterViewInit(){
         this._zone.run(()=>{
             $("#data-table-selection").bootgrid({

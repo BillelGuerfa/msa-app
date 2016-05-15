@@ -1,11 +1,19 @@
 import { Injectable } from 'angular2/core';
+import { Http, Response } from "angular2/http";
 import {Employe} from '../../users/services/employe.service';
 import {Produit} from '../../magasinier/services/produit.service';
 import {Patient} from '../../assistante/services/patient.service';
+import {config} from "../../app.config";
+import {Observable} from "rxjs/Observable";
+import "rxjs/Rx";
 @Injectable()
 export class OrdonanceService {
 
-    constructor() { }
+    constructor(private _http:Http) { }
+    
+    getOrdonance(patient: Patient){
+        this._http.get(config.urls.medecin.ordonance);
+    }
 
 }
 export interface Ordonance{

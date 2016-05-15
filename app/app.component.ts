@@ -29,6 +29,11 @@ import {
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
+declare var $elem;
+declare var $elem2;
+declare var swal,html;
+declare var $animArray,$animation,$animationDuration,$animationIn,$animationOut;
+declare var $this,$dropdownMenu;
 @Component({
     selector: 'my-app',
     templateUrl: "app/app.component.html",

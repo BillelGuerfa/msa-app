@@ -12,13 +12,34 @@ export class DevisService {
     
     getDevis() :  Observable<Devis[]>{
         return this._http.get(config.urls.agentPrestation.devis)
-                         .map(devis => <Devis[]> devis.json())
+                         .map(devisSansLignes => {
+                             let devis : Devis[]; 
+                             devis = devisSansLignes.json();
+                             devis.forEach(dev =>{
+                                 this._http.get(config.urls.agentPrestation.lignesDevis+"?idDevis="+dev.idDevis)
+                                 .map(lignesDevis => {
+                                     dev.listeLigneDevis = lignesDevis.json();
+                                 })
+                             });
+                             return devis;
+                          })
                          .catch(this.handleErrors);
     }
     postDevis(devis : Devis) : Observable<Devis>{
         //TODO : Check stock before posting
+        //TODO : don't forget to post lignes devis After devis...
         return this._http.post(config.urls.agentPrestation.devis,JSON.stringify(devis))
-                            .map(devis => <Devis> devis.json())
+                            .map(devisReturned => {
+                                //TODO: post lignes devis after cheking devis here.
+                                if(devisReturned.json()){
+                                    
+                                    this._http.post(config.urls.agentPrestation.lignesDevis,JSON.stringify(devis.listeLigneDevis))
+                                              .map(lignesDevis => {
+                                                  
+                                              })
+                                }
+                                return <Devis> devisReturned.json();
+                            })
                             .catch(this.handleErrors);
     }
     

@@ -34,7 +34,9 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                 }
                 CommandeService.prototype.getCommandes = function () {
                     return this._http.get(app_config_1.config.urls.agentPrestation.commandes)
-                        .map(function (commandes) { return commandes.json(); })
+                        .map(function (commandes) {
+                        return commandes.json();
+                    })
                         .catch(this.handleErrors);
                 };
                 CommandeService.prototype.handleErrors = function (error) {
