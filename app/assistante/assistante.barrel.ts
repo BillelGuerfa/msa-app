@@ -6,5 +6,5 @@ export {ListePatientsComponent} from "./components/listePatients.component";
 export {SearchRdvsComponent} from "./components/searchRdvs.component";
 //Services :
 export {AnomalieService} from "./services/anomalie.service";
-export {PatientService} from "./services/patient.service";
+export {PatientService, Patient} from "./services/patient.service";
 export {RdvService} from "./services/rdv.service";

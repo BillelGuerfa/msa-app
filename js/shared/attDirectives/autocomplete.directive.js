@@ -25,6 +25,30 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.labelsDataSet = [];
                     this.map = {};
                 }
+                AutocompleteDirective.prototype.ngOnChanges = function (changes) {
+                    var _this = this;
+                    this.objectsDataSet = changes.objectsDataSet.currentValue;
+                    if (this.objectsDataSet) {
+                        console.log(this.objectsDataSet);
+                        this.setLabels();
+                        console.log(this.labelsDataSet);
+                        this._zone.run(function () {
+                            $(_this._el.nativeElement).typeahead({
+                                hint: true,
+                                highlight: true,
+                                minLength: 1
+                            }, {
+                                name: _this.name,
+                                //TODO: Add list of clients here.
+                                source: _this.substringMatcher(_this.labelsDataSet)
+                            });
+                            $(_this._el.nativeElement).bind('typeahead:select', function (ev, suggestion) {
+                                //TODO: handle the selection here.
+                                _this.handleFunction(_this.map[suggestion]);
+                            });
+                        });
+                    }
+                };
                 AutocompleteDirective.prototype.substringMatcher = function (strs) {
                     return function findMatches(q, cb) {
                         var matches, substrRegex;
@@ -45,12 +69,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 AutocompleteDirective.prototype.setLabels = function () {
                     var _this = this;
                     var label;
-                    this.objectsDataSet.forEach(function (object) {
-                        label = _this.uniqLabel(object[_this.labelAtt]);
-                        console.log(label);
-                        _this.map[label] = object;
-                        _this.labelsDataSet.push(label);
-                    });
+                    if (this.objectsDataSet) {
+                        this.objectsDataSet.forEach(function (object) {
+                            label = _this.uniqLabel(object[_this.labelAtt]);
+                            console.log(label);
+                            _this.map[label] = object;
+                            _this.labelsDataSet.push(label);
+                        });
+                    }
                 };
                 AutocompleteDirective.prototype.uniqLabel = function (label) {
                     var blanc = "";
@@ -61,25 +87,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     return label;
                 };
                 AutocompleteDirective.prototype.ngOnInit = function () {
-                    var _this = this;
-                    console.log(this.objectsDataSet);
-                    this.setLabels();
-                    console.log(this.labelsDataSet);
-                    this._zone.run(function () {
-                        $(_this._el.nativeElement).typeahead({
-                            hint: true,
-                            highlight: true,
-                            minLength: 1
-                        }, {
-                            name: _this.name,
-                            //TODO: Add list of clients here.
-                            source: _this.substringMatcher(_this.labelsDataSet)
-                        });
-                        $(_this._el.nativeElement).bind('typeahead:select', function (ev, suggestion) {
-                            //TODO: handle the selection here.
-                            _this.handleFunction(_this.map[suggestion]);
-                        });
-                    });
                 };
                 __decorate([
                     core_1.Input(), 

@@ -30,7 +30,8 @@ System.register(["./components/calendrier.component", "./components/ficheAnomali
             },
             function (patient_service_1_1) {
                 exports_1({
-                    "PatientService": patient_service_1_1["PatientService"]
+                    "PatientService": patient_service_1_1["PatientService"],
+                    "Patient": patient_service_1_1["Patient"]
                 });
             },
             function (rdv_service_1_1) {
