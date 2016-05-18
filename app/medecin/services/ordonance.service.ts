@@ -11,8 +11,22 @@ export class OrdonanceService {
 
     constructor(private _http:Http) { }
     
-    getOrdonance(patient: Patient){
-        this._http.get(config.urls.medecin.ordonance);
+    getOrdonance(patient: Patient) : Observable<Observable<Ordonance>>{ 
+        return this._http.get(config.urls.medecin.ordonance+"?idPatient="+patient.idPatient)
+                      .map((ordonanceSansLignes) => {
+                          let ordonance: Ordonance = ordonanceSansLignes.json();
+                         return this._http.get(config.urls.medecin.lignesOrdonance)
+                                    .map((lignesOrdonance )=>{
+                                        ordonance.lignesOrdonance = lignesOrdonance.json();
+                                        return ordonance;
+                                    })
+                                    .catch(this.handleErrors);
+                      })
+                      .catch(this.handleErrors);
+    }
+    
+    handleErrors(error: Response) {
+        return Observable.throw(error.json().error || 'Server error');
     }
 
 }
@@ -21,6 +35,7 @@ export interface Ordonance{
     date: number;
     medecin: Employe;
     patient: Patient;
+    lignesOrdonance: LigneOrdonance[];
     
 }
 export interface LigneOrdonance{

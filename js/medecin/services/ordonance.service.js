@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Rx"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Observable", "rxjs/Rx"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Rx"
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, app_config_1;
+    var core_1, http_1, app_config_1, Observable_1;
     var OrdonanceService;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Rx"
             function (app_config_1_1) {
                 app_config_1 = app_config_1_1;
             },
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            },
             function (_1) {}],
         execute: function() {
             OrdonanceService = (function () {
@@ -30,7 +33,21 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Rx"
                     this._http = _http;
                 }
                 OrdonanceService.prototype.getOrdonance = function (patient) {
-                    this._http.get(app_config_1.config.urls.medecin.ordonance);
+                    var _this = this;
+                    return this._http.get(app_config_1.config.urls.medecin.ordonance + "?idPatient=" + patient.idPatient)
+                        .map(function (ordonanceSansLignes) {
+                        var ordonance = ordonanceSansLignes.json();
+                        return _this._http.get(app_config_1.config.urls.medecin.lignesOrdonance)
+                            .map(function (lignesOrdonance) {
+                            ordonance.lignesOrdonance = lignesOrdonance.json();
+                            return ordonance;
+                        })
+                            .catch(_this.handleErrors);
+                    })
+                        .catch(this.handleErrors);
+                };
+                OrdonanceService.prototype.handleErrors = function (error) {
+                    return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
                 OrdonanceService = __decorate([
                     core_1.Injectable(), 

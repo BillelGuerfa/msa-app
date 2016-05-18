@@ -23,7 +23,11 @@ System.register([], function(exports_1, context_1) {
                     },
                     medecin: {
                         ordonances: "",
-                        ordonance: "./app/data/medecin/ordonance.json"
+                        ordonance: "./app/data/medecin/ordonance.json",
+                        lignesOrdonance: "./app/data/medecin/lignesOrdonance.json"
+                    },
+                    magasinier: {
+                        produits: "./app/data/magasinier/produits.json"
                     },
                     users: {
                         employe: "./app/data/users/employe.json"

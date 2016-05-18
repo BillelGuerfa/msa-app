@@ -1,0 +1,35 @@
+[
+    {
+        "idLigneOrdonance": 22,
+        "frequenceUtilisation": 1,
+        "produit": {
+            "idProduit": 22,
+            "libelle": "Poche",
+            "gamme": "colostomie",
+            "prixUnitaire": 150,
+            "ttv": 200
+        }
+    },
+    {
+        "idLigneOrdonance": 23,
+        "frequenceUtilisation": 1,
+        "produit": {
+            "idProduit": 23,
+            "libelle": "Seringue",
+            "gamme": "colostomie",
+            "prixUnitaire": 50,
+            "ttv": 200
+        }
+    },
+    {
+        "idLigneOrdonance": 24,
+        "frequenceUtilisation": 3,
+        "produit": {
+            "idProduit": 24,
+            "libelle": "Cachet",
+            "gamme": "colostomie",
+            "prixUnitaire": 20,
+            "ttv": 200
+        }
+    }
+]

@@ -1,0 +1,1 @@
+export{OrdonanceService, Ordonance} from "./services/ordonance.service";

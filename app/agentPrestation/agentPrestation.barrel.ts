@@ -9,6 +9,6 @@ export {DetailCommandeComponent} from "./components/detailCommande.component";
 export {DetailFactureComponent} from "./components/detailFacture.component";
 //services
 export {CommandeService} from "./services/commande.service";
-export {DevisService} from "./services/devis.service";
+export {DevisService, Devis, LigneDevis} from "./services/devis.service";
 export {FactureService} from "./services/facture.service";
 export {OrganismeService} from "./services/organisme.service";

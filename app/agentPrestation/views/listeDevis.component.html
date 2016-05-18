@@ -168,7 +168,7 @@
 
                     
 
-                        <div class="col-md-12">
+                        <div class="col-md-12" *ngIf="newDevis.listeLigneDevis" >
                             <div class="card">
                                 <div class="card-header">
                                     <h2>LISTE DES PRODUITS </h2>
@@ -187,31 +187,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>poche1</td>
-                                                <td>20</td>
-                                                <td>350</td>
-                                                <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
-                                                <td> <button><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
+                                            <tr *ngFor="#ligneDevis of newDevis.listeLigneDevis" >
+                                                <td>{{ligneDevis.produit.idProduit}}</td>
+                                                <td>{{ligneDevis.produit.libelle}}</td>
+                                                <td>{{ligneDevis.quantite}}</td>
+                                                <td>{{ligneDevis.produit.prixUnitaire}}</td>
+                                                <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'+')"><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
+                                                <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'-')"><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
                                             </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>poche1</td>
-                                                <td>20</td>
-                                                <td>350</td>
-                                                <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
-                                                <td> <button><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>poche1</td>
-                                                <td>20</td>
-                                                <td>350</td>
-                                                <td> <button><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
-                                                <td> <button><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -219,7 +202,7 @@
                         </div>
 
                     
-                    <label>PRIX TOTAL :1050 DA</label>
+                    <label *ngIf="newDevis.listeLigneDevis">PRIX TOTAL : {{newDevisTotal()}} </label>
 
                     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 

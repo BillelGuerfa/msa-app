@@ -44,6 +44,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                                 dev.listeLigneDevis = lignesDevis.json();
                             });
                         });
+                        //TODO: fix async error
                         return devis;
                     })
                         .catch(this.handleErrors);

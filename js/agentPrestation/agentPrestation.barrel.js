@@ -50,7 +50,9 @@ System.register(["./components/listeDevis.component", "./components/listeCommand
             },
             function (devis_service_1_1) {
                 exports_1({
-                    "DevisService": devis_service_1_1["DevisService"]
+                    "DevisService": devis_service_1_1["DevisService"],
+                    "Devis": devis_service_1_1["Devis"],
+                    "LigneDevis": devis_service_1_1["LigneDevis"]
                 });
             },
             function (facture_service_1_1) {
