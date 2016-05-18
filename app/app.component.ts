@@ -21,11 +21,17 @@ import {ListeDevisComponent,
         ListeOrganismesComponent,
         DetailDevisComponent,
         DetailCommandeComponent,
-        DetailFactureComponent } from "./agentPrestation/agentPrestation.barrel";
+        DetailFactureComponent,
+        DevisService,
+        FactureService,
+        CommandeService } from "./agentPrestation/agentPrestation.barrel";
 import {
         FicheSeanceFormComponent,
         HistoriqueVisitesComponent
         } from "./therapeute/therapeute.barrel";
+import {
+        OrdonanceService
+        } from "./medecin/medecin.barrel"        
 import {Observable} from "rxjs/Rx";
 declare var $;
 declare var Waves;
@@ -43,7 +49,11 @@ declare var $this,$dropdownMenu;
                 FeatureService, 
                 PatientService, 
                 AnomalieService, 
-                RdvService],
+                RdvService,
+                OrdonanceService,
+                DevisService,
+                FactureService,
+                CommandeService],
                 
     directives: [ROUTER_DIRECTIVES ,
                  HeaderComponent,

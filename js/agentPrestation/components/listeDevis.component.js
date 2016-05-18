@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel", "rxjs/Rx", "../../assistante/assistante.barrel", "../../medecin/medecin.barrel"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel", "rxjs/Rx", "../../assistante/assistante.barrel", "../../medecin/medecin.barrel", "../services/devis.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, shared_barrel_1, assistante_barrel_1, medecin_barrel_1;
+    var core_1, router_1, shared_barrel_1, assistante_barrel_1, medecin_barrel_1, devis_service_1;
     var ListeDevisComponent;
     return {
         setters:[
@@ -29,12 +29,16 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
             },
             function (medecin_barrel_1_1) {
                 medecin_barrel_1 = medecin_barrel_1_1;
+            },
+            function (devis_service_1_1) {
+                devis_service_1 = devis_service_1_1;
             }],
         execute: function() {
             ListeDevisComponent = (function () {
-                function ListeDevisComponent(_zone, _router, _patientService, _ordonanceService) {
+                function ListeDevisComponent(_zone, _devisService, _router, _patientService, _ordonanceService) {
                     var _this = this;
                     this._zone = _zone;
+                    this._devisService = _devisService;
                     this._router = _router;
                     this._patientService = _patientService;
                     this._ordonanceService = _ordonanceService;
@@ -68,21 +72,26 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                 };
                 ListeDevisComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
-                    this._zone.run(function () {
-                        $("#data-table-selection").bootgrid({
-                            css: {
-                                icon: 'zmdi icon',
-                                iconColumns: 'zmdi-view-module',
-                                iconDown: 'zmdi-expand-more',
-                                iconRefresh: 'zmdi-refresh',
-                                iconUp: 'zmdi-expand-less'
-                            },
-                            selection: true,
-                            rowSelect: true,
-                            keepSelection: true
-                        }).on("selected.rs.jquery.bootgrid", function (e, rows) {
-                            //TODO: Select event here
-                            _this._router.navigate(["DetailDevis"]);
+                    this._devisService.getDevis().subscribe(function (devis) {
+                        _this.devis = devis;
+                        _this._zone.run(function () {
+                            setTimeout(function () {
+                                $("#data-table-selection").bootgrid({
+                                    css: {
+                                        icon: 'zmdi icon',
+                                        iconColumns: 'zmdi-view-module',
+                                        iconDown: 'zmdi-expand-more',
+                                        iconRefresh: 'zmdi-refresh',
+                                        iconUp: 'zmdi-expand-less'
+                                    },
+                                    selection: true,
+                                    rowSelect: true,
+                                    keepSelection: true
+                                }).on("selected.rs.jquery.bootgrid", function (e, rows) {
+                                    //TODO: Select event here
+                                    _this._router.navigate(["DetailDevis"]);
+                                });
+                            }, 0);
                         });
                     });
                 };
@@ -108,10 +117,9 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                     core_1.Component({
                         selector: 'liste-devis',
                         templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
-                        directives: [shared_barrel_1.AutocompleteDirective],
-                        providers: [medecin_barrel_1.OrdonanceService]
+                        directives: [shared_barrel_1.AutocompleteDirective]
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router, assistante_barrel_1.PatientService, medecin_barrel_1.OrdonanceService])
+                    __metadata('design:paramtypes', [core_1.NgZone, devis_service_1.DevisService, router_1.Router, assistante_barrel_1.PatientService, medecin_barrel_1.OrdonanceService])
                 ], ListeDevisComponent);
                 return ListeDevisComponent;
             }());

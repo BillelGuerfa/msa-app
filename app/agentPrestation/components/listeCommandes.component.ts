@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit,NgZone} from 'angular2/core';
 import {Router } from "angular2/router";
-import {Commande} from "../services/commande.service";
+import {Commande, CommandeService} from "../services/commande.service";
+import {DevisService} from "../services/devis.service";
 declare var $;
 @Component({
     selector: 'liste-commandes',
@@ -8,7 +9,7 @@ declare var $;
 })
 export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     commandes: Commande[];
-    constructor(private _zone:NgZone, private _router:Router ) { }
+    constructor(private _zone:NgZone, private _router:Router, private _commandesService: CommandeService,private _devisService:DevisService) { }
 
     ngOnInit() { }
     ngAfterViewInit(){

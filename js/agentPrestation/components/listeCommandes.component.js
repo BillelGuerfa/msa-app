@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "../services/commande.service", "../services/devis.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, commande_service_1, devis_service_1;
     var ListeCommandesComponent;
     return {
         setters:[
@@ -19,12 +19,20 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (commande_service_1_1) {
+                commande_service_1 = commande_service_1_1;
+            },
+            function (devis_service_1_1) {
+                devis_service_1 = devis_service_1_1;
             }],
         execute: function() {
             ListeCommandesComponent = (function () {
-                function ListeCommandesComponent(_zone, _router) {
+                function ListeCommandesComponent(_zone, _router, _commandesService, _devisService) {
                     this._zone = _zone;
                     this._router = _router;
+                    this._commandesService = _commandesService;
+                    this._devisService = _devisService;
                 }
                 ListeCommandesComponent.prototype.ngOnInit = function () { };
                 ListeCommandesComponent.prototype.ngAfterViewInit = function () {
@@ -52,7 +60,7 @@ System.register(['angular2/core', "angular2/router"], function(exports_1, contex
                         selector: 'liste-commandes',
                         templateUrl: 'app/agentPrestation/views/listeCommandes.component.html'
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router])
+                    __metadata('design:paramtypes', [core_1.NgZone, router_1.Router, commande_service_1.CommandeService, devis_service_1.DevisService])
                 ], ListeCommandesComponent);
                 return ListeCommandesComponent;
             }());

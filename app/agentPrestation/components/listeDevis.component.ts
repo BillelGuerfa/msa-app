@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit,NgZone, OnChanges  } from 'angular2/core';
+import { Component, OnInit, AfterViewInit,NgZone, OnChanges ,Inject } from 'angular2/core';
 import {Router } from "angular2/router";
 import {AutocompleteDirective} from "../../shared/shared.barrel";
 import {Observable} from "rxjs/Observable";
@@ -6,23 +6,25 @@ import "rxjs/Rx";
 import {PatientService, Patient} from "../../assistante/assistante.barrel";
 import {OrdonanceService, Ordonance} from "../../medecin/medecin.barrel";
 import {Produit} from "../../magasinier/magasinier.barrel";
-import {DevisService, Devis, LigneDevis} from "../../agentPrestation/agentPrestation.barrel";
+import {DevisService, Devis,LigneDevis} from "../services/devis.service";
 declare var $;
 @Component({
     selector: 'liste-devis',
     templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
-    directives: [AutocompleteDirective],
-    providers: [OrdonanceService]
+    directives: [AutocompleteDirective]
 })
-
 export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
     patients : Observable<Patient[]>;
     patient : Patient;
     ordonancePatient : Ordonance;
+    devis: Devis[];
     newDevis : Devis = {};
-    constructor(private _zone:NgZone, private _router:Router,
-     private _patientService:PatientService,
-     private _ordonanceService:OrdonanceService) { }
+    constructor(private _zone:NgZone,
+                private _devisService:DevisService,
+                private _router:Router,
+                private _patientService:PatientService,
+                private _ordonanceService:OrdonanceService
+                ) { }
     ngOnChanges(changes : any){
         //this.patient = changes.patient.currentValue;
         console.log(this.patient);
@@ -32,28 +34,35 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
         
         this.patients = this._patientService.getPatients();
         
+        
      }
     ngAfterViewInit(){
-        
-        this._zone.run(()=>{
-            $("#data-table-selection").bootgrid({
-                css: {
-                    icon: 'zmdi icon',
-                    iconColumns: 'zmdi-view-module',
-                    iconDown: 'zmdi-expand-more',
-                    iconRefresh: 'zmdi-refresh',
-                    iconUp: 'zmdi-expand-less'
-                },
-                selection: true,
-                rowSelect: true,
-                keepSelection: true
-            }).on("selected.rs.jquery.bootgrid", (e, rows) =>
-                  {
-                     //TODO: Select event here
-                     this._router.navigate(["DetailDevis"]);
-                     
-             });
+        this._devisService.getDevis().subscribe(devis => {
+            this.devis = devis;
+            this._zone.run(()=>{
+                setTimeout(()=>{
+                    $("#data-table-selection").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                    selection: true,
+                    rowSelect: true,
+                    keepSelection: true
+                }).on("selected.rs.jquery.bootgrid", (e, rows) =>
+                    {
+                        //TODO: Select event here
+                        this._router.navigate(["DetailDevis"]);
+                        
+                });
+                },0)
+                
+            });
         });
+        
     }
     selectPatient = (patient) => {
             this.patient = patient;

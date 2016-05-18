@@ -33,21 +33,18 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     this._http = _http;
                 }
                 DevisService.prototype.getDevis = function () {
-                    var _this = this;
                     return this._http.get(app_config_1.config.urls.agentPrestation.devis)
                         .map(function (devisSansLignes) {
-                        var devis;
-                        devis = devisSansLignes.json();
-                        devis.forEach(function (dev) {
-                            _this._http.get(app_config_1.config.urls.agentPrestation.lignesDevis + "?idDevis=" + dev.idDevis)
-                                .map(function (lignesDevis) {
-                                dev.listeLigneDevis = lignesDevis.json();
-                            });
-                        });
-                        //TODO: fix async error
-                        return devis;
+                        return devisSansLignes.json();
                     })
                         .catch(this.handleErrors);
+                };
+                DevisService.prototype.getLigneDevis = function (devis) {
+                    return this._http.get(app_config_1.config.urls.agentPrestation.lignesDevis + "?idDevis=" + devis.idDevis)
+                        .map(function (lignesDevis) {
+                        devis.listeLigneDevis = lignesDevis.json();
+                        return devis;
+                    });
                 };
                 DevisService.prototype.postDevis = function (devis) {
                     var _this = this;

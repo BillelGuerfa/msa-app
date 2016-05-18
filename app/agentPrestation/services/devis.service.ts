@@ -1,4 +1,4 @@
-import { Injectable } from 'angular2/core';
+import { Injectable  } from 'angular2/core';
 import {Produit} from '../../magasinier/services/produit.service';
 import {Patient} from '../../assistante/services/patient.service';
 import { Http, Response } from "angular2/http";
@@ -7,24 +7,21 @@ import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 @Injectable()
 export class DevisService {
-
-    constructor(private _http: Http) { }
-    
+    constructor(private _http:Http) { }
     getDevis() :  Observable<Devis[]>{
         return this._http.get(config.urls.agentPrestation.devis)
                          .map(devisSansLignes => {
-                             let devis : Devis[]; 
-                             devis = devisSansLignes.json();
-                             devis.forEach(dev =>{
-                                 this._http.get(config.urls.agentPrestation.lignesDevis+"?idDevis="+dev.idDevis)
-                                 .map(lignesDevis => {
-                                     dev.listeLigneDevis = lignesDevis.json();
-                                 })
-                             });
-                             //TODO: fix async error
-                             return devis;
+                             return devisSansLignes.json();
                           })
                          .catch(this.handleErrors);
+    }
+    getLigneDevis(devis: Devis) : Observable<Devis>{
+            return this._http.get(config.urls.agentPrestation.lignesDevis+"?idDevis="+devis.idDevis)
+                         .map(lignesDevis => {
+                            devis.listeLigneDevis = lignesDevis.json();
+                            return devis;
+                          });
+                            
     }
     postDevis(devis : Devis) : Observable<Devis>{
         //TODO : Check stock before posting
@@ -37,7 +34,7 @@ export class DevisService {
                                     this._http.post(config.urls.agentPrestation.lignesDevis,JSON.stringify(devis.listeLigneDevis))
                                               .map(lignesDevis => {
                                                   
-                                              })
+                                              });
                                 }
                                 return <Devis> devisReturned.json();
                             })

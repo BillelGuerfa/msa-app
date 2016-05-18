@@ -37,77 +37,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>10238</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10239</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10240</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10241</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10242</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10243</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10244</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10245</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                        </tr>
-                        <tr>
-                            <td>10246</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
+                        <tr *ngFor="#devi of devis" >
+                            <td>{{devi.idDevis}}</td>
+                            <td>{{devi.datePrescription}}</td>
+                            <td>{{devi.patient.idPatient}}</td>
+                            <td>{{devi.patient.nom}}</td>
+                            <td>{{devi.patient.prenom}}</td>
+                            <td>{{devi.dureValidation}}</td>
                         </tr>
                     </tbody>
                 </table>

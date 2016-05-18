@@ -1,9 +1,14 @@
-[
-    {
+[{
+    "idDevis": 22,
+    "datePrescription": 1462120173939,
+    "dureValidation": 1462120173939,
+    "modePayment": "Cash",
+    "etat": "Payé",
+    "patient": {
         "idPatient": "P22",
         "nom": "Guerfa",
         "prenom": "Billel",
-        "numTelephone":  "0542765526" ,
+        "numTelephone": "0542765526",
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",
         "typeStomie": "colostomie",
@@ -12,9 +17,15 @@
         "gamme": "laGamme",
         "nombrepocheJ": 2,
         "referenceDossier": "P22",
-        "nss" : "07523698542"
-    },
-    {
+        "nss": "07523698542"
+    }
+}, {
+    "idDevis": 23,
+    "datePrescription": 1462120173939,
+    "dureValidation": 1462120173939,
+    "modePayment": "Prise en charge",
+    "etat": "Payé",
+    "patient": {
         "idPatient": "P39",
         "nom": "Chaibi",
         "prenom": "Asma",
@@ -28,8 +39,14 @@
         "nombrepocheJ": 2,
         "referenceDossier": "P39",
         "nss" : "07523698542"
-    },
-    {
+    }
+}, {
+    "idDevis": 24,
+    "datePrescription": 1462120173939,
+    "dureValidation": 1462120173939,
+    "modePayment": "Prise en charge",
+    "etat": "Payé",
+    "patient": {
         "idPatient": "P11",
         "nom": "Benbelkacem",
         "prenom": "Sonia",
@@ -43,8 +60,14 @@
         "nombrepocheJ": 2,
         "referenceDossier": "P10",
         "nss" : "07523698542"
-    },
-    {
+    }
+}, {
+    "idDevis": 25,
+    "datePrescription": 1462120173939,
+    "dureValidation": 1462120173939,
+    "modePayment": "Prise en charge",
+    "etat": "Payé",
+    "patient": {
         "idPatient": "P10",
         "nom": "Yousnadj",
         "prenom": "Yacine Walid",
@@ -59,4 +82,4 @@
         "referenceDossier": "P10",
         "nss" : "07523698542"
     }
-]
+}]

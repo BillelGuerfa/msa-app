@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "./users/users.barrel", "./assistante/assistante.barrel", "./agentPrestation/agentPrestation.barrel", "./therapeute/therapeute.barrel"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "./users/users.barrel", "./assistante/assistante.barrel", "./agentPrestation/agentPrestation.barrel", "./therapeute/therapeute.barrel", "./medecin/medecin.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, shared_barrel_1, users_barrel_1, assistante_barrel_1, agentPrestation_barrel_1, therapeute_barrel_1;
+    var core_1, router_1, shared_barrel_1, users_barrel_1, assistante_barrel_1, agentPrestation_barrel_1, therapeute_barrel_1, medecin_barrel_1;
     var AppComponent;
     return {
         setters:[
@@ -34,6 +34,9 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
             },
             function (therapeute_barrel_1_1) {
                 therapeute_barrel_1 = therapeute_barrel_1_1;
+            },
+            function (medecin_barrel_1_1) {
+                medecin_barrel_1 = medecin_barrel_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -820,7 +823,11 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                             users_barrel_1.FeatureService,
                             assistante_barrel_1.PatientService,
                             assistante_barrel_1.AnomalieService,
-                            assistante_barrel_1.RdvService],
+                            assistante_barrel_1.RdvService,
+                            medecin_barrel_1.OrdonanceService,
+                            agentPrestation_barrel_1.DevisService,
+                            agentPrestation_barrel_1.FactureService,
+                            agentPrestation_barrel_1.CommandeService],
                         directives: [router_1.ROUTER_DIRECTIVES,
                             shared_barrel_1.HeaderComponent,
                             shared_barrel_1.NavComponent,
