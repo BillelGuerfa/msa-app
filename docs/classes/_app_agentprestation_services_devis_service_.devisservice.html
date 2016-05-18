@@ -88,16 +88,20 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_app_agentprestation_services_devis_service_.devisservice.html#_http" class="tsd-kind-icon">_http</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#selecteddevis" class="tsd-kind-icon">selected<wbr>Devis</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#calculerprixtotal" class="tsd-kind-icon">calculer<wbr>Prix<wbr>Total</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#getdevis" class="tsd-kind-icon">get<wbr>Devis</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#getdevisbyid" class="tsd-kind-icon">get<wbr>Devis<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#getlignedevis" class="tsd-kind-icon">get<wbr>Ligne<wbr>Devis</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#handleerrors" class="tsd-kind-icon">handle<wbr>Errors</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_services_devis_service_.devisservice.html#postdevis" class="tsd-kind-icon">post<wbr>Devis</a></li>
 							</ul>
@@ -117,7 +121,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L9">app/agentPrestation/services/devis.service.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L10">app/agentPrestation/services/devis.service.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -131,7 +135,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_http" class="tsd-anchor"></a>
@@ -143,9 +147,42 @@
 						</ul>
 					</aside>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="selecteddevis" class="tsd-anchor"></a>
+					<h3>selected<wbr>Devis</h3>
+					<div class="tsd-signature tsd-kind-icon">selected<wbr>Devis<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L10">app/agentPrestation/services/devis.service.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="calculerprixtotal" class="tsd-anchor"></a>
+					<h3>calculer<wbr>Prix<wbr>Total</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">calculer<wbr>Prix<wbr>Total<span class="tsd-signature-symbol">(</span>devis<span class="tsd-signature-symbol">: </span><a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L47">app/agentPrestation/services/devis.service.ts:47</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>devis: <a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getdevis" class="tsd-anchor"></a>
 					<h3>get<wbr>Devis</h3>
@@ -156,9 +193,55 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L13">app/agentPrestation/services/devis.service.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L12">app/agentPrestation/services/devis.service.ts:12</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdevisbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>Devis<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Devis<wbr>ById<span class="tsd-signature-symbol">(</span>idDevis<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L27">app/agentPrestation/services/devis.service.ts:27</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>idDevis: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">unknown</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlignedevis" class="tsd-anchor"></a>
+					<h3>get<wbr>Ligne<wbr>Devis</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Ligne<wbr>Devis<span class="tsd-signature-symbol">(</span>devis<span class="tsd-signature-symbol">: </span><a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L19">app/agentPrestation/services/devis.service.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>devis: <a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span></h4>
 						</li>
 					</ul>
@@ -173,7 +256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L46">app/agentPrestation/services/devis.service.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L56">app/agentPrestation/services/devis.service.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,7 +279,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L28">app/agentPrestation/services/devis.service.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/services/devis.service.ts#L30">app/agentPrestation/services/devis.service.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -235,8 +318,20 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_app_agentprestation_services_devis_service_.devisservice.html#_http" class="tsd-kind-icon">_http</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_app_agentprestation_services_devis_service_.devisservice.html#selecteddevis" class="tsd-kind-icon">selected<wbr>Devis</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_app_agentprestation_services_devis_service_.devisservice.html#calculerprixtotal" class="tsd-kind-icon">calculer<wbr>Prix<wbr>Total</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_app_agentprestation_services_devis_service_.devisservice.html#getdevis" class="tsd-kind-icon">get<wbr>Devis</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_app_agentprestation_services_devis_service_.devisservice.html#getdevisbyid" class="tsd-kind-icon">get<wbr>Devis<wbr>ById</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_app_agentprestation_services_devis_service_.devisservice.html#getlignedevis" class="tsd-kind-icon">get<wbr>Ligne<wbr>Devis</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_app_agentprestation_services_devis_service_.devisservice.html#handleerrors" class="tsd-kind-icon">handle<wbr>Errors</a>
