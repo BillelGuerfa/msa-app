@@ -6,7 +6,8 @@ System.register(["./services/ordonance.service"], function(exports_1, context_1)
             function (ordonance_service_1_1) {
                 exports_1({
                     "OrdonanceService": ordonance_service_1_1["OrdonanceService"],
-                    "Ordonance": ordonance_service_1_1["Ordonance"]
+                    "Ordonance": ordonance_service_1_1["Ordonance"],
+                    "LigneOrdonance": ordonance_service_1_1["LigneOrdonance"]
                 });
             }],
         execute: function() {

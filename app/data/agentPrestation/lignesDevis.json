@@ -1,0 +1,36 @@
+[
+    {
+        "idLigneDevis": 22,
+        "quantite": 2,
+        "produit": {
+            "idProduit": 22,
+            "libelle": "Poche",
+            "gamme": "colostomie",
+            "prixUnitaire": 150,
+            "ttv": 200
+        }
+    },
+    {
+        "idLigneDevis": 23,
+        "quantite": 5,
+        "produit": {
+            "idProduit": 23,
+            "libelle": "Seringue",
+            "gamme": "colostomie",
+            "prixUnitaire": 50,
+            "ttv": 200
+        }
+    },
+    {
+        "idLigneDevis": 24,
+        "quantite": 12,
+        "produit": {
+            "idProduit": 24,
+            "libelle": "Cachet",
+            "gamme": "colostomie",
+            "prixUnitaire": 20,
+            "ttv": 200
+        }
+    }
+    
+]

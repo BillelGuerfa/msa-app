@@ -7,6 +7,7 @@ import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 @Injectable()
 export class DevisService {
+    selectedDevis: Devis;
     constructor(private _http:Http) { }
     getDevis() :  Observable<Devis[]>{
         return this._http.get(config.urls.agentPrestation.devis)
@@ -22,6 +23,9 @@ export class DevisService {
                             return devis;
                           });
                             
+    }
+    getDevisById(idDevis: any){
+        return this._http.get(config.urls.agentPrestation.devisById)
     }
     postDevis(devis : Devis) : Observable<Devis>{
         //TODO : Check stock before posting
@@ -40,7 +44,15 @@ export class DevisService {
                             })
                             .catch(this.handleErrors);
     }
-    
+    calculerPrixTotal(devis: Devis){
+        let total = 0;
+        if(devis){
+            devis.listeLigneDevis.forEach(ligne => {
+                total += ligne.produit.prixUnitaire * ligne.quantite;
+            })
+        }        
+        return total;
+    }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }

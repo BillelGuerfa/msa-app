@@ -8,36 +8,36 @@
 
             </div>
 
-            <div class="card-body card-padding">
+            <div class="card-body card-padding" *ngIf="devis" >
 
 
 
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="nom" class="control-label">NOM : </label>
-                        <label id="nom">BENBELKACEM</label>
+                        <label id="nom">{{devis.patient.nom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="prenom" class="control-label">PRENOM : </label>
-                        <label id="prenom">SONIA</label>
+                        <label id="prenom">{{devis.patient.prenom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="id-devis" class="control-label">N° DEVIS : </label>
-                        <label id="id-devis">1022695</label>
+                        <label id="id-devis">{{devis.idDevis}}</label>
                     </div>
 
                     <div class="form-group">
                         <label for="type" class="control-label">TYPE DEVIS : </label>
-                        <label id="type">PRIS EN CHARGE</label>
+                        <label id="type">{{devis.modePayment}}</label>
                     </div>
                     <div class="form-group">
                         <label for="date1" class="control-label">DATE CREATION : </label>
-                        <label id="date1">15.04.2016</label>
+                        <label id="date1">{{devis.datePrescription}}</label>
                     </div>
 
                     <div class="form-group">
                         <label for="date2" class="control-label">DATE EXPIRATION : </label>
-                        <label id="date2">21.04.2016</label>
+                        <label id="date2">{{devis.dureValidation}}</label>
                     </div>
 
 
@@ -48,7 +48,7 @@
 
 
 
-                    <div>
+                    <div *ngIf="devis.listeLigneDevis" >
                         <div class="card">
                             <div class="card-header">
                                 <h2>LISTE DES PRODUITS </h2>
@@ -67,28 +67,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>poche1</td>
-                                            <td>20</td>
-                                            <td>350</td>
+                                        <tr *ngFor="#ligneDevis of devis.listeLigneDevis" >
+                                            <td>{{ligneDevis.produit.idProduit}}</td>
+                                            <td>{{ligneDevis.produit.libelle}}</td>
+                                            <td> {{ligneDevis.quantite}} </td>
+                                            <td> {{ligneDevis.produit.prixUnitaire}} </td>
 
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>poche2</td>
-                                            <td>20</td>
-                                            <td>350</td>
-
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>poche3</td>
-                                            <td>20</td>
-                                            <td>350</td>
-
-                                        </tr>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -96,7 +81,7 @@
                     </div>
 
 
-                    <label>PRIX TOTAL :1050 DA</label>
+                    <label *ngIf="devis.listeLigneDevis" >PRIX TOTAL : {{prixTotalDevis()}}</label>
 
 
 
@@ -118,17 +103,17 @@
 
             </div>
 
-            <div class="card-body card-padding">
+            <div class="card-body card-padding" *ngIf="ordonance" >
 
 
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="nom" class="control-label">NOM : </label>
-                        <label id="nom">BENBELKACEM</label>
+                        <label id="nom">{{ordonance.patient.nom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="prenom" class="control-label">PRENOM : </label>
-                        <label id="prenom">SONIA</label>
+                        <label id="prenom">{{ordonance.patient.prenom}}</label>
                     </div>
 
 
@@ -156,29 +141,12 @@
 
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>poche1</td>
-                                            <td>2/jr</td>
-
-
+                                    <tbody *ngIf="ordonance.lignesOrdonance" >
+                                        <tr *ngFor="#ligneOrdonance of ordonance.lignesOrdonance" >
+                                            <td>{{ligneOrdonance.produit.idProduit}}</td>
+                                            <td>{{ligneOrdonance.produit.libelle}}</td>
+                                            <td>{{ligneOrdonance.frequenceUtilisation}}/jr</td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>poche2</td>
-                                            <td>5/mois</td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>poche3</td>
-                                            <td>1/jr</td>
-
-
-                                        </tr>
-
                                     </tbody>
                                 </table>
                             </div>

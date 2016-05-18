@@ -19,6 +19,7 @@ System.register([], function(exports_1, context_1) {
                         commandes: "./app/data/agentPrestation/commandes.json",
                         devis: "./app/data/agentPrestation/devis.json",
                         lignesDevis: "./app/data/agentPrestation/lignesDevis.json",
+                        devisById: "./app/data/agentPrestation/devisById.json",
                         factures: "./app/data/agentPrestation/factures.json"
                     },
                     medecin: {

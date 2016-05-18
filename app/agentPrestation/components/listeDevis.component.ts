@@ -18,6 +18,7 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
     patient : Patient;
     ordonancePatient : Ordonance;
     devis: Devis[];
+    selectedDevis: Devis;
     newDevis : Devis = {};
     constructor(private _zone:NgZone,
                 private _devisService:DevisService,
@@ -55,7 +56,8 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
                 }).on("selected.rs.jquery.bootgrid", (e, rows) =>
                     {
                         //TODO: Select event here
-                        this._router.navigate(["DetailDevis"]);
+                        this.selectDevis(rows[0].id);
+                        this._router.navigate(["DetailDevis",{idDevis: rows[0].id}]);
                         
                 });
                 },0)
@@ -63,6 +65,10 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
             });
         });
         
+    }
+    selectDevis = (idDevis) => {
+        this.selectedDevis = this.devis.filter((devis) => devis.idDevis === idDevis)[0];
+        this._devisService.selectedDevis = this.selectedDevis;
     }
     selectPatient = (patient) => {
             this.patient = patient;
@@ -91,12 +97,6 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
         }
     }
     newDevisTotal() : number{
-        let total = 0;
-        if(this.newDevis){
-            this.newDevis.listeLigneDevis.forEach(ligne => {
-                total += ligne.produit.prixUnitaire * ligne.quantite;
-            })
-        }        
-        return total;
+        return this._devisService.calculerPrixTotal(this.newDevis);
     }
 }

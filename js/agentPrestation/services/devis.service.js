@@ -46,6 +46,9 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         return devis;
                     });
                 };
+                DevisService.prototype.getDevisById = function (idDevis) {
+                    return this._http.get(app_config_1.config.urls.agentPrestation.devisById);
+                };
                 DevisService.prototype.postDevis = function (devis) {
                     var _this = this;
                     //TODO : Check stock before posting
@@ -61,6 +64,15 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         return devisReturned.json();
                     })
                         .catch(this.handleErrors);
+                };
+                DevisService.prototype.calculerPrixTotal = function (devis) {
+                    var total = 0;
+                    if (devis) {
+                        devis.listeLigneDevis.forEach(function (ligne) {
+                            total += ligne.produit.prixUnitaire * ligne.quantite;
+                        });
+                    }
+                    return total;
                 };
                 DevisService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');

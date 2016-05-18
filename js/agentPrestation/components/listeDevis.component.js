@@ -43,6 +43,10 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                     this._patientService = _patientService;
                     this._ordonanceService = _ordonanceService;
                     this.newDevis = {};
+                    this.selectDevis = function (idDevis) {
+                        _this.selectedDevis = _this.devis.filter(function (devis) { return devis.idDevis === idDevis; })[0];
+                        _this._devisService.selectedDevis = _this.selectedDevis;
+                    };
                     this.selectPatient = function (patient) {
                         _this.patient = patient;
                         _this._ordonanceService.getOrdonance(_this.patient).subscribe(function (ordonanceSansLignes) {
@@ -89,7 +93,8 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                                     keepSelection: true
                                 }).on("selected.rs.jquery.bootgrid", function (e, rows) {
                                     //TODO: Select event here
-                                    _this._router.navigate(["DetailDevis"]);
+                                    _this.selectDevis(rows[0].id);
+                                    _this._router.navigate(["DetailDevis", { idDevis: rows[0].id }]);
                                 });
                             }, 0);
                         });
@@ -105,13 +110,7 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                     }
                 };
                 ListeDevisComponent.prototype.newDevisTotal = function () {
-                    var total = 0;
-                    if (this.newDevis) {
-                        this.newDevis.listeLigneDevis.forEach(function (ligne) {
-                            total += ligne.produit.prixUnitaire * ligne.quantite;
-                        });
-                    }
-                    return total;
+                    return this._devisService.calculerPrixTotal(this.newDevis);
                 };
                 ListeDevisComponent = __decorate([
                     core_1.Component({

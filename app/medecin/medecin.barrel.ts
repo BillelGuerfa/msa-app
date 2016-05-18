@@ -1,1 +1,1 @@
-export{OrdonanceService, Ordonance} from "./services/ordonance.service";
+export{OrdonanceService, Ordonance, LigneOrdonance} from "./services/ordonance.service";
