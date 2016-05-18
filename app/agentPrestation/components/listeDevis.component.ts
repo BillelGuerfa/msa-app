@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit,NgZone } from 'angular2/core';
+import { Component, OnInit, AfterViewInit,NgZone, OnChanges  } from 'angular2/core';
 import {Router } from "angular2/router";
 import {AutocompleteDirective} from "../../shared/shared.barrel";
 import {Observable} from "rxjs/Observable";
@@ -11,12 +11,17 @@ declare var $;
     directives: [AutocompleteDirective]
 })
 
-export class ListeDevisComponent implements OnInit, AfterViewInit  {
+export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
     patients : Observable<Patient[]>;
     patient : Patient;
     constructor(private _zone:NgZone, private _router:Router, private _patientService:PatientService) { }
-    
+    ngOnChanges(changes : any){
+        this.patient = changes.patient.currentValue;
+        console.log(this.patient);
+    }
     ngOnInit() {
+        this.patient = {nom: "",prenom:""};
+        
         this.patients = this._patientService.getPatients();
         
      }
@@ -42,9 +47,8 @@ export class ListeDevisComponent implements OnInit, AfterViewInit  {
              });
         });
     }
-    selectPatient(patient){
-        this.patient = patient;
-        console.log(this.patient);
-        
+    selectPatient = (patient) => {
+            this.patient = patient;
+            console.log(this.patient);
     }
 }

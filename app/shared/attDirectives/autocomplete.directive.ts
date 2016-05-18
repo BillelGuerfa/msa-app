@@ -9,7 +9,8 @@ export class AutocompleteDirective implements OnInit,OnChanges {
     @Input() objectsDataSet;
     @Input() handleFunction;
     @Input() labelAtt;
-    
+    labelsDataSet = [];
+    map = {};
     ngOnChanges(changes: any){
         this.objectsDataSet = changes.objectsDataSet.currentValue;
         if(this.objectsDataSet){
@@ -36,8 +37,7 @@ export class AutocompleteDirective implements OnInit,OnChanges {
             });
         }
     }
-    labelsDataSet = [];
-    map = {};
+    
     substringMatcher(strs) {
         return function findMatches(q, cb) {
             var matches, substrRegex;

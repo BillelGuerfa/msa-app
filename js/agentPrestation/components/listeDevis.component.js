@@ -30,11 +30,21 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
         execute: function() {
             ListeDevisComponent = (function () {
                 function ListeDevisComponent(_zone, _router, _patientService) {
+                    var _this = this;
                     this._zone = _zone;
                     this._router = _router;
                     this._patientService = _patientService;
+                    this.selectPatient = function (patient) {
+                        _this.patient = patient;
+                        console.log(_this.patient);
+                    };
                 }
+                ListeDevisComponent.prototype.ngOnChanges = function (changes) {
+                    this.patient = changes.patient.currentValue;
+                    console.log(this.patient);
+                };
                 ListeDevisComponent.prototype.ngOnInit = function () {
+                    this.patient = { nom: "", prenom: "" };
                     this.patients = this._patientService.getPatients();
                 };
                 ListeDevisComponent.prototype.ngAfterViewInit = function () {
@@ -56,10 +66,6 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                             _this._router.navigate(["DetailDevis"]);
                         });
                     });
-                };
-                ListeDevisComponent.prototype.selectPatient = function (patient) {
-                    this.patient = patient;
-                    console.log(this.patient);
                 };
                 ListeDevisComponent = __decorate([
                     core_1.Component({

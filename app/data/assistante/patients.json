@@ -16,8 +16,8 @@
     },
     {
         "idPatient": "P39",
-        "nom": "Guerfa",
-        "prenom": "Billel",
+        "nom": "Chaibi",
+        "prenom": "Asma",
         "numTelephone":  "0542765526" ,
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",
@@ -31,8 +31,8 @@
     },
     {
         "idPatient": "10",
-        "nom": "Guerfa",
-        "prenom": "Billel",
+        "nom": "Benbelkacem",
+        "prenom": "Sonia",
         "numTelephone":  "0542765526" ,
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",
@@ -46,8 +46,8 @@
     },
     {
         "idPatient": "P10",
-        "nom": "Guerfa",
-        "prenom": "Billel",
+        "nom": "Yousnadj",
+        "prenom": "Yacine Walid",
         "numTelephone":  "0542765526" ,
         "dateNaissance": "22/07/1994",
         "natureStomie": "colostomie",
