@@ -27,6 +27,11 @@ export class DevisService {
     getDevisById(idDevis: any){
         return this._http.get(config.urls.agentPrestation.devisById)
     }
+    getDevisByIdPatient(idPatient: any) : Observable<Devis[]>{
+        return this._http.get(config.urls.agentPrestation.devis+"?idPatient="+idPatient)
+                        .map(devis =>  <Devis[]>devis.json())
+                        .catch(this.handleErrors);
+    }
     postDevis(devis : Devis) : Observable<Devis>{
         //TODO : Check stock before posting
         //TODO : don't forget to post lignes devis After devis...
@@ -62,7 +67,7 @@ export class DevisService {
 export interface Devis{
     idDevis: number;
     datePrescription: number;
-    dureValidation: number;
+    dateExpiration: number;
     modePayment: string;
     etat: string;
     patient: Patient;

@@ -2,7 +2,7 @@
     {
         "idOrganisme": 23,
         "nom": "CNAS",
-        "email": "cnas@cnas.dz",
+        "email": "contact@cnas.dz",
         "numTelephone": "0523654789",
         "adresse": {
 
@@ -10,8 +10,8 @@
     },
     {
         "idOrganisme": 24,
-        "nom": "CNAS",
-        "email": "cnas@cnas.dz",
+        "nom": "ESI",
+        "email": "contact@esi.dz",
         "numTelephone": "0523654789",
         "adresse": {
 
@@ -19,17 +19,8 @@
     },
     {
         "idOrganisme": 25,
-        "nom": "CNAS",
-        "email": "cnas@cnas.dz",
-        "numTelephone": "0523654789",
-        "adresse": {
-
-        }
-    },
-    {
-        "idOrganisme": 26,
-        "nom": "CNAS",
-        "email": "cnas@cnas.dz",
+        "nom": "Sonatrach",
+        "email": "contact@sonatrach.dz",
         "numTelephone": "0523654789",
         "adresse": {
 

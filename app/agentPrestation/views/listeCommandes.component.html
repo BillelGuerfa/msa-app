@@ -17,13 +17,13 @@
                 <button class="btn btn-primary" type="submit">IMPRIMER</button>
             </div>
             <div class="col-md-4"></div>
-            <div class="col-md-2"><button class="btn btn-success" type="submit" data-toggle="modal" data-target="#creation">IMPORTER</button></div>
+            <div class="col-md-2"><button class="btn btn-success" type="submit" data-toggle="modal" data-target="#creation" (click)="createCommande()">IMPORTER</button></div>
 
             <div class="row"><label>      </label></div>
             <div class="row"><label>      </label></div>
             <div class="row"><label>      </label></div>
             <div class="table-responsive" *ngIf="commandes" >
-                <table class="table table-striped data-table-selection">
+                <table id="commandesTable" class="table table-striped data-table-selection commandes">
                     <thead>
                         <tr>
                             <th data-column-id="id" data-type="numeric" data-identifier="true">N° COMMANDE</th>
@@ -70,31 +70,24 @@
                     <div class="form-group">
                         <label for="nom" class="col-sm-2 control-label">NOM</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="nom" placeholder=" ">
+                            <input type="text" class="form-control" id="nom" placeholder="Selectionnez le patient.. " [value]="patient.nom" typeaheadautocomplete [objectsDataSet]="patients | async" [labelAtt]="'nom'" [name]="'nomsPatients'" [handleFunction]="selectPatient" autocomplete="off">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="prenom" class="col-sm-2 control-label">PRENOM</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="prenom" placeholder=" ">
+                            <input type="text" class="form-control" id="prenom" placeholder="Selectionnez le patient.. " [value]="patient.prenom" typeaheadautocomplete [objectsDataSet]="patients | async" [labelAtt]="'prenom'" [name]="'prenomsPatients'" [handleFunction]="selectPatient" autocomplete="off">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="id-devis" class="col-sm-2 control-label">N° COMMANDE</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="id-devis" placeholder=" ">
-                        </div>
-                    </div>
+                    
 
-                    <div class="form-group">
-                        <label for="orga" class="col-sm-2 control-label">ORGANISME</label>
+                    <div class="form-group" *ngIf="organismes">
+                        <label for="orga" class="col-sm-2 control-label">{{selectedOrganisme}}</label>
                         <div class="col-sm-10">
 
-                            <select class="form-control" id="orga">
-                                        <option>ESI</option>
-                                        <option>USTHB</option>
-                                        <option>SAAS</option>
-                                    </select>
+                            <select class="form-control" id="orga" [(ngModel)]="selectedOrganisme" >
+                                        <option *ngFor="#organisme of organismes" [value]="organisme">{{organisme.nom}}</option>
+                            </select>
                         </div>
                     </div>
 
@@ -103,14 +96,14 @@
                     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 
 
-                        <div class="col-md-12">
+                        <div class="col-md-12"  *ngIf="devisPatient">
                             <div class="card">
                                 <div class="card-header">
                                     <h2>SELECTION DU DEVIS</h2>
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table id="data-table-selection" class="table table-striped data-table-selection">
+                                    <table id="devisTable" class="table table-striped data-table-selection">
                                         <thead>
                                             <tr>
                                                 <th data-column-id="id" data-type="numeric" data-identifier="true">N°DEVIS</th>
@@ -119,38 +112,12 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>10238</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
+                                        <tbody >
+                                            <tr *ngFor="#devis of devisPatient" >
+                                                <td>{{devis.idDevis}}</td>
+                                                <td>{{displayDate(devis.datePrescription)}}</td>
+                                                <td>{{displayDate(devis.dateExpiration)}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>10243</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10248</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10253</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10234</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10239</td>
-                                                <td>14.10.2013</td>
-                                                <td>14.10.2013</td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -158,7 +125,7 @@
                         </div>
 
                     
-                    <label>PRIX TOTAL :1050 DA</label>
+                    <label *ngIf="devisPatient" >PRIX TOTAL :1050 DA</label>
 
                     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 
@@ -170,7 +137,7 @@
 
 
                     <div class="col-md-offset-8"></div>
-                    <button type="button" class="btn btn-primary">IMPORTER</button>
+                    <button type="button" class="btn btn-primary" (click)="test()">IMPORTER</button>
                 </div>
             </div>
         </div>

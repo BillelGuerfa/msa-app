@@ -49,7 +49,7 @@
 
                     
 
-                        <div class="col-md-12">
+                        <div class="col-md-12"  >
                             <div class="card">
                                 <div class="card-header">
                                     <h2>LISTE DES PRODUITS </h2>
@@ -66,26 +66,12 @@
 
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>poche1</td>
-                                                <td>350</td>
-
+                                        <tbody *ngIf="commande.devis.listeLigneDevis" >
+                                            <tr *ngFor="#ligneDevis of commande.devis.listeLigneDevis" >
+                                                <td>{{ligneDevis.produit.idProduit}}</td>
+                                                <td>{{ligneDevis.produit.libelle}}</td>
+                                                <td>{{ligneDevis.produit.prixUnitaire}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>poche2</td>
-                                                <td>350</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>poche3</td>
-                                                <td>350</td>
-
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -93,7 +79,7 @@
                         </div>
 
                     
-                    <label>PRIX TOTAL :1050 DA</label>
+                    <label  >PRIX TOTAL :1050 DA</label>
 
 
 
@@ -122,19 +108,19 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="nom" class="control-label">NOM : </label>
-                        <label id="nom">BENBELKACEM</label>
+                        <label id="nom">{{commande.devis.patient.nom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="prenom" class="control-label">PRENOM : </label>
-                        <label id="prenom">SONIA</label>
+                        <label id="prenom">{{commande.devis.patient.prenom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="datecrea" class="control-label">DATE CREATION : </label>
-                        <label id="date crea">12.06.2016</label>
+                        <label id="date crea">{{displayDate(commande.devis.datePrescription)}}</label>
                     </div>
                     <div class="form-group">
                         <label for="dateexp" class="control-label">DATE EXPIRATION : </label>
-                        <label id="dateexp">26.06.2016</label>
+                        <label id="dateexp">{{displayDate(commande.devis.dateExpiration)}}</label>
                     </div>
 
 

@@ -24,7 +24,8 @@ import {ListeDevisComponent,
         DetailFactureComponent,
         DevisService,
         FactureService,
-        CommandeService } from "./agentPrestation/agentPrestation.barrel";
+        CommandeService,
+        OrganismeService } from "./agentPrestation/agentPrestation.barrel";
 import {
         FicheSeanceFormComponent,
         HistoriqueVisitesComponent
@@ -54,7 +55,8 @@ declare var $this,$dropdownMenu;
                 DevisService,
                 FactureService,
                 CommandeService,
-                DateService],
+                DateService,
+                OrganismeService],
                 
     directives: [ROUTER_DIRECTIVES ,
                  HeaderComponent,

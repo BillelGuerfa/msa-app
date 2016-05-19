@@ -1,7 +1,7 @@
 [{
     "idDevis": 22,
     "datePrescription": 1462120173939,
-    "dureValidation": 1462120173939,
+    "dateExpiration": 1462120173939,
     "modePayment": "Cash",
     "etat": "Payé",
     "patient": {
@@ -22,7 +22,7 @@
 }, {
     "idDevis": 23,
     "datePrescription": 1462120173939,
-    "dureValidation": 1462120173939,
+    "dateExpiration": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "Payé",
     "patient": {
@@ -43,7 +43,7 @@
 }, {
     "idDevis": 24,
     "datePrescription": 1462120173939,
-    "dureValidation": 1462120173939,
+    "dateExpiration": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "En attente",
     "patient": {
@@ -64,7 +64,7 @@
 }, {
     "idDevis": 25,
     "datePrescription": 1462120173939,
-    "dureValidation": 1462120173939,
+    "dateExpiration": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "Expiré",
     "patient": {
