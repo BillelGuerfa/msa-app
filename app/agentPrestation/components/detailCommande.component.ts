@@ -29,5 +29,8 @@ export class DetailCommandeComponent implements OnInit {
      displayDate(timestampDate: string) : string{
          return this._dateService.timestampToDate(+timestampDate);
      }
+     prixTotalCommande(){
+         return this._commmandeService.getPrixTotal(this.commande);
+     }
 
 }

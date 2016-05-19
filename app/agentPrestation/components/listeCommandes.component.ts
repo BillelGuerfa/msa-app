@@ -73,6 +73,7 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     selectDevis = (idDevis) => {
         this.newCommande.devis = this.devisPatient.filter((devis) => devis.idDevis === idDevis)[0];
     }
+    
     createCommande(){
         this.newCommande = {};
         this.newCommande.etat = "En attente de facturation";

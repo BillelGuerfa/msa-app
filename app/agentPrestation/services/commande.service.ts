@@ -21,6 +21,13 @@ export class CommandeService {
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');
     }
+    getPrixTotal(commande:Commande){
+        let total = 0;
+        commande.devis.listeLigneDevis.forEach(ligneDevis => {
+            total += ligneDevis.produit.prixUnitaire * ligneDevis.quantite;
+        });
+        return total;
+    }
 
 }
 export interface Commande{

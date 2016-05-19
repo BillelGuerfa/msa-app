@@ -7,9 +7,9 @@
 
                 <h2>COMMANDE 
                                     
-                                    <i class="zmdi zmdi-check-circle-u zmdi-hc-fw"></i>
-                                    <i class="zmdi zmdi-close-circle zmdi-hc-fw"></i>
-                                    <i class="zmdi zmdi-more zmdi-hc-fw"></i>
+                                    <i *ngIf="commande.etat === 'Facturée et Payée'"  class="zmdi zmdi-check-circle-u zmdi-hc-fw"></i>
+                                    <i *ngIf="commande.etat === 'En Attente de facturation'" class="zmdi zmdi-close-circle zmdi-hc-fw"></i>
+                                    <i *ngIf="commande.etat === 'En Attente de Paiement'" class="zmdi zmdi-more zmdi-hc-fw"></i>
                                     
                                     </h2>
 
@@ -25,20 +25,20 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="nom" class="control-label">NOM : </label>
-                        <label id="nom">BENBELKACEM</label>
+                        <label id="nom">{{commande.devis.patient.nom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="prenom" class="control-label">PRENOM : </label>
-                        <label id="prenom">SONIA</label>
+                        <label id="prenom">{{commande.devis.patient.nom}}</label>
                     </div>
                     <div class="form-group">
                         <label for="id-cmd" class="control-label">N° COMMANDE : </label>
-                        <label id="id-devis">1022695</label>
+                        <label id="id-devis">{{commande.idCommande}}</label>
                     </div>
 
                     <div class="form-group">
                         <label for="type" class="control-label">ORGANISME : </label>
-                        <label id="type">ESI</label>
+                        <label id="type">{{commande.organisme.nom}}</label>
                     </div>
 
 
@@ -79,7 +79,7 @@
                         </div>
 
                     
-                    <label  >PRIX TOTAL :1050 DA</label>
+                    <label  *ngIf="commande.devis.listeLigneDevis">PRIX TOTAL : {{prixTotalCommande()}} DA</label>
 
 
 

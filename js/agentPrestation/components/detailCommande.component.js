@@ -52,6 +52,9 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                 DetailCommandeComponent.prototype.displayDate = function (timestampDate) {
                     return this._dateService.timestampToDate(+timestampDate);
                 };
+                DetailCommandeComponent.prototype.prixTotalCommande = function () {
+                    return this._commmandeService.getPrixTotal(this.commande);
+                };
                 DetailCommandeComponent = __decorate([
                     core_1.Component({
                         selector: 'detail-commande',

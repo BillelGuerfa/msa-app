@@ -42,6 +42,13 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                 CommandeService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };
+                CommandeService.prototype.getPrixTotal = function (commande) {
+                    var total = 0;
+                    commande.devis.listeLigneDevis.forEach(function (ligneDevis) {
+                        total += ligneDevis.produit.prixUnitaire * ligneDevis.quantite;
+                    });
+                    return total;
+                };
                 CommandeService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
