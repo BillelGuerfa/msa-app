@@ -19,7 +19,7 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     organismes: Organisme[];
     selectedOrganisme : Organisme;
     selectedCommande: Commande;
-    newCommande: Commande;
+    newCommande: Commande = {};
     patients : Observable<Patient[]>;
     patient: Patient = { nom : "", prenom:""};
     devisPatient :Devis[];
@@ -67,13 +67,15 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
             //console.log(this.patient);
     }
     selectOrganisme = (organisme) => {
-        this.newCommande.organisme = organisme;
-        console.log(organisme);
+        this.newCommande.organisme = JSON.parse(organisme);
+        console.log(this.newCommande.organisme);
     }
     selectDevis = (idDevis) => {
         this.newCommande.devis = this.devisPatient.filter((devis) => devis.idDevis === idDevis)[0];
     }
-    
+    stringify(o : Object) : string {
+        return JSON.stringify(o);
+    }
     createCommande(){
         this.newCommande = {};
         this.newCommande.etat = "En attente de facturation";

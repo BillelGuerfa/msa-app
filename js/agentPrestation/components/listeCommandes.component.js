@@ -46,6 +46,7 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                     this._patientService = _patientService;
                     this._organismeService = _organismeService;
                     this._dateService = _dateService;
+                    this.newCommande = {};
                     this.patient = { nom: "", prenom: "" };
                     this.selectCommande = function (idCommande) {
                         _this.selectedCommande = _this.commandes.filter(function (commande) { return commande.idCommande === idCommande; })[0];
@@ -79,13 +80,16 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                         //console.log(this.patient);
                     };
                     this.selectOrganisme = function (organisme) {
-                        _this.newCommande.organisme = organisme;
-                        console.log(organisme);
+                        _this.newCommande.organisme = JSON.parse(organisme);
+                        console.log(_this.newCommande.organisme);
                     };
                     this.selectDevis = function (idDevis) {
                         _this.newCommande.devis = _this.devisPatient.filter(function (devis) { return devis.idDevis === idDevis; })[0];
                     };
                 }
+                ListeCommandesComponent.prototype.stringify = function (o) {
+                    return JSON.stringify(o);
+                };
                 ListeCommandesComponent.prototype.createCommande = function () {
                     this.newCommande = {};
                     this.newCommande.etat = "En attente de facturation";

@@ -85,8 +85,8 @@
                         <label for="orga" class="col-sm-2 control-label">ORGANISME</label>
                         <div class="col-sm-10">
 
-                            <select class="form-control" id="orga" [(ngModel)]="selectedOrganisme" >
-                                        <option *ngFor="#organisme of organismes" [value]="organisme">{{organisme.nom}}</option>
+                            <select #sel class="form-control" id="orga"  (change)="selectOrganisme(sel.value)" >
+                                        <option *ngFor="#organisme of organismes" [value]="organisme | json">{{organisme.nom}}</option>
                             </select>
                         </div>
                     </div>

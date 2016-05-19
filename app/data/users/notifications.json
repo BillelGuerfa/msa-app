@@ -1,0 +1,23 @@
+[
+    {
+        "id_notif": 22,
+        "contenu": "La facture pour CNAS a été générée !",
+        "typeNotification": "INFO",
+        "dateEvenement": 1462120173939,
+        "dateDeclenchement": 1462120173939
+    },
+    {
+        "id_notif": 23,
+        "contenu": "Des Devis ont expirés !",
+        "typeNotification": "INFO",
+        "dateEvenement": 1462120173939,
+        "dateDeclenchement": 1462120173939
+    },
+    {
+        "id_notif": 24,
+        "contenu": "La facture Pour ESI a été générée !",
+        "typeNotification": "INFO",
+        "dateEvenement": 1462120173939,
+        "dateDeclenchement": 1462120173939
+    }
+]

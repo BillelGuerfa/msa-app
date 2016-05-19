@@ -1,11 +1,12 @@
 import { Injectable } from 'angular2/core';
 import {Http} from "angular2/http";
+import {config} from "../../app.config";
 @Injectable()
 export class NotificationService {
     notifications: Notification[];
-    constructor() { }
+    constructor(private _http:Http) { }
     getNotifications(): Notification[] {
-        return this.notifications;
+        return this._http.get(config.urls.users);
     }
 
 }

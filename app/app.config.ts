@@ -26,7 +26,8 @@ export var config = {
             produits:"./app/data/magasinier/produits.json"
         },
         users:{
-            employe: "./app/data/users/employe.json"
+            employe: "./app/data/users/employe.json",
+            notifications: "./app/data/users/notifications.json"
         }
     }
 };
