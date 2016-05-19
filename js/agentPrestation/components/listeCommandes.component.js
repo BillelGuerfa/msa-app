@@ -29,29 +29,40 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
         execute: function() {
             ListeCommandesComponent = (function () {
                 function ListeCommandesComponent(_zone, _router, _commandesService, _devisService) {
+                    var _this = this;
                     this._zone = _zone;
                     this._router = _router;
                     this._commandesService = _commandesService;
                     this._devisService = _devisService;
+                    this.selectCommande = function (idCommande) {
+                        _this.selectedCommande = _this.commandes.filter(function (commande) { return commande.idCommande === idCommande; })[0];
+                        _this._commandesService.selectedCommande = _this.selectedCommande;
+                    };
                 }
                 ListeCommandesComponent.prototype.ngOnInit = function () { };
                 ListeCommandesComponent.prototype.ngAfterViewInit = function () {
                     var _this = this;
-                    this._zone.run(function () {
-                        $(".data-table-selection").bootgrid({
-                            css: {
-                                icon: 'zmdi icon',
-                                iconColumns: 'zmdi-view-module',
-                                iconDown: 'zmdi-expand-more',
-                                iconRefresh: 'zmdi-refresh',
-                                iconUp: 'zmdi-expand-less'
-                            },
-                            selection: true,
-                            rowSelect: true,
-                            keepSelection: true
-                        }).on("selected.rs.jquery.bootgrid", function (e, rows) {
-                            //TODO: Select event here
-                            _this._router.navigate(["DetailCommande"]);
+                    this._commandesService.getCommandes().subscribe(function (commandes) {
+                        _this.commandes = commandes;
+                        _this._zone.run(function () {
+                            setTimeout(function () {
+                                $(".data-table-selection").bootgrid({
+                                    css: {
+                                        icon: 'zmdi icon',
+                                        iconColumns: 'zmdi-view-module',
+                                        iconDown: 'zmdi-expand-more',
+                                        iconRefresh: 'zmdi-refresh',
+                                        iconUp: 'zmdi-expand-less'
+                                    },
+                                    selection: true,
+                                    rowSelect: true,
+                                    keepSelection: true
+                                }).on("selected.rs.jquery.bootgrid", function (e, rows) {
+                                    //TODO: Select event here
+                                    _this.selectCommande(rows[0].id);
+                                    _this._router.navigate(["DetailCommande"]);
+                                });
+                            }, 0);
                         });
                     });
                 };

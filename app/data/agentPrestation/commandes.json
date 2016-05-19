@@ -1,11 +1,138 @@
 [
     {
-        
+        "idCommande" : 22,
+        "devis" : {
+            "idDevis": 23,
+            "datePrescription": 1462120173939,
+            "dureValidation": 1462120173939,
+            "modePayment": "Prise en charge",
+            "etat": "Payé",
+            "patient": {
+                "idPatient": "P39",
+                "nom": "Chaibi",
+                "prenom": "Asma",
+                "numTelephone":  "0542765526" ,
+                "dateNaissance": "22/07/1994",
+                "natureStomie": "colostomie",
+                "typeStomie": "colostomie",
+                "adressMail": "cb_guerfa@esi.dz",
+                "typePoche": "Moyenne",
+                "gamme": "laGamme",
+                "nombrepocheJ": 2,
+                "referenceDossier": "P39",
+                "nss" : "07523698542"
+            }
+        },
+        "organisme" : {
+            "idOrganisme": 23,
+            "nom": "CNAS",
+            "email": "cnas@cnas.dz",
+            "numTelephone":"0523654789",
+            "adresse":{
+                
+            }
+        },
+        "facture": {
+            
+        },
+        "date": 1462120173939,
+        "etat": "En Attente de facturation"
     },
     {
-        
+        "idCommande" : 23,
+        "devis" : {
+            "idDevis": 24,
+            "datePrescription": 1462120173939,
+            "dureValidation": 1462120173939,
+            "modePayment": "Prise en charge",
+            "etat": "En attente",
+            "patient": {
+                "idPatient": "P11",
+                "nom": "Benbelkacem",
+                "prenom": "Sonia",
+                "numTelephone":  "0542765526" ,
+                "dateNaissance": "22/07/1994",
+                "natureStomie": "colostomie",
+                "typeStomie": "colostomie",
+                "adressMail": "cb_guerfa@esi.dz",
+                "typePoche": "Moyenne",
+                "gamme": "laGamme",
+                "nombrepocheJ": 2,
+                "referenceDossier": "P10",
+                "nss" : "07523698542"
+            }
+        },
+        "organisme" : {
+            "idOrganisme": 23,
+            "nom": "CNAS",
+            "email": "cnas@cnas.dz",
+            "numTelephone":"0523654789",
+            "adresse":{
+                
+            }
+        },
+        "facture": {
+            "idFacture": 180,
+            "organisme": {
+                "idOrganisme": 23,
+                "nom": "CNAS",
+                "email": "cnas@cnas.dz",
+                "numTelephone":"0523654789",
+                "adresse":{
+                    
+                }
+            }
+        },
+        "date": 1462120173939,
+        "etat": "En Attente de Paiement"
     },
     {
-        
+        "idCommande" : 24,
+        "devis" : {
+            "idDevis": 23,
+            "datePrescription": 1462120173939,
+            "dureValidation": 1462120173939,
+            "modePayment": "Prise en charge",
+            "etat": "Payé",
+            "patient": {
+                "idPatient": "P39",
+                "nom": "Chaibi",
+                "prenom": "Asma",
+                "numTelephone":  "0542765526" ,
+                "dateNaissance": "22/07/1994",
+                "natureStomie": "colostomie",
+                "typeStomie": "colostomie",
+                "adressMail": "cb_guerfa@esi.dz",
+                "typePoche": "Moyenne",
+                "gamme": "laGamme",
+                "nombrepocheJ": 2,
+                "referenceDossier": "P39",
+                "nss" : "07523698542"
+            }
+        },
+        "organisme" : {
+            "idOrganisme": 23,
+            "nom": "CNAS",
+            "email": "cnas@cnas.dz",
+            "numTelephone":"0523654789",
+            "adresse":{
+                
+            }
+        },
+        "facture": {
+            "idFacture": 188,
+            "organisme": {
+                "idOrganisme": 23,
+                "nom": "CNAS",
+                "email": "cnas@cnas.dz",
+                "numTelephone":"0523654789",
+                "adresse":{
+                    
+                }
+            }
+        },
+        "date": 1462120173939,
+        "etat": "Facturée et Payée"
     }
+   
 ]

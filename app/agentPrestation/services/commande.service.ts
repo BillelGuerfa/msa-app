@@ -8,7 +8,7 @@ import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 @Injectable()
 export class CommandeService {
-
+    selectedCommande : Commande;
     constructor(private _http:Http) { }
     
     getCommandes(): Observable<Commande[]>{
@@ -28,4 +28,6 @@ export interface Commande{
     devis: Devis;
     organisme: Organisme;
     facture: Facture;
+    etat: string;
+    date: number;
 }

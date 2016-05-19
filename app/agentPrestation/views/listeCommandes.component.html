@@ -22,7 +22,7 @@
             <div class="row"><label>      </label></div>
             <div class="row"><label>      </label></div>
             <div class="row"><label>      </label></div>
-            <div class="table-responsive">
+            <div class="table-responsive" *ngIf="commandes" >
                 <table class="table table-striped data-table-selection">
                     <thead>
                         <tr>
@@ -33,85 +33,20 @@
                             <th data-column-id="prenom">PRENOM</th>
                             <th data-column-id="date">DATE</th>
                             <th data-column-id="montant">MONTANT</th>
-                            <th data-column-id="type">TYPE</th>
                             <th data-column-id="etat">ETAT</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>10238</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
+                    <tbody  >
+                        <tr *ngFor="#commande of commandes" >
+                            <td>{{commande.idCommande}}</td>
+                            <td>{{commande.organisme.nom}}</td>
+                            <td>{{commande.devis.patient.idPatient}}</td>
+                            <td>{{commande.devis.patient.nom}}</td>
+                            <td>{{commande.devis.patient.prenom}}</td>
+                            <td>{{commande.date}}</td>
                             <td>3569</td>
-                            <td>EN COURS</td>
-
+                            <td>{{commande.etat}}</td>
                         </tr>
-                        <tr>
-                            <td>10239</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                            <td>3569</td>
-                            <td>EN COURS</td>
-
-                        </tr>
-                        <tr>
-                            <td>10240</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                            <td>3569</td>
-                            <td>ANNULEE</td>
-
-                        </tr>
-                        <tr>
-                            <td>10241</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                            <td>3569</td>
-                            <td>TRAITEE</td>
-
-                        </tr>
-
-                        <tr>
-                            <td>10243</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                            <td>3569</td>
-                            <td></td>
-
-                        </tr>
-                        <tr>
-                            <td>10244</td>
-                            <td>ESI</td>
-                            <td>14.10.2013</td>
-                            <td>23658</td>
-                            <td>BNEBLKACEM </td>
-                            <td>SONIA</td>
-                            <td>20.10.2013</td>
-                            <td>3569</td>
-                            <td></td>
-
-                        </tr>
-
                     </tbody>
                 </table>
             </div>
