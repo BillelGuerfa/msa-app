@@ -33,17 +33,19 @@
                             <th data-column-id="nom">NOM</th>
                             <th data-column-id="prenom">PRENOM</th>
                             <th data-column-id="date-exp">DATE EXPIRATION</th>
+                            <th data-column-id="etat">ETAT</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="#devi of devis" >
                             <td>{{devi.idDevis}}</td>
-                            <td>{{devi.datePrescription}}</td>
+                            <td>{{displayDate(devi.datePrescription)}}</td>
                             <td>{{devi.patient.idPatient}}</td>
                             <td>{{devi.patient.nom}}</td>
                             <td>{{devi.patient.prenom}}</td>
-                            <td>{{devi.dureValidation}}</td>
+                            <td>{{displayDate(devi.dureValidation)}}</td>
+                            <td>{{devi.etat}}</td>
                         </tr>
                     </tbody>
                 </table>

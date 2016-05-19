@@ -35,13 +35,14 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
             }],
         execute: function() {
             ListeDevisComponent = (function () {
-                function ListeDevisComponent(_zone, _devisService, _router, _patientService, _ordonanceService) {
+                function ListeDevisComponent(_zone, _devisService, _router, _patientService, _ordonanceService, _dateService) {
                     var _this = this;
                     this._zone = _zone;
                     this._devisService = _devisService;
                     this._router = _router;
                     this._patientService = _patientService;
                     this._ordonanceService = _ordonanceService;
+                    this._dateService = _dateService;
                     this.newDevis = {};
                     this.selectDevis = function (idDevis) {
                         _this.selectedDevis = _this.devis.filter(function (devis) { return devis.idDevis === idDevis; })[0];
@@ -112,13 +113,16 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                 ListeDevisComponent.prototype.newDevisTotal = function () {
                     return this._devisService.calculerPrixTotal(this.newDevis);
                 };
+                ListeDevisComponent.prototype.displayDate = function (timestampDate) {
+                    return this._dateService.timestampToDate(+timestampDate);
+                };
                 ListeDevisComponent = __decorate([
                     core_1.Component({
                         selector: 'liste-devis',
                         templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
                         directives: [shared_barrel_1.AutocompleteDirective]
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone, devis_service_1.DevisService, router_1.Router, assistante_barrel_1.PatientService, medecin_barrel_1.OrdonanceService])
+                    __metadata('design:paramtypes', [core_1.NgZone, devis_service_1.DevisService, router_1.Router, assistante_barrel_1.PatientService, medecin_barrel_1.OrdonanceService, shared_barrel_1.DateService])
                 ], ListeDevisComponent);
                 return ListeDevisComponent;
             }());

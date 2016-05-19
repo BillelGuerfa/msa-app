@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", "../services/devis.service", "../../medecin/medecin.barrel"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel", "../services/devis.service", "../../medecin/medecin.barrel"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/router", "../services/devis.service"
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, devis_service_1, medecin_barrel_1;
+    var core_1, router_1, shared_barrel_1, devis_service_1, medecin_barrel_1;
     var DetailDevisComponent;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', "angular2/router", "../services/devis.service"
             function (router_1_1) {
                 router_1 = router_1_1;
             },
+            function (shared_barrel_1_1) {
+                shared_barrel_1 = shared_barrel_1_1;
+            },
             function (devis_service_1_1) {
                 devis_service_1 = devis_service_1_1;
             },
@@ -28,10 +31,11 @@ System.register(['angular2/core', "angular2/router", "../services/devis.service"
             }],
         execute: function() {
             DetailDevisComponent = (function () {
-                function DetailDevisComponent(_router, _devisService, _ordonanceService) {
+                function DetailDevisComponent(_router, _devisService, _ordonanceService, _dateService) {
                     this._router = _router;
                     this._devisService = _devisService;
                     this._ordonanceService = _ordonanceService;
+                    this._dateService = _dateService;
                 }
                 DetailDevisComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -52,12 +56,15 @@ System.register(['angular2/core', "angular2/router", "../services/devis.service"
                 DetailDevisComponent.prototype.prixTotalDevis = function () {
                     return this._devisService.calculerPrixTotal(this.devis);
                 };
+                DetailDevisComponent.prototype.displayDate = function (timestampDate) {
+                    return this._dateService.timestampToDate(+timestampDate);
+                };
                 DetailDevisComponent = __decorate([
                     core_1.Component({
                         selector: 'detail-devis',
                         templateUrl: 'app/agentPrestation/views/detailDevis.component.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, devis_service_1.DevisService, medecin_barrel_1.OrdonanceService])
+                    __metadata('design:paramtypes', [router_1.Router, devis_service_1.DevisService, medecin_barrel_1.OrdonanceService, shared_barrel_1.DateService])
                 ], DetailDevisComponent);
                 return DetailDevisComponent;
             }());

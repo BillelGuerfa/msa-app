@@ -1,6 +1,6 @@
 import {Component,OnInit,ElementRef,AfterViewInit, NgZone, OnChanges  } from "angular2/core";
 import { RouteConfig, ROUTER_DIRECTIVES, Router} from "angular2/router";
-import {HomeComponent, HeaderComponent, NavComponent, FooterComponent} from "./shared/shared.barrel";
+import {HomeComponent, HeaderComponent, NavComponent, FooterComponent, DateService} from "./shared/shared.barrel";
 import {AuthService, 
         LoginComponent,
         EmployeService, 
@@ -53,7 +53,8 @@ declare var $this,$dropdownMenu;
                 OrdonanceService,
                 DevisService,
                 FactureService,
-                CommandeService],
+                CommandeService,
+                DateService],
                 
     directives: [ROUTER_DIRECTIVES ,
                  HeaderComponent,

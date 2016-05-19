@@ -1,6 +1,6 @@
-import { Component, OnInit, AfterViewInit,NgZone, OnChanges ,Inject } from 'angular2/core';
+import { Component, OnInit, AfterViewInit,NgZone, OnChanges } from 'angular2/core';
 import {Router } from "angular2/router";
-import {AutocompleteDirective} from "../../shared/shared.barrel";
+import {AutocompleteDirective, DateService} from "../../shared/shared.barrel";
 import {Observable} from "rxjs/Observable";
 import "rxjs/Rx";
 import {PatientService, Patient} from "../../assistante/assistante.barrel";
@@ -24,7 +24,8 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
                 private _devisService:DevisService,
                 private _router:Router,
                 private _patientService:PatientService,
-                private _ordonanceService:OrdonanceService
+                private _ordonanceService:OrdonanceService,
+                private _dateService: DateService
                 ) { }
     ngOnChanges(changes : any){
         //this.patient = changes.patient.currentValue;
@@ -98,5 +99,8 @@ export class ListeDevisComponent implements OnInit, AfterViewInit,OnChanges {
     }
     newDevisTotal() : number{
         return this._devisService.calculerPrixTotal(this.newDevis);
+    }
+    displayDate(timestampDate : string) : string{
+        return this._dateService.timestampToDate(+timestampDate);
     }
 }

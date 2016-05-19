@@ -9,6 +9,7 @@ export {NotificationBodyComponent} from "./components/notificationBody.component
 
 //Services:
 export {NotificationService} from "./services/notification.service";
+export {DateService} from "./services/date.service";
 
 //attDirectives
 export {AutocompleteDirective} from "./attDirectives/autocomplete.directive";

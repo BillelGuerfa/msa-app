@@ -1,4 +1,4 @@
-System.register(["./components/footer.component", "./components/header.component", "./components/home.component", "./components/nav.component", "./components/navItem.component", "./components/notification.component", "./components/notificationBody.component", "./services/notification.service", "./attDirectives/autocomplete.directive"], function(exports_1, context_1) {
+System.register(["./components/footer.component", "./components/header.component", "./components/home.component", "./components/nav.component", "./components/navItem.component", "./components/notification.component", "./components/notificationBody.component", "./services/notification.service", "./services/date.service", "./attDirectives/autocomplete.directive"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     return {
@@ -41,6 +41,11 @@ System.register(["./components/footer.component", "./components/header.component
             function (notification_service_1_1) {
                 exports_1({
                     "NotificationService": notification_service_1_1["NotificationService"]
+                });
+            },
+            function (date_service_1_1) {
+                exports_1({
+                    "DateService": date_service_1_1["DateService"]
                 });
             },
             function (autocomplete_directive_1_1) {

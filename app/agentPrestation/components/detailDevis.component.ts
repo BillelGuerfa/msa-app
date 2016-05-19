@@ -1,5 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 import {Router, RouteParams} from "angular2/router";
+import {DateService} from "../../shared/shared.barrel";
 import {DevisService, Devis, LigneDevis} from "../services/devis.service";
 import {OrdonanceService, Ordonance} from "../../medecin/medecin.barrel";
 @Component({
@@ -10,7 +11,10 @@ import {OrdonanceService, Ordonance} from "../../medecin/medecin.barrel";
 export class DetailDevisComponent implements OnInit {
     devis:Devis;
     ordonance: Ordonance;
-    constructor(private _router:Router, private _devisService:DevisService, private _ordonanceService:OrdonanceService) { }
+    constructor(private _router:Router,
+                 private _devisService:DevisService, 
+                 private _ordonanceService:OrdonanceService, 
+                 private _dateService:DateService) { }
 
     ngOnInit() { 
         if(!this._devisService.selectedDevis.idDevis){
@@ -29,6 +33,9 @@ export class DetailDevisComponent implements OnInit {
     }
     prixTotalDevis() : number{
         return this._devisService.calculerPrixTotal(this.devis);
+    }
+    displayDate(timestampDate : string) : string{
+        return this._dateService.timestampToDate(+timestampDate);
     }
 
 }
