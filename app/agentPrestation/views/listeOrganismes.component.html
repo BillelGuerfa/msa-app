@@ -24,29 +24,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>10238</td>
-                            <td>ESI</td>
-                            <td>35 rue abas turki</td>
-                            <td>021569874</td>
-                            <td>cs_benbelkacem@esi.dz</td>
+                        <tr *ngFor="#organisme of organismes" >
+                            <td>{{organisme.idOrganisme}}</td>
+                            <td>{{organisme.nom}}</td>
+                            <td></td>
+                            <td>{{organisme.numTelephone}}</td>
+                            <td>{{organisme.email}}</td>
 
                         </tr>
-                        <tr>
-                            <td>10239</td>
-                            <td>ESI</td>
-                            <td>35 rue abas turki</td>
-                            <td>021569874</td>
-                            <td>cs_benbelkacem@esi.dz</td>
-                        </tr>
-                        <tr>
-                            <td>10240</td>
-                            <td>ESI</td>
-                            <td>35 rue abas turki</td>
-                            <td>021569874</td>
-                            <td>cs_benbelkacem@esi.dz</td>
-                        </tr>
-
                     </tbody>
                 </table>
             </div>

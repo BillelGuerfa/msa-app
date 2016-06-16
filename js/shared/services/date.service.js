@@ -22,7 +22,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function DateService() {
                 }
                 DateService.prototype.timestampToDate = function (timestamp) {
-                    return moment(timestamp).format();
+                    return moment(timestamp).format("DD/MM/YYYY HH:mm");
+                };
+                DateService.prototype.currentTimestamp = function () {
+                    return +moment().format("x");
+                };
+                DateService.prototype.dateToTimestamp = function (date, dateFormat) {
+                    return +moment(date, dateFormat).format("x");
                 };
                 DateService = __decorate([
                     core_1.Injectable(), 

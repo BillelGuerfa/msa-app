@@ -22,7 +22,7 @@ export class DevisService {
                             devis.listeLigneDevis = lignesDevis.json();
                             return devis;
                           });
-                            
+
     }
     getDevisById(idDevis: any){
         return this._http.get(config.urls.agentPrestation.devisById)
@@ -39,10 +39,10 @@ export class DevisService {
                             .map(devisReturned => {
                                 //TODO: post lignes devis after cheking devis here.
                                 if(devisReturned.json()){
-                                    
+
                                     this._http.post(config.urls.agentPrestation.lignesDevis,JSON.stringify(devis.listeLigneDevis))
                                               .map(lignesDevis => {
-                                                  
+
                                               });
                                 }
                                 return <Devis> devisReturned.json();
@@ -55,7 +55,7 @@ export class DevisService {
             devis.listeLigneDevis.forEach(ligne => {
                 total += ligne.produit.prixUnitaire * ligne.quantite;
             })
-        }        
+        }
         return total;
     }
     handleErrors(error: Response) {

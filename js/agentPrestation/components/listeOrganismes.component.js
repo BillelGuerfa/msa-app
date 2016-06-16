@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', "../services/organisme.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,43 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, organisme_service_1;
     var ListeOrganismesComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (organisme_service_1_1) {
+                organisme_service_1 = organisme_service_1_1;
             }],
         execute: function() {
             ListeOrganismesComponent = (function () {
-                function ListeOrganismesComponent(_zone) {
+                function ListeOrganismesComponent(_zone, _organismeService) {
                     this._zone = _zone;
+                    this._organismeService = _organismeService;
                 }
-                ListeOrganismesComponent.prototype.ngOnInit = function () { };
+                ListeOrganismesComponent.prototype.ngOnInit = function () {
+                };
                 ListeOrganismesComponent.prototype.ngAfterViewInit = function () {
-                    this._zone.run(function () {
-                        $("#data-table-selection").bootgrid({
-                            css: {
-                                icon: 'zmdi icon',
-                                iconColumns: 'zmdi-view-module',
-                                iconDown: 'zmdi-expand-more',
-                                iconRefresh: 'zmdi-refresh',
-                                iconUp: 'zmdi-expand-less'
-                            },
-                            selection: true,
-                            rowSelect: true,
-                            keepSelection: true
+                    var _this = this;
+                    this._organismeService.getOrganismes().subscribe(function (organismes) {
+                        _this.organismes = organismes;
+                        _this._zone.run(function () {
+                            setTimeout(function () {
+                                $("#data-table-selection").bootgrid({
+                                    css: {
+                                        icon: 'zmdi icon',
+                                        iconColumns: 'zmdi-view-module',
+                                        iconDown: 'zmdi-expand-more',
+                                        iconRefresh: 'zmdi-refresh',
+                                        iconUp: 'zmdi-expand-less'
+                                    },
+                                    selection: true,
+                                    rowSelect: true,
+                                    keepSelection: true
+                                });
+                            }, 0);
                         });
                     });
                 };
@@ -44,7 +55,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         selector: 'liste-organismes',
                         templateUrl: 'app/agentPrestation/views/listeOrganismes.component.html'
                     }), 
-                    __metadata('design:paramtypes', [core_1.NgZone])
+                    __metadata('design:paramtypes', [core_1.NgZone, organisme_service_1.OrganismeService])
                 ], ListeOrganismesComponent);
                 return ListeOrganismesComponent;
             }());

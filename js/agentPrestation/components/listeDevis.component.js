@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel", "rxjs/Rx", "../../assistante/assistante.barrel", "../../medecin/medecin.barrel", "../services/devis.service"], function(exports_1, context_1) {
+System.register(["angular2/core", "angular2/router", "../../shared/shared.barrel", "rxjs/Rx", "../../assistante/assistante.barrel", "../../medecin/medecin.barrel", "../services/devis.service"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -53,7 +53,9 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                         _this._ordonanceService.getOrdonance(_this.patient).subscribe(function (ordonanceSansLignes) {
                             ordonanceSansLignes.subscribe(function (ordonance) {
                                 _this.ordonancePatient = ordonance;
+                                _this.newDevis = {};
                                 _this.newDevis.patient = _this.patient;
+                                _this.newDevis.datePrescription = _this._dateService.currentTimestamp();
                                 _this.newDevis.listeLigneDevis = [];
                                 _this.ordonancePatient.lignesOrdonance.forEach(function (ligneOrdonance) {
                                     var ligneDevis = {};
@@ -68,7 +70,7 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                     };
                 }
                 ListeDevisComponent.prototype.ngOnChanges = function (changes) {
-                    //this.patient = changes.patient.currentValue;
+                    // this.patient = changes.patient.currentValue;
                     console.log(this.patient);
                 };
                 ListeDevisComponent.prototype.ngOnInit = function () {
@@ -83,23 +85,36 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                             setTimeout(function () {
                                 $("#data-table-selection").bootgrid({
                                     css: {
-                                        icon: 'zmdi icon',
-                                        iconColumns: 'zmdi-view-module',
-                                        iconDown: 'zmdi-expand-more',
-                                        iconRefresh: 'zmdi-refresh',
-                                        iconUp: 'zmdi-expand-less'
+                                        icon: "zmdi icon",
+                                        iconColumns: "zmdi-view-module",
+                                        iconDown: "zmdi-expand-more",
+                                        iconRefresh: "zmdi-refresh",
+                                        iconUp: "zmdi-expand-less"
                                     },
                                     selection: true,
                                     rowSelect: true,
                                     keepSelection: true
                                 }).on("selected.rs.jquery.bootgrid", function (e, rows) {
-                                    //TODO: Select event here
+                                    // TODO: Select event here
                                     _this.selectDevis(rows[0].id);
                                     _this._router.navigate(["DetailDevis", { idDevis: rows[0].id }]);
                                 });
                             }, 0);
                         });
                     });
+                    $(".date-picker").datetimepicker({
+                        format: "DD/MM/YYYY"
+                    }).on('dp.change', function (ev) {
+                        _this.newDevis.dateExpiration = _this._dateService.dateToTimestamp(ev.date.format("DD/MM/YYYY"), 'DD/MM/YYYY');
+                    });
+                    ;
+                };
+                ListeDevisComponent.prototype.setDateExpDevis = function (event) {
+                    this.newDevis.dateExpiration = this._dateService.dateToTimestamp(event, "DD/MM/YYYY");
+                    console.log(this.newDevis);
+                };
+                ListeDevisComponent.prototype.sendDevis = function () {
+                    console.log(this.newDevis);
                 };
                 ListeDevisComponent.prototype.changeQuantiteLigneDevis = function (ligneDevis, signe) {
                     if (signe === "+") {
@@ -118,8 +133,8 @@ System.register(['angular2/core', "angular2/router", "../../shared/shared.barrel
                 };
                 ListeDevisComponent = __decorate([
                     core_1.Component({
-                        selector: 'liste-devis',
-                        templateUrl: 'app/agentPrestation/views/listeDevis.component.html',
+                        selector: "liste-devis",
+                        templateUrl: "app/agentPrestation/views/listeDevis.component.html",
                         directives: [shared_barrel_1.AutocompleteDirective]
                     }), 
                     __metadata('design:paramtypes', [core_1.NgZone, devis_service_1.DevisService, router_1.Router, assistante_barrel_1.PatientService, medecin_barrel_1.OrdonanceService, shared_barrel_1.DateService])

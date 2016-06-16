@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d554b86a-1777-4d86-b0d2-fb772800ccc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/commande.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/commande.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/devis.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/devis.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/services/facture.service.ts" afterPath="$PROJECT_DIR$/app/agentPrestation/services/facture.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/agentPrestation/views/listeDevis.component.html" afterPath="$PROJECT_DIR$/app/agentPrestation/views/listeDevis.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assistante/components/searchRdvs.component.ts" afterPath="$PROJECT_DIR$/app/assistante/components/searchRdvs.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/commande.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/devis.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js" afterPath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js.map" afterPath="$PROJECT_DIR$/js/agentPrestation/services/facture.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js" afterPath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js.map" afterPath="$PROJECT_DIR$/js/assistante/components/searchRdvs.component.js.map" />
     </list>
     <ignored path="msa-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +26,12 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="1139">
+              <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
                 <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
+                <marker date="1463650393635" expanded="true" signature="1999:2007" placeholder="[...]" />
               </folding>
             </state>
           </provider>
@@ -205,7 +193,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,73 +202,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="msa-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,11 +293,13 @@
       <workItem from="1462213112013" duration="99000" />
       <workItem from="1462733154874" duration="182000" />
       <workItem from="1462905583119" duration="178000" />
+      <workItem from="1463992669364" duration="594000" />
+      <workItem from="1464112039654" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10655000" />
+    <option name="totallyTimeSpent" value="11275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,6 +394,7 @@
           <folding>
             <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
+            <marker date="1463650393635" expanded="true" signature="1999:2007" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -566,6 +493,7 @@
           <folding>
             <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
+            <marker date="1463650393635" expanded="true" signature="1999:2007" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -807,11 +735,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        <state relative-caret-position="1139">
+          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
           <folding>
             <element signature="e#0#93#0" expanded="true" />
             <element signature="n#!!block;n#ngAfterViewInit#0;n#AppComponent#0" expanded="false" />
+            <marker date="1463650393635" expanded="true" signature="1999:2007" placeholder="[...]" />
           </folding>
         </state>
       </provider>

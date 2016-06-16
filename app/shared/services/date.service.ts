@@ -4,6 +4,12 @@ declare var moment;
 export class DateService {
     constructor() { }
     timestampToDate(timestamp : number) : string{
-        return moment(timestamp).format();
+        return moment(timestamp).format("DD/MM/YYYY HH:mm");
+    }
+    currentTimestamp() : number {
+        return +moment().format("x");
+    }
+    dateToTimestamp(date: string,dateFormat:string) : number{
+        return +moment(date,dateFormat).format("x");
     }
 }
