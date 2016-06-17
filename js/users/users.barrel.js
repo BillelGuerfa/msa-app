@@ -10,7 +10,8 @@ System.register(["./components/login.component", "./services/auth.service", "./s
             },
             function (auth_service_1_1) {
                 exports_1({
-                    "AuthService": auth_service_1_1["AuthService"]
+                    "AuthService": auth_service_1_1["AuthService"],
+                    "Compte": auth_service_1_1["Compte"]
                 });
             },
             function (employe_service_1_1) {

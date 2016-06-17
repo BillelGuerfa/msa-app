@@ -43,8 +43,8 @@
                                 </ul>
                             </div>
 
-                            <div class="lv-body">
-                                <notification type="Rappel RDV client" contenu="Cum sociis natoque penatibus et magnis dis parturient montes"></notification>
+                            <div class="lv-body" *ngIf="notifications" >
+                                <notification *ngFor="#notification of notifications"  [type]="notification.typeNotification" [contenu]="notification.contenu" [id_notif]="notification.id_notif"></notification>
                             </div>
 
                             <a class="lv-footer" href="">View Previous</a>
@@ -94,4 +94,5 @@
 </header>
 
 <!-- -------------------------------------------------------modal------------------------------------------------------------- -->
-<notification-body></notification-body>
+
+<notification-body *ngFor="#notification of notifications" [notification]="notification"></notification-body>

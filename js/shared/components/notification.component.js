@@ -19,9 +19,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             NotificationComponent = (function () {
-                function NotificationComponent() {
+                function NotificationComponent(_zone) {
+                    this._zone = _zone;
                 }
                 NotificationComponent.prototype.ngOnInit = function () { };
+                NotificationComponent.prototype.showModal = function () {
+                    $("#" + this.id_notif).modal();
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', String)
@@ -30,12 +34,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Input(), 
                     __metadata('design:type', String)
                 ], NotificationComponent.prototype, "contenu", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', String)
+                ], NotificationComponent.prototype, "id_notif", void 0);
                 NotificationComponent = __decorate([
                     core_1.Component({
                         selector: 'notification',
                         templateUrl: 'app/shared/views/notification.component.html'
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.NgZone])
                 ], NotificationComponent);
                 return NotificationComponent;
             }());

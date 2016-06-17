@@ -22,6 +22,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function NotificationBodyComponent() {
                 }
                 NotificationBodyComponent.prototype.ngOnInit = function () { };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], NotificationBodyComponent.prototype, "notification", void 0);
                 NotificationBodyComponent = __decorate([
                     core_1.Component({
                         selector: 'notification-body',
