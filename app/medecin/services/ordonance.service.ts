@@ -12,10 +12,10 @@ export class OrdonanceService {
     constructor(private _http:Http) { }
     
     getOrdonance(patient: Patient) : Observable<Observable<Ordonance>>{ 
-        return this._http.get(config.urls.medecin.ordonance+"?idPatient="+patient.idPatient)
+        return this._http.get(config.urls.medecin.ordonance+"/"+patient.idPatient)
                       .map((ordonanceSansLignes) => {
-                          let ordonance: Ordonance = ordonanceSansLignes.json();
-                         return this._http.get(config.urls.medecin.lignesOrdonance)
+                          let ordonance: Ordonance = ordonanceSansLignes.json()[0];
+                         return this._http.get(config.urls.medecin.lignesOrdonance+"/"+ordonance.idOrdonance)
                                     .map((lignesOrdonance )=>{
                                         ordonance.lignesOrdonance = lignesOrdonance.json();
                                         return ordonance;

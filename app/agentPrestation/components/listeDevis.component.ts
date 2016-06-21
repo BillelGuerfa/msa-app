@@ -69,7 +69,7 @@ export class ListeDevisComponent implements OnInit, AfterViewInit, OnChanges {
         $(".date-picker").datetimepicker({
                 format: "DD/MM/YYYY"
         }).on('dp.change',  (ev) =>{
-             this.newDevis.dateExpiration = this._dateService.dateToTimestamp(ev.date.format("DD/MM/YYYY"),'DD/MM/YYYY');
+             this.newDevis.dureValidation = this._dateService.dateToTimestamp(ev.date.format("DD/MM/YYYY"),'DD/MM/YYYY');
         }); ;
 
     }
@@ -83,6 +83,8 @@ export class ListeDevisComponent implements OnInit, AfterViewInit, OnChanges {
                  ordonanceSansLignes.subscribe(ordonance => {
                     this.ordonancePatient = ordonance;
                     this.newDevis = { };
+                    this.newDevis.etat = "En cours"
+                    this.newDevis.ordonnance = ordonance;
                     this.newDevis.patient = this.patient;
                     this.newDevis.datePrescription = this._dateService.currentTimestamp();
                     this.newDevis.listeLigneDevis = [];
@@ -98,11 +100,14 @@ export class ListeDevisComponent implements OnInit, AfterViewInit, OnChanges {
             //console.log(this.patient);
     };
     setDateExpDevis(event) {
-        this.newDevis.dateExpiration = this._dateService.dateToTimestamp(event, "DD/MM/YYYY");
+        this.newDevis.dureValidation = this._dateService.dateToTimestamp(event, "DD/MM/YYYY");
         console.log(this.newDevis);
     }
     sendDevis() {
         console.log(this.newDevis);
+        this._devisService.postDevis(this.newDevis).subscribe((resp)=>{
+            console.log(resp);
+        });
     }
     changeQuantiteLigneDevis(ligneDevis: LigneDevis, signe: string) {
         if (signe === "+") {
@@ -117,5 +122,14 @@ export class ListeDevisComponent implements OnInit, AfterViewInit, OnChanges {
     }
     displayDate(timestampDate : string) : string {
         return this._dateService.timestampToDate(+timestampDate);
+    }
+    exportPdf(){
+        $("#data-table-selection").tableExport({type:'pdf',escape:'false',pdfLeftMargin:0});
+    }
+    exportCsv(){
+        $("#data-table-selection").tableExport({type:'csv',escape:'false'});
+    }
+    imprimer(){
+        window.print();
     }
 }

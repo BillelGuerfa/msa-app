@@ -85,6 +85,11 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     displayDate(timestampDate : string) : string{
         return this._dateService.timestampToDate(+timestampDate);
     }
+    sendCommande(){
+        this._commandesService.postCommande(this.newCommande).subscribe((commande)=>{
+            console.log(commande);
+        });
+    }
     ngOnInit() { 
         this.patients = this._patientService.getPatients();
         this._organismeService.getOrganismes().subscribe(organismes => {
@@ -119,5 +124,14 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
             });
         });
         
+    }
+     exportPdf(){
+        $("#data-table-selection").tableExport({type:'pdf',escape:'false'});
+    }
+    exportCsv(){
+        $("#data-table-selection").tableExport({type:'csv',escape:'false'});
+    }
+    imprimer(){
+        window.print();
     }
 }

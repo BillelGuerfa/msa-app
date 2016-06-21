@@ -3,6 +3,7 @@ import {Http, Response } from "angular2/http";
 import {config} from "../../app.config";
 import {Feature, FeatureService} from "./feature.service";
 import {Observable} from "rxjs/Observable";
+import {Adresse} from "../../shared/shared.barrel";
 import "rxjs/Rx";
 @Injectable()
 export class EmployeService {
@@ -34,7 +35,7 @@ export interface Employe {
     idEmploye: number;
     nom: string;
     prenom: string;
-    adresse: {};
+    adresse: Adresse;
     dateNaissance: string;
     numeroTel: string;
     dateRecrutement: string;

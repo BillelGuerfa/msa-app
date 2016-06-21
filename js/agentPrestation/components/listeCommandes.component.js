@@ -98,6 +98,11 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                 ListeCommandesComponent.prototype.displayDate = function (timestampDate) {
                     return this._dateService.timestampToDate(+timestampDate);
                 };
+                ListeCommandesComponent.prototype.sendCommande = function () {
+                    this._commandesService.postCommande(this.newCommande).subscribe(function (commande) {
+                        console.log(commande);
+                    });
+                };
                 ListeCommandesComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this.patients = this._patientService.getPatients();
@@ -130,6 +135,15 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                             }, 0);
                         });
                     });
+                };
+                ListeCommandesComponent.prototype.exportPdf = function () {
+                    $("#data-table-selection").tableExport({ type: 'pdf', escape: 'false' });
+                };
+                ListeCommandesComponent.prototype.exportCsv = function () {
+                    $("#data-table-selection").tableExport({ type: 'csv', escape: 'false' });
+                };
+                ListeCommandesComponent.prototype.imprimer = function () {
+                    window.print();
                 };
                 ListeCommandesComponent = __decorate([
                     core_1.Component({

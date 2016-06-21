@@ -40,7 +40,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         .catch(this.handleErrors);
                 };
                 DevisService.prototype.getLigneDevis = function (devis) {
-                    return this._http.get(app_config_1.config.urls.agentPrestation.lignesDevis + "?idDevis=" + devis.idDevis)
+                    return this._http.get(app_config_1.config.urls.agentPrestation.lignesDevis + "/" + devis.idDevis)
                         .map(function (lignesDevis) {
                         devis.listeLigneDevis = lignesDevis.json();
                         return devis;
@@ -58,17 +58,22 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     var _this = this;
                     //TODO : Check stock before posting
                     //TODO : don't forget to post lignes devis After devis...
-                    return this._http.post(app_config_1.config.urls.agentPrestation.devis, JSON.stringify(devis))
+                    var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this._http.post(app_config_1.config.urls.agentPrestation.devis, JSON.stringify(devis), options)
                         .map(function (devisReturned) {
                         //TODO: post lignes devis after cheking devis here.
                         if (devisReturned.json()) {
-                            _this._http.post(app_config_1.config.urls.agentPrestation.lignesDevis, JSON.stringify(devis.listeLigneDevis))
-                                .map(function (lignesDevis) {
+                            devis.listeLigneDevis.forEach(function (ligneDevis) {
+                                ligneDevis["devis"] = { "idDevis": devis.idDevis };
+                                _this._http.post(app_config_1.config.urls.agentPrestation.lignesDevis, JSON.stringify(ligneDevis), options)
+                                    .map(function (ligneDevis) {
+                                }).subscribe(function () {
+                                });
                             });
                         }
                         return devisReturned.json();
-                    })
-                        .catch(this.handleErrors);
+                    });
                 };
                 DevisService.prototype.calculerPrixTotal = function (devis) {
                     var total = 0;
@@ -80,7 +85,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     return total;
                 };
                 DevisService.prototype.handleErrors = function (error) {
-                    return Observable_1.Observable.throw(error.json().error || 'Server error');
+                    return Observable_1.Observable.throw('Server error');
                 };
                 DevisService = __decorate([
                     core_1.Injectable(), 

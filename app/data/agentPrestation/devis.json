@@ -1,11 +1,11 @@
 [{
     "idDevis": 22,
     "datePrescription": 1462120173939,
-    "dateExpiration": 1462120173939,
+    "dureValidation": 1462120173939,
     "modePayment": "Cash",
     "etat": "Payé",
     "patient": {
-        "idPatient": "P22",
+        "idPatient": 2,
         "nom": "Guerfa",
         "prenom": "Billel",
         "numTelephone": "0542765526",
@@ -16,13 +16,33 @@
         "typePoche": "Moyenne",
         "gamme": "laGamme",
         "nombrepocheJ": 2,
-        "referenceDossier": "P22",
+        "referenceDossier": 2,
         "nss": "07523698542"
+    },
+    "ordonance":{
+         "idOrdonance": 22,
+        "date": 1462120173939,
+        "medecin": null,
+        "patient": {
+            "idPatient": 2,
+            "nom": "Guerfa",
+            "prenom": "Billel",
+            "numTelephone": "0542765526",
+            "dateNaissance": "22/07/1994",
+            "natureStomie": "colostomie",
+            "typeStomie": "colostomie",
+            "adressMail": "cb_guerfa@esi.dz",
+            "typePoche": "Moyenne",
+            "gamme": "laGamme",
+            "nombrepocheJ": 2,
+            "referenceDossier": 2,
+            "nss": "07523698542"
+        } 
     }
 }, {
     "idDevis": 23,
     "datePrescription": 1462120173939,
-    "dateExpiration": 1462120173939,
+    "dureValidation": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "Payé",
     "patient": {
@@ -39,11 +59,40 @@
         "nombrepocheJ": 2,
         "referenceDossier": "P39",
         "nss" : "07523698542"
+    },
+    "ordonance":{
+         "idOrdonance": 23,
+        "date": 1462120173939,
+        "medecin": {
+            "idEmploye": 20,
+            "nom": "Guerfa",
+            "prenom": "Billel",
+            "adresse": "03 rue mustapha bouhired ,Alger",
+            "dateNaissance": "22/07/1994",
+            "numeroTel": "0542765526",
+            "dateRecrutement": "20/03/2016",
+            "poste": "AGENT_PRESTATION"
+        },
+        "patient": {
+            "idPatient": "P39",
+            "nom": "Chaibi",
+            "prenom": "Asma",
+            "numTelephone": "0542765526",
+            "dateNaissance": "22/07/1994",
+            "natureStomie": "colostomie",
+            "typeStomie": "colostomie",
+            "adressMail": "cb_guerfa@esi.dz",
+            "typePoche": "Moyenne",
+            "gamme": "laGamme",
+            "nombrepocheJ": 2,
+            "referenceDossier": "P22",
+            "nss": "07523698542"
+        } 
     }
 }, {
     "idDevis": 24,
     "datePrescription": 1462120173939,
-    "dateExpiration": 1462120173939,
+    "dureValidation": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "En attente",
     "patient": {
@@ -60,11 +109,40 @@
         "nombrepocheJ": 2,
         "referenceDossier": "P10",
         "nss" : "07523698542"
+    },
+    "ordonance":{
+         "idOrdonance": 24,
+        "date": 1462120173939,
+        "medecin": {
+            "idEmploye": 20,
+            "nom": "Guerfa",
+            "prenom": "Billel",
+            "adresse": "03 rue mustapha bouhired ,Alger",
+            "dateNaissance": "22/07/1994",
+            "numeroTel": "0542765526",
+            "dateRecrutement": "20/03/2016",
+            "poste": "AGENT_PRESTATION"
+        },
+        "patient": {
+            "idPatient": "P11",
+            "nom": "Benbelkacem",
+            "prenom": "Sonia",
+            "numTelephone": "0542765526",
+            "dateNaissance": "22/07/1994",
+            "natureStomie": "colostomie",
+            "typeStomie": "colostomie",
+            "adressMail": "cb_guerfa@esi.dz",
+            "typePoche": "Moyenne",
+            "gamme": "laGamme",
+            "nombrepocheJ": 2,
+            "referenceDossier": "P22",
+            "nss": "07523698542"
+        } 
     }
 }, {
     "idDevis": 25,
     "datePrescription": 1462120173939,
-    "dateExpiration": 1462120173939,
+    "dureValidation": 1462120173939,
     "modePayment": "Prise en charge",
     "etat": "Expiré",
     "patient": {
@@ -81,5 +159,34 @@
         "nombrepocheJ": 2,
         "referenceDossier": "P10",
         "nss" : "07523698542"
+    },
+    "ordonance":{
+         "idOrdonance": 24,
+        "date": 1462120173939,
+        "medecin": {
+            "idEmploye": 20,
+            "nom": "Guerfa",
+            "prenom": "Billel",
+            "adresse": "03 rue mustapha bouhired ,Alger",
+            "dateNaissance": "22/07/1994",
+            "numeroTel": "0542765526",
+            "dateRecrutement": "20/03/2016",
+            "poste": "AGENT_PRESTATION"
+        },
+        "patient": {
+            "idPatient": "P10",
+            "nom": "Yousnadj",
+            "prenom": "Yacine Walid",
+            "numTelephone": "0542765526",
+            "dateNaissance": "22/07/1994",
+            "natureStomie": "colostomie",
+            "typeStomie": "colostomie",
+            "adressMail": "cb_guerfa@esi.dz",
+            "typePoche": "Moyenne",
+            "gamme": "laGamme",
+            "nombrepocheJ": 2,
+            "referenceDossier": "P22",
+            "nss": "07523698542"
+        } 
     }
 }]

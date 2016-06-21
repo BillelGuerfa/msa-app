@@ -15,17 +15,12 @@
 
         <li class="pull-right">
             <ul class="top-menu">
-
-
-
-
-
                 <!--------------------Notifications-------------------------- -->
 
                 <li class="dropdown">
                     <a data-toggle="dropdown" data-target="notifications" href="">
                         <i class="tm-icon zmdi zmdi-notifications"></i>
-                        <i class="tmn-counts">9</i>
+                        <i class="tmn-counts" *ngIf="notifications">{{notifications.length}}</i>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-lg pull-right">
@@ -43,8 +38,8 @@
                                 </ul>
                             </div>
 
-                            <div class="lv-body" *ngIf="notifications" >
-                                <notification *ngFor="#notification of notifications"  [type]="notification.typeNotification" [contenu]="notification.contenu" [id_notif]="notification.id_notif"></notification>
+                            <div class="lv-body" *ngIf="notifications">
+                                <notification *ngFor="#notification of notifications" [type]="notification.typeNotification" [contenu]="notification.contenu" [id_notif]="notification.id_notif"></notification>
                             </div>
 
                             <a class="lv-footer" href="">View Previous</a>

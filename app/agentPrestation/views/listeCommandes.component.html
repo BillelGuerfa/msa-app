@@ -10,11 +10,11 @@
             <div class="row"><label>      </label></div>
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <button class="btn btn-default" type="submit">CSV</button>
+                <button class="btn btn-default" type="submit" (click)="exportCsv()">CSV</button>
                 <label>      </label>
-                <button class="btn btn-default" type="submit">PDF</button>
+                <button class="btn btn-default" type="submit" (click)="exportPdf()">PDF</button>
                 <label>      </label>
-                <button class="btn btn-primary" type="submit">IMPRIMER</button>
+                <button class="btn btn-primary" type="submit" (click)="imprimer()">IMPRIMER</button>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-2"><button class="btn btn-success" type="submit" data-toggle="modal" data-target="#creation" (click)="createCommande()">IMPORTER</button></div>
@@ -116,7 +116,7 @@
                                             <tr *ngFor="#devis of devisPatient" >
                                                 <td>{{devis.idDevis}}</td>
                                                 <td>{{displayDate(devis.datePrescription)}}</td>
-                                                <td>{{displayDate(devis.dateExpiration)}}</td>
+                                                <td>{{displayDate(devis.dureValidation)}}</td>
                                             </tr>
                                         </tbody>
                                     </table>

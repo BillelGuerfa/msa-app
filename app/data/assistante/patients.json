@@ -1,62 +1,90 @@
 [
     {
-        "idPatient": "P22",
+        "idPatient": 2,
         "nom": "Guerfa",
         "prenom": "Billel",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue":"mustapha bouhired",
+            "numRue":3
+        },
         "numTelephone":  "0542765526" ,
-        "dateNaissance": "22/07/1994",
+        "dateNaissance": "774831600000",
         "natureStomie": "colostomie",
         "typeStomie": "colostomie",
         "adressMail": "cb_guerfa@esi.dz",
         "typePoche": "Moyenne",
         "gamme": "laGamme",
         "nombrepocheJ": 2,
-        "referenceDossier": "P22",
+        "referenceDossier": 2,
         "nss" : "07523698542"
     },
     {
-        "idPatient": "P39",
+        "idPatient": 4,
         "nom": "Chaibi",
         "prenom": "Asma",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue":"mustapha bouhired",
+            "numRue":3
+        },
         "numTelephone":  "0542765526" ,
-        "dateNaissance": "22/07/1994",
+        "dateNaissance": "774831600000",
         "natureStomie": "colostomie",
         "typeStomie": "colostomie",
         "adressMail": "cb_guerfa@esi.dz",
         "typePoche": "Moyenne",
         "gamme": "laGamme",
         "nombrepocheJ": 2,
-        "referenceDossier": "P39",
+        "referenceDossier": 4,
         "nss" : "07523698542"
     },
     {
-        "idPatient": "P11",
+        "idPatient": 6,
         "nom": "Benbelkacem",
         "prenom": "Sonia",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue":"mustapha bouhired",
+            "numRue":3
+        },
         "numTelephone":  "0542765526" ,
-        "dateNaissance": "22/07/1994",
+        "dateNaissance": "774831600000",
         "natureStomie": "colostomie",
         "typeStomie": "colostomie",
         "adressMail": "cb_guerfa@esi.dz",
         "typePoche": "Moyenne",
         "gamme": "laGamme",
         "nombrepocheJ": 2,
-        "referenceDossier": "P10",
+        "referenceDossier": 6,
         "nss" : "07523698542"
     },
     {
-        "idPatient": "P10",
+        "idPatient": 8,
         "nom": "Yousnadj",
         "prenom": "Yacine Walid",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue":"mustapha bouhired",
+            "numRue":3
+        },
         "numTelephone":  "0542765526" ,
-        "dateNaissance": "22/07/1994",
+        "dateNaissance": "774831600000",
         "natureStomie": "colostomie",
         "typeStomie": "colostomie",
         "adressMail": "cb_guerfa@esi.dz",
         "typePoche": "Moyenne",
         "gamme": "laGamme",
         "nombrepocheJ": 2,
-        "referenceDossier": "P10",
+        "referenceDossier": 8,
         "nss" : "07523698542"
     }
 ]

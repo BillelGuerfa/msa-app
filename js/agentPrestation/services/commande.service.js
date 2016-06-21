@@ -39,6 +39,14 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     })
                         .catch(this.handleErrors);
                 };
+                CommandeService.prototype.postCommande = function (commande) {
+                    var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this._http.post(app_config_1.config.urls.agentPrestation.commandes, JSON.stringify(commande), options)
+                        .map(function (commande) {
+                        return commande.json();
+                    });
+                };
                 CommandeService.prototype.handleErrors = function (error) {
                     return Observable_1.Observable.throw(error.json().error || 'Server error');
                 };

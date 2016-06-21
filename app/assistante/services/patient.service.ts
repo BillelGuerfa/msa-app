@@ -3,6 +3,7 @@ import {Http, Response} from "angular2/http";
 import "rxjs/Rx";
 import {Observable} from "rxjs/Observable";
 import {config} from "../../app.config";
+import {Adresse} from "../../shared/shared.barrel";
 @Injectable()
 export class PatientService {
     
@@ -26,6 +27,7 @@ export interface Patient{
     idPatient: string;
     nom: string;
     prenom: string;
+    adresse: Adresse;
     numTelephone: string;
     dateNaissance: string;
     natureStomie: string;

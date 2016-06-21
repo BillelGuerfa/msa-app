@@ -9,7 +9,8 @@ System.register([], function(exports_1, context_1) {
                 urls: {
                     login: "./app/data/users/compte.json",
                     assistante: {
-                        patients: "./app/data/assistante/patients.json",
+                        //patients: "./app/data/assistante/patients.json",
+                        patients: "http://localhost:8080/Patients",
                         anomalie: "",
                         rdvs: "./app/data/assistante/rdvs.json"
                     },
@@ -17,15 +18,17 @@ System.register([], function(exports_1, context_1) {
                     agentPrestation: {
                         organismes: "./app/data/agentPrestation/organismes.json",
                         commandes: "./app/data/agentPrestation/commandes.json",
-                        devis: "./app/data/agentPrestation/devis.json",
-                        lignesDevis: "./app/data/agentPrestation/lignesDevis.json",
+                        //devis: "./app/data/agentPrestation/devis.json",
+                        devis: "http://localhost:8080/Prestations/Devis",
+                        //lignesDevis : "./app/data/agentPrestation/lignesDevis.json",
+                        lignesDevis: "http://localhost:8080/Prestations/ligneDevis",
                         devisById: "./app/data/agentPrestation/devisById.json",
                         factures: "./app/data/agentPrestation/factures.json"
                     },
                     medecin: {
-                        ordonances: "",
-                        ordonance: "./app/data/medecin/ordonance.json",
-                        lignesOrdonance: "./app/data/medecin/lignesOrdonance.json"
+                        ordonances: "http://localhost:8080/Patients/Ordonance",
+                        ordonance: "http://localhost:8080/Patients/Ordonance",
+                        lignesOrdonance: "http://localhost:8080/Patients/LigneOrdonance"
                     },
                     magasinier: {
                         produits: "./app/data/magasinier/produits.json"

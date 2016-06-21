@@ -34,10 +34,10 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                 }
                 OrdonanceService.prototype.getOrdonance = function (patient) {
                     var _this = this;
-                    return this._http.get(app_config_1.config.urls.medecin.ordonance + "?idPatient=" + patient.idPatient)
+                    return this._http.get(app_config_1.config.urls.medecin.ordonance + "/" + patient.idPatient)
                         .map(function (ordonanceSansLignes) {
-                        var ordonance = ordonanceSansLignes.json();
-                        return _this._http.get(app_config_1.config.urls.medecin.lignesOrdonance)
+                        var ordonance = ordonanceSansLignes.json()[0];
+                        return _this._http.get(app_config_1.config.urls.medecin.lignesOrdonance + "/" + ordonance.idOrdonance)
                             .map(function (lignesOrdonance) {
                             ordonance.lignesOrdonance = lignesOrdonance.json();
                             return ordonance;

@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import {Http , Response } from "angular2/http";
+import {Http , Response, Headers, RequestOptions } from "angular2/http";
 import {Devis} from "./devis.service";
 import {Organisme} from "./organisme.service";
 import {config} from "../../app.config";
@@ -17,6 +17,15 @@ export class CommandeService {
                              return commandes.json();
                          })
                          .catch(this.handleErrors);
+    }
+    postCommande(commande: Commande): Observable<Commande>{
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this._http.post(config.urls.agentPrestation.commandes,JSON.stringify(commande),options)
+                                .map((commande)=>{
+                                    return commande.json();
+                                });
+
     }
     handleErrors(error: Response) {
         return Observable.throw(error.json().error || 'Server error');

@@ -54,6 +54,8 @@ System.register(["angular2/core", "angular2/router", "../../shared/shared.barrel
                             ordonanceSansLignes.subscribe(function (ordonance) {
                                 _this.ordonancePatient = ordonance;
                                 _this.newDevis = {};
+                                _this.newDevis.etat = "En cours";
+                                _this.newDevis.ordonnance = ordonance;
                                 _this.newDevis.patient = _this.patient;
                                 _this.newDevis.datePrescription = _this._dateService.currentTimestamp();
                                 _this.newDevis.listeLigneDevis = [];
@@ -105,16 +107,19 @@ System.register(["angular2/core", "angular2/router", "../../shared/shared.barrel
                     $(".date-picker").datetimepicker({
                         format: "DD/MM/YYYY"
                     }).on('dp.change', function (ev) {
-                        _this.newDevis.dateExpiration = _this._dateService.dateToTimestamp(ev.date.format("DD/MM/YYYY"), 'DD/MM/YYYY');
+                        _this.newDevis.dureValidation = _this._dateService.dateToTimestamp(ev.date.format("DD/MM/YYYY"), 'DD/MM/YYYY');
                     });
                     ;
                 };
                 ListeDevisComponent.prototype.setDateExpDevis = function (event) {
-                    this.newDevis.dateExpiration = this._dateService.dateToTimestamp(event, "DD/MM/YYYY");
+                    this.newDevis.dureValidation = this._dateService.dateToTimestamp(event, "DD/MM/YYYY");
                     console.log(this.newDevis);
                 };
                 ListeDevisComponent.prototype.sendDevis = function () {
                     console.log(this.newDevis);
+                    this._devisService.postDevis(this.newDevis).subscribe(function (resp) {
+                        console.log(resp);
+                    });
                 };
                 ListeDevisComponent.prototype.changeQuantiteLigneDevis = function (ligneDevis, signe) {
                     if (signe === "+") {
@@ -130,6 +135,15 @@ System.register(["angular2/core", "angular2/router", "../../shared/shared.barrel
                 };
                 ListeDevisComponent.prototype.displayDate = function (timestampDate) {
                     return this._dateService.timestampToDate(+timestampDate);
+                };
+                ListeDevisComponent.prototype.exportPdf = function () {
+                    $("#data-table-selection").tableExport({ type: 'pdf', escape: 'false', pdfLeftMargin: 0 });
+                };
+                ListeDevisComponent.prototype.exportCsv = function () {
+                    $("#data-table-selection").tableExport({ type: 'csv', escape: 'false' });
+                };
+                ListeDevisComponent.prototype.imprimer = function () {
+                    window.print();
                 };
                 ListeDevisComponent = __decorate([
                     core_1.Component({

@@ -1,30 +1,23 @@
 {
-    "idOrdonance": 22,
-    "date": 1462120173939,
-    "medecin": {
-        "idEmploye": 20,
-        "nom": "Guerfa",
-        "prenom": "Billel",
-        "adresse": "03 rue mustapha bouhired ,Alger",
-        "dateNaissance": "22/07/1994",
-        "numeroTel": "0542765526",
-        "dateRecrutement": "20/03/2016",
-        "poste": "AGENT_PRESTATION"
-    },
-    "patient": {
-        "idPatient": "P39",
-        "nom": "Chaibi",
-        "prenom": "Asma",
-        "numTelephone":  "0542765526" ,
-        "dateNaissance": "22/07/1994",
-        "natureStomie": "colostomie",
-        "typeStomie": "colostomie",
-        "adressMail": "cb_guerfa@esi.dz",
-        "typePoche": "Moyenne",
-        "gamme": "laGamme",
-        "nombrepocheJ": 2,
-        "referenceDossier": "P39",
-        "nss" : "07523698542"
-    } 
-
+  "idOrdonance": 25,
+  "date": 1462120173939,
+  "medecin": null,
+  "patient": {
+    "idPatient": 2,
+    "nom": "Billel",
+    "prenom": "Guerfa",
+    "dateNaissance": 774831600000,
+    "dateInscription": null,
+    "numTelephone": "0542765526",
+    "referenceDossier": "2",
+    "nss": "07523698542",
+    "typeAssurance": null,
+    "adresseMail": null,
+    "adresse": null,
+    "hopital": null,
+    "stomies": [],
+    "id": 2,
+    "numeroTel": "0542765526"
+  },
+  "id": 25
 }
