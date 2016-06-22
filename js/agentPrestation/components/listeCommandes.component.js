@@ -92,7 +92,7 @@ System.register(['angular2/core', "angular2/router", "../services/commande.servi
                 };
                 ListeCommandesComponent.prototype.createCommande = function () {
                     this.newCommande = {};
-                    this.newCommande.etat = "En attente de facturation";
+                    this.newCommande.etat = "Non reglée";
                     this.newCommande.date = moment().format("x");
                 };
                 ListeCommandesComponent.prototype.displayDate = function (timestampDate) {

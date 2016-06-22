@@ -49,10 +49,22 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                     this._zone = _zone;
                 }
                 AppComponent.prototype.ngOnInit = function () {
+                    var _this = this;
                     if (this._authService.isLogged()) {
                         this.loginPage = false;
-                        var compte = this._authService.getCompte();
-                        this.employe = this._employeService.getEmploye(compte.idCompte);
+                        this._authService.getCompte().subscribe(function (compte) {
+                            _this.employe = _this._employeService.getEmploye(compte.idCompte);
+                            _this._employeService.getEmploye(compte.idCompte).subscribe(function (employe) {
+                                console.log("l'employe : ");
+                                console.log(employe);
+                                if (employe.poste === "ASSISTANTE") {
+                                    window.location.pathname = "/Home";
+                                }
+                                else if (employe.poste === "MANAGER") {
+                                    window.location.pathname = "/ClientServlet";
+                                }
+                            });
+                        });
                     }
                     else {
                         this.loginPage = true;
@@ -837,7 +849,7 @@ System.register(["angular2/core", "angular2/router", "./shared/shared.barrel", "
                             shared_barrel_1.FooterComponent]
                     }),
                     router_1.RouteConfig([
-                        { path: '/', as: 'Home', component: shared_barrel_1.HomeComponent, useAsDefault: true },
+                        { path: '/', as: 'App', component: shared_barrel_1.HomeComponent, useAsDefault: true },
                         { path: '/login', as: 'Login', component: users_barrel_1.LoginComponent },
                         //Assistante Routes : ---------------------------------------------------------------
                         { path: '/patients', as: 'Patients', component: assistante_barrel_1.ListePatientsComponent },

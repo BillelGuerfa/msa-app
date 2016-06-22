@@ -29,7 +29,7 @@ export class DevisService {
         return this._http.get(config.urls.agentPrestation.devisById)
     }
     getDevisByIdPatient(idPatient: any) : Observable<Devis[]> {
-        return this._http.get(config.urls.agentPrestation.devis + "?idPatient=" + idPatient)
+        return this._http.get(config.urls.agentPrestation.devis + "/Patient/" + idPatient)
                         .map(devis =>  <Devis[]>devis.json())
                         .catch(this.handleErrors);
     }

@@ -39,6 +39,10 @@ System.register(['angular2/core', "angular2/router", "./navItem.component", "../
                 };
                 NavComponent.prototype.ngOnInit = function () {
                 };
+                NavComponent.prototype.deco = function () {
+                    sessionStorage.clear();
+                    window.location.pathname = "/";
+                };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)

@@ -26,9 +26,7 @@ export class LoginComponent implements OnInit, AfterViewInit  {
         this._authService.login(this.compte)
                          .subscribe( compte => {
                              this.compte = compte;
-                             console.log(compte);
-                             this._router.navigate(['Home']);
-                             location.reload();
+                             window.location.pathname = "/"
                          },
                          error =>  this.error = error);
     }

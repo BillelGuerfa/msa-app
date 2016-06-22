@@ -145,6 +145,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                 this.features = [];
                             }
                             break;
+                        case "MANAGER":
+                            {
+                                this.features = [];
+                            }
+                            break;
                         default: {
                             this.features = [];
                         }

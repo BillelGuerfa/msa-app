@@ -137,6 +137,11 @@ export class FeatureService {
                         
                     ];
                 }break;
+                case "MANAGER":{
+                    this.features =  [
+                        
+                    ];
+                }break;
                 default: {
                     this.features =  [
                         

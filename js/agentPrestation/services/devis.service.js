@@ -50,7 +50,7 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                     return this._http.get(app_config_1.config.urls.agentPrestation.devisById);
                 };
                 DevisService.prototype.getDevisByIdPatient = function (idPatient) {
-                    return this._http.get(app_config_1.config.urls.agentPrestation.devis + "?idPatient=" + idPatient)
+                    return this._http.get(app_config_1.config.urls.agentPrestation.devis + "/Patient/" + idPatient)
                         .map(function (devis) { return devis.json(); })
                         .catch(this.handleErrors);
                 };

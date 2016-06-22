@@ -42,15 +42,17 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "rxjs/Obs
                         this.logged = false;
                 }
                 AuthService.prototype.getCompte = function () {
-                    if (this.compte)
-                        return this.compte;
+                    return this.login(this.compte);
                 };
                 AuthService.prototype.login = function (compte) {
                     var _this = this;
                     //TODO replace get with post for production
                     return this._http.get(app_config_1.config.urls.login)
                         .map(function (res) {
-                        _this.compte = res.json();
+                        var comptes = res.json();
+                        _this.compte = comptes.filter(function (com) {
+                            return ((com.nomUtilisateur === compte.nomUtilisateur && com.motDePasse === compte.motDePasse) || (com.idCompte == compte.idCompte));
+                        })[0];
                         sessionStorage.setItem("session_id", _this.compte.session_id);
                         sessionStorage.setItem("idCompte", _this.compte.idCompte.toString());
                         sessionStorage.setItem("nomUtilisateur", _this.compte.nomUtilisateur);

@@ -45,9 +45,12 @@ System.register(['angular2/core', "angular2/http", "../../app.config", "./featur
                         });
                     }
                     else {
-                        return this._http.get(app_config_1.config.urls.users.employe + "?idEmploye=" + idEmploye)
+                        return this._http.get(app_config_1.config.urls.login)
                             .map(function (res) {
-                            _this.employe = res.json();
+                            var comptes = res.json();
+                            _this.employe = comptes.filter(function (compte) {
+                                return (compte.employe.idEmploye === idEmploye);
+                            })[0].employe;
                             return _this.employe;
                         })
                             .catch(this.handleErrors);

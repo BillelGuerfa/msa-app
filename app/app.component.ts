@@ -67,7 +67,7 @@ declare var $this,$dropdownMenu;
 })
 
 @RouteConfig([
-    { path: '/',as: 'Home',component: HomeComponent, useAsDefault: true }, 
+    { path: '/',as: 'App',component: HomeComponent, useAsDefault: true }, 
     { path: '/login',as: 'Login',component: LoginComponent },
     //Assistante Routes : ---------------------------------------------------------------
     { path: '/patients', as:'Patients', component: ListePatientsComponent},
@@ -104,10 +104,24 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
     }
 
     ngOnInit() {
+        
         if(this._authService.isLogged()){
             this.loginPage = false;
-            let compte = this._authService.getCompte();
-            this.employe = this._employeService.getEmploye(compte.idCompte);
+            this._authService.getCompte().subscribe((compte)=>{
+                this.employe = this._employeService.getEmploye(compte.idCompte);
+                this._employeService.getEmploye(compte.idCompte).subscribe((employe)=>{
+                console.log("l'employe : ");
+                console.log(employe);
+                if(employe.poste === "ASSISTANTE"){
+                     window.location.pathname = "/Home";
+                }
+                else if(employe.poste ==="MANAGER"){
+                    window.location.pathname = "/ClientServlet";
+                }
+                });
+            });
+            
+            
             
         }else {
             this.loginPage = true;

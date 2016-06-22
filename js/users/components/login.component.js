@@ -39,9 +39,7 @@ System.register(['angular2/core', "angular2/router", "../services/auth.service"]
                     this._authService.login(this.compte)
                         .subscribe(function (compte) {
                         _this.compte = compte;
-                        console.log(compte);
-                        _this._router.navigate(['Home']);
-                        location.reload();
+                        window.location.pathname = "/";
                     }, function (error) { return _this.error = error; });
                 };
                 LoginComponent.prototype.forget = function () {

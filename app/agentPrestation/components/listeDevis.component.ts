@@ -124,7 +124,7 @@ export class ListeDevisComponent implements OnInit, AfterViewInit, OnChanges {
         return this._dateService.timestampToDate(+timestampDate);
     }
     exportPdf(){
-        $("#data-table-selection").tableExport({type:'pdf',escape:'false',pdfLeftMargin:0});
+        $("#data-table-selection").tableExport({type:'pdf',escape:'false',pdfFontSize:7});
     }
     exportCsv(){
         $("#data-table-selection").tableExport({type:'csv',escape:'false'});

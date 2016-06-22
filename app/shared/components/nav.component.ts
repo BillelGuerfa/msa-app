@@ -24,5 +24,9 @@ export class NavComponent implements OnInit,OnChanges  {
     }
     ngOnInit() { 
     }
+    deco(){
+        sessionStorage.clear();
+        window.location.pathname = "/"
+    }
 
 }

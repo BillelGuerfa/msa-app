@@ -137,7 +137,7 @@ System.register(["angular2/core", "angular2/router", "../../shared/shared.barrel
                     return this._dateService.timestampToDate(+timestampDate);
                 };
                 ListeDevisComponent.prototype.exportPdf = function () {
-                    $("#data-table-selection").tableExport({ type: 'pdf', escape: 'false', pdfLeftMargin: 0 });
+                    $("#data-table-selection").tableExport({ type: 'pdf', escape: 'false', pdfFontSize: 7 });
                 };
                 ListeDevisComponent.prototype.exportCsv = function () {
                     $("#data-table-selection").tableExport({ type: 'csv', escape: 'false' });

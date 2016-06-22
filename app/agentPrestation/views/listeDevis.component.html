@@ -38,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="#devi of devis" >
+                        <tr *ngFor="#devi of devis">
                             <td>{{devi.idDevis}}</td>
                             <td>{{displayDate(devi.datePrescription)}}</td>
                             <td>{{devi.patient.idPatient}}</td>
@@ -76,10 +76,11 @@
                     <div class="form-group">
                         <label for="prenom" class="col-sm-2 control-label">PRENOM</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="prenom" placeholder="Selectionnez le patient.. " [value]="patient.prenom" typeaheadautocomplete [objectsDataSet]="patients | async" [labelAtt]="'prenom'" [name]="'prenomsPatients'" [handleFunction]="selectPatient" autocomplete="off">
+                            <input type="text" class="form-control" id="prenom" placeholder="Selectionnez le patient.. " [value]="patient.prenom" typeaheadautocomplete [objectsDataSet]="patients | async" [labelAtt]="'prenom'" [name]="'prenomsPatients'" [handleFunction]="selectPatient"
+                                autocomplete="off">
                         </div>
                     </div>
-                    
+
 
                     <div class="form-group">
                         <label for="type" class="col-sm-2 control-label">TYPE DEVIS</label>
@@ -91,7 +92,7 @@
                                     </select>
                         </div>
                     </div>
-                   
+
 
                     <div class="form-group">
                         <label for="date2" class="col-sm-2 control-label ">DATE EXPIRATION</label>
@@ -104,42 +105,42 @@
 
                     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->
 
-                    
 
-                        <div class="col-md-12" *ngIf="newDevis.listeLigneDevis" >
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>LISTE DES PRODUITS </h2>
-                                </div>
 
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
+                    <div class="col-md-12" *ngIf="newDevis.listeLigneDevis">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>LISTE DES PRODUITS </h2>
+                            </div>
 
-                                                <th>CODE PRODUIT</th>
-                                                <th>DESIGNATION</th>
-                                                <th>QUANTITE</th>
-                                                <th>PRIX</th>
-                                                <th>AUGMENTER</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr *ngFor="#ligneDevis of newDevis.listeLigneDevis" >
-                                                <td>{{ligneDevis.produit.idProduit}}</td>
-                                                <td>{{ligneDevis.produit.libelle}}</td>
-                                                <td>{{ligneDevis.quantite}}</td>
-                                                <td>{{ligneDevis.produit.prixUnitaire}}</td>
-                                                <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'+')"><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
-                                                <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'-')"><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+
+                                            <th>CODE PRODUIT</th>
+                                            <th>DESIGNATION</th>
+                                            <th>QUANTITE</th>
+                                            <th>PRIX</th>
+                                            <th>AUGMENTER</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="#ligneDevis of newDevis.listeLigneDevis">
+                                            <td>{{ligneDevis.produit.idProduit}}</td>
+                                            <td>{{ligneDevis.produit.libelle}}</td>
+                                            <td>{{ligneDevis.quantite}}</td>
+                                            <td>{{ligneDevis.produit.prixUnitaire}}</td>
+                                            <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'+')"><center><i  class="zmdi zmdi-plus zmdi-hc-fw"></i></center></button></td>
+                                            <td> <button (click)="changeQuantiteLigneDevis(ligneDevis,'-')"><center><i  class="zmdi zmdi-minus zmdi-hc-fw"></i></center></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
 
-                    
+
                     <label *ngIf="newDevis.listeLigneDevis">PRIX TOTAL : {{newDevisTotal()}} Da </label>
 
                     <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ -->

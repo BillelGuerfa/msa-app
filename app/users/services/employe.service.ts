@@ -4,6 +4,7 @@ import {config} from "../../app.config";
 import {Feature, FeatureService} from "./feature.service";
 import {Observable} from "rxjs/Observable";
 import {Adresse} from "../../shared/shared.barrel";
+import {Compte} from "./auth.service";
 import "rxjs/Rx";
 @Injectable()
 export class EmployeService {
@@ -18,9 +19,12 @@ export class EmployeService {
                    observer.onCompleted();
                 });
             }else {
-                return this._http.get(config.urls.users.employe+"?idEmploye="+idEmploye)
+                return this._http.get(config.urls.login)
                              .map(res => {
-                                 this.employe = <Employe> res.json();
+                                 let comptes =  <Compte[]>res.json();
+                                 this.employe = comptes.filter((compte)=>{
+                                     return (compte.employe.idEmploye === idEmploye);
+                                 })[0].employe;
                                  return this.employe;
                              })
                              .catch(this.handleErrors);

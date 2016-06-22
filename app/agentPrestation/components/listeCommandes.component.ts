@@ -78,9 +78,8 @@ export class ListeCommandesComponent implements OnInit, AfterViewInit  {
     }
     createCommande(){
         this.newCommande = {};
-        this.newCommande.etat = "En attente de facturation";
+        this.newCommande.etat = "Non reglée";
         this.newCommande.date = moment().format("x");
-        
     }
     displayDate(timestampDate : string) : string{
         return this._dateService.timestampToDate(+timestampDate);

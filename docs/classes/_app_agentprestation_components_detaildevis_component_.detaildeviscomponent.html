@@ -97,6 +97,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_dateservice" class="tsd-kind-icon">_date<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_devisservice" class="tsd-kind-icon">_devis<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_ordonanceservice" class="tsd-kind-icon">_ordonance<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_router" class="tsd-kind-icon">_router</a></li>
@@ -107,6 +108,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#displaydate" class="tsd-kind-icon">display<wbr>Date</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#prixtotaldevis" class="tsd-kind-icon">prix<wbr>Total<wbr>Devis</a></li>
 							</ul>
@@ -120,13 +122,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Detail<wbr>Devis<wbr>Component<span class="tsd-signature-symbol">(</span>_router<span class="tsd-signature-symbol">: </span><a href="_node_modules_angular2_ts_src_router_router_.router.html" class="tsd-signature-type">Router</a>, _devisService<span class="tsd-signature-symbol">: </span><a href="_app_agentprestation_services_devis_service_.devisservice.html" class="tsd-signature-type">DevisService</a>, _ordonanceService<span class="tsd-signature-symbol">: </span><a href="_app_medecin_services_ordonance_service_.ordonanceservice.html" class="tsd-signature-type">OrdonanceService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html" class="tsd-signature-type">DetailDevisComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Detail<wbr>Devis<wbr>Component<span class="tsd-signature-symbol">(</span>_router<span class="tsd-signature-symbol">: </span><a href="_node_modules_angular2_ts_src_router_router_.router.html" class="tsd-signature-type">Router</a>, _devisService<span class="tsd-signature-symbol">: </span><a href="_app_agentprestation_services_devis_service_.devisservice.html" class="tsd-signature-type">DevisService</a>, _ordonanceService<span class="tsd-signature-symbol">: </span><a href="_app_medecin_services_ordonance_service_.ordonanceservice.html" class="tsd-signature-type">OrdonanceService</a>, _dateService<span class="tsd-signature-symbol">: </span><a href="_app_shared_services_date_service_.dateservice.html" class="tsd-signature-type">DateService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html" class="tsd-signature-type">DetailDevisComponent</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L12">app/agentPrestation/components/detailDevis.component.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L13">app/agentPrestation/components/detailDevis.component.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -140,6 +142,9 @@
 								<li>
 									<h5>_ordonanceService: <a href="_app_medecin_services_ordonance_service_.ordonanceservice.html" class="tsd-signature-type">OrdonanceService</a></h5>
 								</li>
+								<li>
+									<h5>_dateService: <a href="_app_shared_services_date_service_.dateservice.html" class="tsd-signature-type">DateService</a></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html" class="tsd-signature-type">DetailDevisComponent</a></h4>
 						</li>
@@ -149,12 +154,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_dateservice" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _date<wbr>Service</h3>
+					<div class="tsd-signature tsd-kind-icon">_date<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_app_shared_services_date_service_.dateservice.html" class="tsd-signature-type">DateService</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L17">app/agentPrestation/components/detailDevis.component.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_devisservice" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _devis<wbr>Service</h3>
 					<div class="tsd-signature tsd-kind-icon">_devis<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_app_agentprestation_services_devis_service_.devisservice.html" class="tsd-signature-type">DevisService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L13">app/agentPrestation/components/detailDevis.component.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L15">app/agentPrestation/components/detailDevis.component.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">_ordonance<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_app_medecin_services_ordonance_service_.ordonanceservice.html" class="tsd-signature-type">OrdonanceService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L13">app/agentPrestation/components/detailDevis.component.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L16">app/agentPrestation/components/detailDevis.component.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,7 +189,7 @@
 					<div class="tsd-signature tsd-kind-icon">_router<span class="tsd-signature-symbol">:</span> <a href="_node_modules_angular2_ts_src_router_router_.router.html" class="tsd-signature-type">Router</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L13">app/agentPrestation/components/detailDevis.component.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L14">app/agentPrestation/components/detailDevis.component.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,7 +199,7 @@
 					<div class="tsd-signature tsd-kind-icon">devis<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_app_agentprestation_services_devis_service_.devis.html" class="tsd-signature-type">Devis</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L11">app/agentPrestation/components/detailDevis.component.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L12">app/agentPrestation/components/detailDevis.component.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -194,13 +209,36 @@
 					<div class="tsd-signature tsd-kind-icon">ordonance<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_app_medecin_services_ordonance_service_.ordonance.html" class="tsd-signature-type">Ordonance</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L12">app/agentPrestation/components/detailDevis.component.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L13">app/agentPrestation/components/detailDevis.component.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="displaydate" class="tsd-anchor"></a>
+					<h3>display<wbr>Date</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">display<wbr>Date<span class="tsd-signature-symbol">(</span>timestampDate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L37">app/agentPrestation/components/detailDevis.component.ts:37</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timestampDate: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="ngoninit" class="tsd-anchor"></a>
 					<h3>ng<wbr>OnInit</h3>
@@ -211,7 +249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L15">app/agentPrestation/components/detailDevis.component.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L19">app/agentPrestation/components/detailDevis.component.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -228,7 +266,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L30">app/agentPrestation/components/detailDevis.component.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/BillelGuerfa/msa-app/blob/master/app/agentPrestation/components/detailDevis.component.ts#L34">app/agentPrestation/components/detailDevis.component.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -259,6 +297,9 @@
 								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_dateservice" class="tsd-kind-icon">_date<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#_devisservice" class="tsd-kind-icon">_devis<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
@@ -272,6 +313,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#ordonance" class="tsd-kind-icon">ordonance</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#displaydate" class="tsd-kind-icon">display<wbr>Date</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_app_agentprestation_components_detaildevis_component_.detaildeviscomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a>

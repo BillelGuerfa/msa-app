@@ -1,6 +1,65 @@
-{
+[{
     "idCompte": 20,
     "session_id": "20",
-    "nomUtilisateur": "BillelGuerfa",
-    "motDePasse": "BillelGuerfa"
+    "nomUtilisateur": "AgentPrestation",
+    "motDePasse": "AgentPrestation",
+    "employe": {
+        "idEmploye": 20,
+        "nom": "Guerfa",
+        "prenom": "Billel",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue": "mustapha bouhired",
+            "numRue": 3
+        },
+        "dateNaissance": "774831600000",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "1458428400000",
+        "poste": "AGENT_PRESTATION"
+    }
+}, {
+    "idCompte": 21,
+    "session_id": "21",
+    "nomUtilisateur": "Assistante",
+    "motDePasse": "Assistante",
+    "employe": {
+        "idEmploye": 21,
+        "nom": "Khaldi",
+        "prenom": "Hadjer",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue": "mustapha bouhired",
+            "numRue": 3
+        },
+        "dateNaissance": "774831600000",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "1458428400000",
+        "poste": "ASSISTANTE"
+    }
+}, {
+    "idCompte": 22,
+    "session_id": "22",
+    "nomUtilisateur": "Assistante",
+    "motDePasse": "Assistante",
+    "employe": {
+        "idEmploye": 22,
+        "nom": "Benhacine",
+        "prenom": "Hamza",
+        "adresse": {
+            "codePostale": 16037,
+            "wilaya": "Alger",
+            "commune": "Alger centre",
+            "rue": "mustapha bouhired",
+            "numRue": 3
+        },
+        "dateNaissance": "774831600000",
+        "numeroTel": "0542765526",
+        "dateRecrutement": "1458428400000",
+        "poste": "MANAGER"
+    }
 }
+]
